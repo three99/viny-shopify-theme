@@ -352,6 +352,7 @@
         </div>
       </div>
     </footer>
+    {% include 'product-add-to-cart-form' %}
     <!-- //site-footer -->
   </div>
 
@@ -399,6 +400,12 @@
         // Bind to 'ajaxCart.afterCartLoad' to run any javascript after the cart has loaded in the DOM
         timber.RightDrawer.open();
       });
+
+
+      $(".quickAddToCart").on('click', function(event){
+        $("#productSelect").val(this.id)
+        $("#AddToCartForm").submit();
+      })
     </script>
   {% endif %}
 

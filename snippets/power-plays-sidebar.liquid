@@ -1,0 +1,13 @@
+<!-- /snippets/power-plays-sidebar.liquid -->
+{% if linklists.pbv-power-plays.links.size > 0 %}
+  <ul class="no-bullets">
+    <h5>PBV Power Plays</h5>
+    {% for link in  linklists.pbv-power-plays.links %}
+      <li>
+        <h6>
+          <a href="{{ link.url }}" >{{ link.title }}</a>
+        </h6>
+      </li>
+      {% endfor %}
+    </ul>
+{% endif %}

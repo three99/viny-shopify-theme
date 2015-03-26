@@ -27,7 +27,11 @@
         Good for /collections/all collection and regular collections
       {% endcomment %}
       {% if collection.handle %}
-        <a href="/collections/{{ collection.handle }}">All {{ collection.title }}</a>
+        <a href="/collections/{{ collection.handle }}">All
+          {% unless collection.handle == 'all' %}
+            {{ collection.title }}
+          {% endunless %}
+        </a>
 
       {% comment %}
         Good for automatic type collections
