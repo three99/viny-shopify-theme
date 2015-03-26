@@ -55,22 +55,21 @@
   </a>
   {% endcomment %}
 <div class="grid">
-
   <figure class="effect-zoe">
-  <a href="{{ product.url | within: collection }}" class="grid__image">
-    <img src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}"/>
-  </a>
-  <figcaption>
-    <p class="icon-links">
-      {% for variant in product.variants %}
-        {% assign cart_value = variant.id %}
-      {% endfor %}
-      <a href="#" class="quickAddToCart" id="{{ cart_value }}"><span class="fa fa-shopping-cart"></span></a>
-      <a href="{{ product.url | within: collection }}"><span class="fa fa-eye"></span></a>
-      <a href="#"><span class="fa fa-heart-o"></span></a>
-    </p>
-  </figcaption>
-</figure>
+    <a href="{{ product.url | within: collection }}" class="grid__image">
+      <img src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}"/>
+    </a>
+    <figcaption>
+      <p class="icon-links">
+        {% for variant in product.variants %}
+          {% assign cart_value = variant.id %}
+        {% endfor %}
+        <a href="#" class="quickAddToCart" id="{{ cart_value }}"><span class="fa fa-shopping-cart"></span></a>
+        <a href="{{ product.url | within: collection }}"><span class="fa fa-eye"></span></a>
+        <a href="#"><span class="fa fa-heart-o"></span></a>
+      </p>
+    </figcaption>
+  </figure>
 </div>
 
   <p class="h6">
