@@ -32,10 +32,7 @@
   <!-- CSS ================================================== -->
   {{ 'image_effect.css' | asset_url | stylesheet_tag }}
   {{ 'font-awesome.min.css' | asset_url | stylesheet_tag }}
-<<<<<<< HEAD
-=======
   {{ 'bootstrap.min.css' | asset_url | stylesheet_tag }}
->>>>>>> 80cbb5efa613eeb6a9ae6566493836be8f04fff2
   {{ 'timber.scss.css' | asset_url | stylesheet_tag }}
 
   <!-- Header hook for plugins ================================================== -->
@@ -139,10 +136,7 @@
           {% endif %}
         {% endif %}
       {% endif %}
-<<<<<<< HEAD
-=======
       <li class="mobile-nav__item"><a href="#">Styles</a></li>
->>>>>>> 80cbb5efa613eeb6a9ae6566493836be8f04fff2
     </ul>
     <!-- //mobile-nav -->
   </div>
@@ -309,6 +303,38 @@
                       <a class="icon-fallback-text" href="{{ settings.social_facebook_link }}" title="{{ shop.name }} on Facebook">
                         <span class="icon icon-facebook" aria-hidden="true"></span>
                         <span class="fallback-text">Facebook</span>
+                      </a>
+                    </li>
+                  {% endif %}
+                  {% if settings.social_instagram_link != blank %}
+                    <li>
+                      <a class="icon-fallback-text" href="{{ settings.social_instagram_link }}" title="{{ shop.name }} on Instagram">
+                        <span class="icon icon-instagram" aria-hidden="true"></span>
+                        <span class="fallback-text">Instagram</span>
+                      </a>
+                    </li>
+                  {% endif %}
+                  {% if settings.social_pinterest_link != blank %}
+                    <li>
+                      <a class="icon-fallback-text" href="{{ settings.social_pinterest_link }}" title="{{ shop.name }} on Pinterest">
+                        <span class="icon icon-pinterest" aria-hidden="true"></span>
+                        <span class="fallback-text">Pinterest</span>
+                      </a>
+                    </li>
+                  {% endif %}
+                  {% if settings.social_google_plus_link != blank %}
+                    <li>
+                      <a class="icon-fallback-text" href="{{ settings.social_google_plus_link }}" title="{{ shop.name }} on Google+">
+                        <span class="icon icon-google" aria-hidden="true"></span>
+                        <span class="fallback-text">Google+</span>
+                      </a>
+                    </li>
+                  {% endif %}
+                  {% if settings.social_youtube_link != blank %}
+                    <li>
+                      <a class="icon-fallback-text" href="{{ settings.social_youtube_link }}" title="{{ shop.name }} on Youtube">
+                        <span class="icon icon-youtube" aria-hidden="true"></span>
+                        <span class="fallback-text">Youtube</span>
                       </a>
                     </li>
                   {% endif %}
