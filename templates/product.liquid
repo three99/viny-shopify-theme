@@ -48,7 +48,12 @@
 
     <div class="grid__item large--one-half">
 
-      <h1 itemprop="name">{{ product.title }}</h1>
+    {% assign pbv_title_arr = split(product.title, delimiter=" | ") %}
+    {% assign release_artist = pbv_title_arr[0] %}
+    {% assign release_title = pbv_title_arr[1] %}
+
+      <h1 itemprop="name">{{ release_artist }}</h1>
+      <h2 itemprop="name">{{ release_title }}</h2>
 
       <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
         <meta itemprop="priceCurrency" content="{{ shop.currency }}">
