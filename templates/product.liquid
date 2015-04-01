@@ -48,9 +48,8 @@
 
     <div class="grid__item large--one-half">
 
-    {% assign pbv_title_arr = split(product.title, delimiter=" | ") %}
-    {% assign release_artist = pbv_title_arr[0] %}
-    {% assign release_title = pbv_title_arr[1] %}
+    {% capture release_artist %}{{ product.title | split: " | " | first }}{% endcapture %}
+    {% capture release_title %}{{ product.title | split: " | " | last }}{% endcapture %}
 
       <h1 itemprop="name">{{ release_artist }}</h1>
       <h2 itemprop="name">{{ release_title }}</h2>
