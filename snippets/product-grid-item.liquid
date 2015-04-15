@@ -52,7 +52,7 @@ Example
     <div class="grid">
         <figure>
             <a href="{{ product.url | within: collection }}" class="grid__image">
-                <img src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}"/>
+                <img src="{{ product.featured_image.src | img_url: 'medium' }}" alt="{{ product.featured_image.alt | escape }}"/>
             </a>
         </figure>
     </div>
