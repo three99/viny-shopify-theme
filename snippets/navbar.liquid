@@ -44,26 +44,34 @@
                                 </li>
                             {% endif %}
                         {% endfor %}
+                        {% comment %}
                         {% if shop.customer_accounts_enabled %}
                              <li>
                                  {% if customer %}
                                    {% if customer.first_name != blank %}
-                                   {% capture first_name %}<a href="/account">{{ customer.first_name }}</a>{% endcapture %}
-                                 {{ 'layout.customer.logged_in_as_html' | t: first_name: first_name }}
-                               {% else %}
-                                   <a class="site-nav__link" href="/account">{{ 'layout.customer.account' | t }}</a>
-                               {% endif %}
-                                 | {{ 'layout.customer.log_out' | t | customer_logout_link }}
-                               {% else %}
+                                     {% capture first_name %}
+                                        <a href="/account" class="site-nav__link">{{ customer.first_name }}</a>
+                                     {% endcapture %}
+                                     {{ 'layout.customer.logged_in_as_html' | t: first_name: first_name }}
+                                   {% else %}
+                                     <a class="site-nav__link" href="/account">{{ 'layout.customer.account' | t }}</a>
+                                   {% endif %}
+                                   | {{ 'layout.customer.log_out' | t | customer_logout_link }}
+                                 {% else %}
                                    {{ 'layout.customer.log_in' | t | customer_login_link }}
-                                 {% if shop.customer_accounts_optional %}
-                                   | {{ 'layout.customer.create_account' | t | customer_register_link }}
-                               {% endif %}
-                               {% endif %}
+                                   {% if shop.customer_accounts_optional %}
+                                     | {{ 'layout.customer.create_account' | t | customer_register_link }}
+                                   {% endif %}
+                                 {% endif %}
                             </li>
                         {% endif %}
+                        {% endcomment %}
                         <li>
-                            <a href="/cart" class="site-header__cart-toggle js-drawer-open-right" aria-controls="CartDrawer" aria-expanded="false">
+                            <a href="/cart"
+                              class="site-nav__link site-header__cart-toggle js-drawer-open-right"
+                              aria-controls="CartDrawer"
+                              aria-expanded="false"
+                            >
                                 <span class="icon-fallback-text">
                                     <span class="icon icon-cart" aria-hidden="true"></span>
                                 </span>
