@@ -19,6 +19,7 @@
     {% include 'search-bar' %}
     <hr>
     <ul class="no-bullets">
+      <h5>Styles</h5>
       {% for collection in collections %}
         {% unless collection.handle == 'all' || collection.handle == 'frontpage' %}
           <li>
