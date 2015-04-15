@@ -1,17 +1,18 @@
+
+
 <!-- /templates/index.liquid -->
+
 {% comment %}
-
   This is the homepage of your site.
-
   More info on global variables (available on all templates):
     - http://docs.shopify.com/themes/liquid-variables/global
 {% endcomment %}
-
 
 {% comment %}
   Use class grid-uniform to have evenly sized columns clear
   each other properly at each breakpoint.
 {% endcomment %}
+
 <div class="grid-uniform">
 
   <div class="grid__item large--one-quarter medium-down--hide">
@@ -19,9 +20,8 @@
     {% include 'search-bar' %}
     <hr>
     <ul class="no-bullets">
-      <h5>Styles</h5>
       {% for collection in collections %}
-        {% unless collection.handle == 'all' || collection.handle == 'frontpage' %}
+        {% unless collection.handle == "all" or collection.handle == "frontpage" %}
           <li>
             <h6>
               <a href="{{ collection.url }}">{{ collection.title | escape }}</a>
