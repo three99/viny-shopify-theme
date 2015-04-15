@@ -1760,9 +1760,9 @@ label.error {
   margin: 0 auto;
   max-width: 100%;
 
-  @include at-query ($min, $large) {
-    text-align: left;
-  }
+  //@include at-query ($min, $large) {
+  //  text-align: left;
+  //}
 
   a,
   a:hover,
@@ -1809,6 +1809,7 @@ label.error {
 ==============================================================================*/
 .nav-bar {
   background-color: $colorNav;
+  padding: 20px 0;
 }
 
 .site-nav {
@@ -1839,7 +1840,7 @@ label.error {
 .site-nav__link {
   display: block;
   text-decoration: none;
-  padding: $gutter / 2;
+  //padding: $gutter / 2;
   white-space: nowrap;
   color: $colorNavText;
 
@@ -2173,6 +2174,7 @@ label.error {
 .grid__image {
   display: block;
   margin: 0 auto ($gutter / 2);
+  border: 1px #EEE solid;
 
   img {
     display: block;
