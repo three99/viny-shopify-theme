@@ -1,42 +1,46 @@
-<hr>
-<ul class="no-bullets">
-    {% for link in linklists.aside-inventory-time-line.links %}
-        <li {% if link.active %}class="site-nav--active"{% endif %}>
-            <a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
-        </li>
-    {% endfor %}
-</ul>
-<hr>
-<ul class="no-bullets">
-    {% for link in linklists.aside-standard.links %}
-        <li {% if link.active %}class="site-nav--active"{% endif %}>
-            <a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
-        </li>
-    {% endfor %}
-</ul>
-<hr>
-<ul class="no-bullets">
-    {% for link in linklists.aside-misc.links %}
-        <li {% if link.active %}class="site-nav--active"{% endif %}>
-            <a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
-        </li>
-    {% endfor %}
-</ul>
-<hr>
-<ul class="no-bullets">
-    {% for link in linklists.aside-main-genre.links %}
-        <li {% if link.active %}class="site-nav--active"{% endif %}>
-            <a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
-        </li>
-    {% endfor %}
-</ul>
-<hr>
-<h5>PBV Power Plays</h5>
-<ul class="no-bullets">
-    {% for link in linklists.aside-power-plays.links %}
-        <li {% if link.active %}class="site-nav--active"{% endif %}>
-            <a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
-        </li>
-    {% endfor %}
-</ul>
-<hr>
+
+
+<div class="nav-sidebar">
+  <hr>
+  <ul class="no-bullets">
+      {% for link in linklists.aside-inventory-time-line.links %}
+          <li {% if link.active %}class="site-nav--active"{% endif %}>
+              <a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
+          </li>
+      {% endfor %}
+  </ul>
+  <hr>
+  <ul class="no-bullets">
+      {% for link in linklists.aside-standard.links %}
+          <li {% if link.active %}class="site-nav--active"{% endif %}>
+              <a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
+          </li>
+      {% endfor %}
+  </ul>
+  <hr>
+  <ul class="no-bullets">
+      {% for link in linklists.aside-misc.links %}
+          <li {% if link.active %}class="site-nav--active"{% endif %}>
+              <a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
+          </li>
+      {% endfor %}
+  </ul>
+  <hr>
+  <ul class="no-bullets">
+      {% for link in linklists.aside-main-genre.links %}
+          <li {% if link.active %}class="site-nav--active"{% endif %}>
+              <a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
+          </li>
+      {% endfor %}
+  </ul>
+  <hr>
+  <h5>PBV Power Plays</h5>
+  <ul class="no-bullets">
+      {% for link in linklists.aside-power-plays.links %}
+          <li {% if link.active %}class="site-nav--active"{% endif %}>
+              <a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
+          </li>
+      {% endfor %}
+  </ul>
+  <hr>
+</div>
