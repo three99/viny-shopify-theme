@@ -7,12 +7,19 @@
 	text-align: center;
 }*/
 
-/* Common style */
+.product-grid-item p {
+  margin: 0;
+  background: #F9F9F9;
+  padding: 10px;
+  line-height: 1.2;
+  min-height: 100px;
+}
+
 .grid figure {
 	position: relative;
 	float: left;
 	overflow: hidden;
-	margin: 30px 0 0 30px;
+	margin: 10px 0 0 30px;
 }
 
 .grid figure img {
