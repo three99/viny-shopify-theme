@@ -7,6 +7,13 @@
     {% endfor %}
 </ul>
 <hr>
+<ul class="no-bullets">
+    {% for link in linklists.aside-standard.links %}
+        <li {% if link.active %}class="site-nav--active"{% endif %}>
+            <a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
+        </li>
+    {% endfor %}
+</ul>
 <hr>
 <ul class="no-bullets">
     {% for link in linklists.aside-misc.links %}
