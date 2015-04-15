@@ -3,6 +3,9 @@
 <footer class="site-footer small--text-center" role="contentinfo">
     <div class="wrapper">
         <div class="grid">
+            <div class="grid__item text-center">
+              <hr>
+            </div>
             {% if settings.footer_social_enable %}
                 <div class="grid__item large--one-third medium--one-half">
                     <h3>{{ 'layout.footer.social_title' | t }}</h3>
@@ -68,8 +71,13 @@
                         {% endfor %}
                     </ul>
                 {% endunless %}
-                <a href="http://shopify.com/timber">Timber Theme Framework</a> by <a href="http://www.shopify.com?ref=Timber" title="Shopify.com">Shopify</a><br>
+                {% comment %}
+                <a href="http://shopify.com/timber">Timber Theme Framework</a>
+                by
+                <a href="http://www.shopify.com?ref=Timber" title="Shopify.com">Shopify</a>
+                <br>
                 <small>{{ powered_by_link }}</small>
+                {% endcomment %}
             </div>
         </div>
     </div>
