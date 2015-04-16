@@ -56,33 +56,40 @@ Example
         </figure>
     </div>
 
-    <p class="text-center">
-        <small>
-            <a href="{{ product.url | within: collection }}">{{ product.title | capitalize }}</a>
-            <br>
-            {% comment %}
-            You can show a leading 'from' or 'up to' by checking 'product.price_varies'
-            if your variants have different prices.
-            {% endcomment %}
-            {% if on_sale %}
-                {% if product.price_varies %}
-                    {% assign sale_price = product.price | money %}
-                    {{ 'products.product.on_sale_from_html' | t: price: sale_price }}
-                {% else %}
-                    <strong>{{ 'products.product.on_sale' | t }}</strong>
-                    {{ product.price | money }}
-                {% endif %}
-            {% else %}
-                {% if product.price_varies %}{{ 'products.general.from' | t }}{% endif %}
-                {{ product.price | money }}
-            {% endif %}
-            {% if sold_out %}
-                <br><strong>{{ 'products.product.sold_out' | t }}</strong>
-            {% endif %}
-            {% if on_sale %}
-                <br><s>{{ product.compare_at_price | money }}</s>
-            {% endif %}
-        </small>
-    </p>
+    <a href="{{ product.url | within: collection }}" class="text">
+      {% capture release_artist %}{{ product.title | split: " | " | first }}{% endcapture %}
+      {% capture release_title %}{{ product.title | split: " | " | last }}{% endcapture %}
+
+      <strong>
+        <span itemprop="name">{{ release_artist | capitalize }}</span>
+      </strong>
+
+      <br>
+      <span itemprop="name">{{ release_title | capitalize }}</span>
+      <br>
+
+      {% comment %}
+      You can show a leading 'from' or 'up to' by checking 'product.price_varies'
+      if your variants have different prices.
+      {% endcomment %}
+      {% if on_sale %}
+          {% if product.price_varies %}
+              {% assign sale_price = product.price | money %}
+              {{ 'products.product.on_sale_from_html' | t: price: sale_price }}
+          {% else %}
+              <strong>{{ 'products.product.on_sale' | t }}</strong>
+              {{ product.price | money }}
+          {% endif %}
+      {% else %}
+          {% if product.price_varies %}{{ 'products.general.from' | t }}{% endif %}
+          {{ product.price | money }}
+      {% endif %}
+      {% if sold_out %}
+          <br><strong>{{ 'products.product.sold_out' | t }}</strong>
+      {% endif %}
+      {% if on_sale %}
+          <br><s>{{ product.compare_at_price | money }}</s>
+      {% endif %}
+    </a>
 
 </div>
