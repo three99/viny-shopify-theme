@@ -44,9 +44,8 @@
                                 </li>
                             {% endif %}
                         {% endfor %}
-                        {% comment %}
                         {% if shop.customer_accounts_enabled %}
-                             <li>
+                              <li {% if link.active %}class="site-nav--active"{% endif %}>
                                  {% if customer %}
                                    {% if customer.first_name != blank %}
                                      {% capture first_name %}
@@ -56,16 +55,15 @@
                                    {% else %}
                                      <a class="site-nav__link" href="/account">{{ 'layout.customer.account' | t }}</a>
                                    {% endif %}
-                                   | {{ 'layout.customer.log_out' | t | customer_logout_link }}
+                                   {{ 'layout.customer.log_out' | t | customer_logout_link }}
                                  {% else %}
                                    {{ 'layout.customer.log_in' | t | customer_login_link }}
                                    {% if shop.customer_accounts_optional %}
-                                     | {{ 'layout.customer.create_account' | t | customer_register_link }}
+                                     {{ 'layout.customer.create_account' | t | customer_register_link }}
                                    {% endif %}
                                  {% endif %}
                             </li>
                         {% endif %}
-                        {% endcomment %}
                         <li>
                             <a href="/cart"
                               class="site-nav__link site-header__cart-toggle js-drawer-open-right"
