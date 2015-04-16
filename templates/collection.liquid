@@ -40,7 +40,7 @@ Use .grid--rev so that the collection tags appear below the products on mobile
         Use class grid-uniform to have evenly sized columns clear
         each other properly at each breakpoint.
         {% endcomment %}
-        <div class="grid-uniform">
+        <div id="products-grid" class="grid-uniform">
 
             {% comment %}
             Loop through our products in the current collection.
@@ -78,12 +78,8 @@ Use .grid--rev so that the collection tags appear below the products on mobile
 
         </div>
 
-        {% if paginate.pages > 1 %}
-            <hr>
-
-            <div class="text-center">
-                {% include 'pagination-custom' %}
-            </div>
+        {% if paginate.next %}
+          <a id="more" href="{{ paginate.next.url }}">&nbsp;</a>
         {% endif %}
 
     </div>
@@ -94,3 +90,4 @@ Use .grid--rev so that the collection tags appear below the products on mobile
 </div>
 
 {% endpaginate %}
+
