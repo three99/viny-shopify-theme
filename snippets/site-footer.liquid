@@ -6,58 +6,56 @@
             <div class="grid__item text-center">
               <hr>
             </div>
-            {% if settings.footer_social_enable %}
-                <div class="grid__item large--one-third medium--one-half">
-                    <h3>{{ 'layout.footer.social_title' | t }}</h3>
-                    <ul class="inline-list social-icons">
-                        {% if settings.social_twitter_link != blank %}
-                            <li>
-                                <a class="icon-fallback-text" href="{{ settings.social_twitter_link }}" title="{{ shop.name }} on Twitter">
-                                    <span class="icon icon-twitter" aria-hidden="true"></span>
-                                    <span class="fallback-text">Twitter</span>
-                                </a>
-                            </li>
-                        {% endif %}
-                        {% if settings.social_facebook_link != blank %}
-                            <li>
-                                <a class="icon-fallback-text" href="{{ settings.social_facebook_link }}" title="{{ shop.name }} on Facebook">
-                                    <span class="icon icon-facebook" aria-hidden="true"></span>
-                                    <span class="fallback-text">Facebook</span>
-                                </a>
-                            </li>
-                        {% endif %}
-                    </ul>
-                </div>
-            {% endif %}
-            {% if settings.footer_newsletter_enable %}
-                <div class="grid__item large--one-third push--large--one-third medium--one-half">
-                    {% comment %}
-                    MailChimp is the go-to newsletter service for Shopify.
-                    Use the link below to find your MailChimp form action
-                    and insert it in your site settings.
-
-                    MailChimp newsletter integration and requirement:
-                    - http://docs.shopify.com/support/configuration/store-customization/where-do-i-get-my-mailchimp-form-action
-                    {% endcomment %}
-                    <h3>{{ 'layout.footer.newsletter_title' | t }}</h3>
-                    {% if settings.newsletter_form_action != blank %}
-                        {% assign form_action = settings.newsletter_form_action %}
-                    {% else %}
-                        {% assign form_action = '#' %}
-                    {% endif %}
-                    <form action="{{ form_action }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" class="input-group">
-                        <input type="email" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="{{ 'general.newsletter_form.newsletter_email' | t }}" name="EMAIL" id="mail" class="input-group-field" aria-label="{{ 'general.newsletter_form.newsletter_email' | t }}" autocorrect="off" autocapitalize="off">
-                        <span class="input-group-btn">
-                            <input type="submit" class="btn" name="subscribe" id="subscribe" value="{{ 'general.newsletter_form.submit' | t }}">
-                        </span>
-                    </form>
-                </div>
-            {% endif %}
+            <div class="grid__item large--one-quarter push--large--one-quarter medium--one-half">
+              <h5>{{ linklists.footer-customer.title }}</h5>
+              <ul class="no-bullets">
+                  {% for link in linklists.footer-customer.links %}
+                      <li {% if link.active %}class="site-nav--active"{% endif %}>
+                          <a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
+                      </li>
+                  {% endfor %}
+              </ul>
+            </div>
+            <div class="grid__item large--one-quarter push--large--one-quarter medium--one-half">
+              <h5>{{ linklists.footer-about.title }}</h5>
+              <ul class="no-bullets">
+                  {% for link in linklists.footer-about.links %}
+                      <li {% if link.active %}class="site-nav--active"{% endif %}>
+                          <a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
+                      </li>
+                  {% endfor %}
+              </ul>
+            </div>
+            <div class="grid__item large--one-quarter push--large--one-quarter medium--one-half">
+              <h5>{{ linklists.footer-social.title }}</h5>
+              <ul class="no-bullets">
+                  {% for link in linklists.footer-social.links %}
+                      <li {% if link.active %}class="site-nav--active"{% endif %}>
+                          <a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
+                      </li>
+                  {% endfor %}
+              </ul>
+            </div>
             <div class="grid__item text-center">
                 <hr>
                 {% comment %}
-                Loop through available payment methods and show their icons.
+                <p>© 2014 - 2015 H-Track Music Group LLC / Pacific Beach Vinyl -USA-</p>
+                {% if settings.footer_newsletter_enable %}
+                        <h3>{{ 'layout.footer.newsletter_title' | t }}</h3>
+                        {% if settings.newsletter_form_action != blank %}
+                            {% assign form_action = settings.newsletter_form_action %}
+                        {% else %}
+                            {% assign form_action = '#' %}
+                        {% endif %}
+                        <form action="{{ form_action }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" class="input-group">
+                            <input type="email" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="{{ 'general.newsletter_form.newsletter_email' | t }}" name="EMAIL" id="mail" class="input-group-field" aria-label="{{ 'general.newsletter_form.newsletter_email' | t }}" autocorrect="off" autocapitalize="off">
+                            <span class="input-group-btn">
+                                <input type="submit" class="btn" name="subscribe" id="subscribe" value="{{ 'general.newsletter_form.submit' | t }}">
+                            </span>
+                        </form>
+                {% endif %}
                 {% endcomment %}
+                {% comment %}
                 {% unless shop.enabled_payment_types == empty %}
                     <h4 class="text-center">{{ 'layout.footer.accepted_payments' | t }}</h4>
                     <ul class="inline-list payment-icons">
@@ -71,12 +69,6 @@
                         {% endfor %}
                     </ul>
                 {% endunless %}
-                {% comment %}
-                <a href="http://shopify.com/timber">Timber Theme Framework</a>
-                by
-                <a href="http://www.shopify.com?ref=Timber" title="Shopify.com">Shopify</a>
-                <br>
-                <small>{{ powered_by_link }}</small>
                 {% endcomment %}
             </div>
         </div>
