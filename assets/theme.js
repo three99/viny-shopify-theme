@@ -3,6 +3,7 @@
 function paginate(){
   var $more = $("#more");
   var $grid = $("#products-grid"); 
+  var speed = 180;
   if ($more.length) {
     if($(document).height() - 500 < ($(document).scrollTop() + $(window).height())) {
       url = $more.attr("href");
@@ -22,11 +23,11 @@ function paginate(){
             $grid.append($item);
             setTimeout(function(){
               $item.removeClass("invisible");
-            }, 120 * i);
+            }, speed * i);
           });
           setTimeout(function(){
             $grid.after($(data).find("#more"));
-          }, 120 * $newitems.length);
+          }, speed * $newitems.length);
         },
         dataType: "html"
       });
@@ -36,7 +37,6 @@ function paginate(){
 
 $(document).ready(function () {
   $(window).scroll(function(){
-    //setTimeout(paginate, 500);
     paginate();
   });
 });
