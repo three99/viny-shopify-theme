@@ -27,6 +27,7 @@ function paginate(){
           });
           setTimeout(function(){
             $grid.after($(data).find("#more"));
+            paginate();
           }, speed * $newitems.length);
         },
         dataType: "html"
