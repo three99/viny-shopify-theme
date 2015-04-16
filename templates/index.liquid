@@ -8,50 +8,57 @@ More info on global variables (available on all templates):
 - http://docs.shopify.com/themes/liquid-variables/global
 {% endcomment %}
 
-{% comment %}
-Use class grid-uniform to have evenly sized columns clear
-each other properly at each breakpoint.
-{% endcomment %}
+{% paginate collections[settings.fp_collection].products by 12 %}
 
-<div class="grid-uniform">
+  {% comment %}
+  Use class grid-uniform to have evenly sized columns clear
+  each other properly at each breakpoint.
+  {% endcomment %}
 
-    <div class="grid__item large--one-quarter medium-down--hide">
-        {% include "main-sidebar" %}
-    </div>
+  <div class="grid-uniform">
 
-    <div class="grid__item large--three-quarters">
-        <div class="grid">
+      <div class="grid__item large--one-quarter medium-down--hide">
+          {% include "main-sidebar" %}
+      </div>
 
-            {% comment %}
-            Loop through products in your Frontpage collection.
-            This collection is created by default, but you must add products to it.
-            {% endcomment %}
+      <div class="grid__item large--three-quarters">
+        <div id="products-grid" class="grid-uniform">
 
-            {% for product in collections[settings.fp_collection].products limit: settings.number_of_fp_products %}
+              {% comment %}
+              Loop through products in your Frontpage collection.
+              This collection is created by default, but you must add products to it.
+              {% endcomment %}
 
-                {% comment %}
-                Change the grid item width by using classes from the grid in
-                the grid_item_width variable.
+              {% for product in collections[settings.fp_collection].products %}
 
-                Example:
-                - {% assign grid_item_width = 'large--one-third medium--one-half' %}
-                {% endcomment %}
-                {% assign grid_item_width = 'large--one-third medium--one-half' %}
-                {% include 'product-grid-item' %}
+                  {% comment %}
+                  Change the grid item width by using classes from the grid in
+                  the grid_item_width variable.
 
-            {% else %}
-                {% comment %}
-                For onboarding new users to your theme, we add some default products and onboarding tutorials to help populate their store
-                {% endcomment %}
-                {% unless emptyState %}
-                    {{ 'theme-onboarding.css' | global_asset_url | stylesheet_tag }}
-                    {% assign emptyState = true %}
-                {% endunless %}
+                  Example:
+                  - {% assign grid_item_width = 'large--one-third medium--one-half' %}
+                  {% endcomment %}
+                  {% assign grid_item_width = 'large--one-third medium--one-half' %}
+                  {% include 'product-grid-item' %}
 
-                {% include 'onboarding-featured-products' %}
+              {% else %}
+                  {% comment %}
+                  For onboarding new users to your theme, we add some default products and onboarding tutorials to help populate their store
+                  {% endcomment %}
+                  {% unless emptyState %}
+                      {{ 'theme-onboarding.css' | global_asset_url | stylesheet_tag }}
+                      {% assign emptyState = true %}
+                  {% endunless %}
 
-            {% endfor %}
+                  {% include 'onboarding-featured-products' %}
 
-        </div>
-    </div>
-</div>
+              {% endfor %}
+
+          </div>
+      </div>
+      {% if paginate.next %}
+        <a id="more" href="{{ paginate.next.url }}">&nbsp;</a>
+      {% endif %}
+  </div>
+
+{% endpaginate %}

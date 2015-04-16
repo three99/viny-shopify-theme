@@ -4,7 +4,7 @@ function paginate(){
   var $more = $("#more");
   var $grid = $("#products-grid"); 
   if ($more.length) {
-    if($(document).height() - 800 < ($(document).scrollTop() + $(window).height())) {
+    if($(document).height() - 500 < ($(document).scrollTop() + $(window).height())) {
       url = $more.attr("href");
       $more.remove();
       $.ajax({
@@ -19,14 +19,14 @@ function paginate(){
           $newitems.addClass("invisible");
           $newitems.each(function(i){
             var $item = $(this);
+            $grid.append($item);
             setTimeout(function(){
-              $grid.append($item);
-              setTimeout(function(){
-                $item.removeClass("invisible");
-              }, 240);
+              $item.removeClass("invisible");
             }, 120 * i);
           });
-          $grid.after($(data).find("#more"));
+          setTimeout(function(){
+            $grid.after($(data).find("#more"));
+          }, 120 * $newitems.length);
         },
         dataType: "html"
       });
@@ -36,6 +36,7 @@ function paginate(){
 
 $(document).ready(function () {
   $(window).scroll(function(){
-    setTimeout(paginate, 200);
+    //setTimeout(paginate, 500);
+    paginate();
   });
 });
