@@ -13,25 +13,15 @@ Use .grid--rev so that the collection tags appear below the products on mobile
 <div class="grid--rev">
     <div class="grid__item large--three-quarters">
 
-        {% comment %}
-        Different markup if a collection description exists
-        {% endcomment %}
+        <div class="section-header">
+            <div class="section-header__right">
+                {% include 'collection-sorting' %}
+            </div>
+        </div>
         {% if collection.description != blank %}
             <header class="section-header">
                 <div class="rte rte--header">
                     {{ collection.description }}
-                </div>
-            </header>
-            <hr>
-            <div class="section-header">
-                <div class="section-header__right">
-                    {% include 'collection-sorting' %}
-                </div>
-            </div>
-        {% else %}
-            <header class="section-header">
-                <div class="section-header__right">
-                    {% include 'collection-sorting' %}
                 </div>
             </header>
         {% endif %}
