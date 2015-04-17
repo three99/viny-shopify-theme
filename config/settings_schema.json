@@ -229,6 +229,18 @@
     ]
   },
   {
+    "name": "Cart",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "ajax_cart_enable",
+        "label": "Enable Ajaxify Cart",
+        "info": "[View Documentation](http:\/\/shopify.com\/timber#ajax-cart)",
+        "default": false
+      }
+    ]
+  },
+  {
     "name": "Footer",
     "settings": [
       {
