@@ -10,7 +10,7 @@
               <div class="grid">
                 <div class="grid__item large--two-thirds medium--one-half">
                   {% if settings.footer_newsletter_enable %}
-                    <h5>{{ 'layout.footer.newsletter_title' | t }}</h5>
+                    <h5>{{ settings.footer_newsletter_title }}</h5>
                     {% if settings.newsletter_form_action != blank %}
                       {% assign form_action = settings.newsletter_form_action %}
                     {% else %}

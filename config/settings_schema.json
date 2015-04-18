@@ -104,7 +104,7 @@
       {
         "type": "checkbox",
         "id": "ajax_cart_enable",
-        "label": "Enable Ajaxify Cart",
+        "label": "Enable ajaxify cart?",
         "info": "[View Documentation](http:\/\/shopify.com\/timber#ajax-cart)",
         "default": false
       }
@@ -118,6 +118,29 @@
         "id": "footer_copyright",
         "label": "Copyright Text",
         "default": "H-Track Music Group LLC / Pacific Beach Vinyl -USA-"
+      },
+      {
+        "type": "header",
+        "content": "Newsletter"
+      },
+      {
+        "type": "checkbox",
+        "id": "footer_newsletter_enable",
+        "label": "Display newsletter subscribe form?",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "footer_newsletter_title",
+        "label": "Newsletter title",
+        "default": "Newsletter"
+      },
+      {
+        "type": "text",
+        "id": "newsletter_form_action",
+        "label": "MailChimp form action URL",
+        "info": "[View Documentation](https:\/\/docs.shopify.com\/manual\/configuration\/store-customization\/communicating-with-customers\/accounts-and-newsletters\/where-do-i-get-my-mailchimp-form-action)",
+        "default": "#"
       }
     ]
   }
