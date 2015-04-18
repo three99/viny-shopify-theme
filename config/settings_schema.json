@@ -109,5 +109,16 @@
         "default": false
       }
     ]
+  },
+  {
+    "name": "Footer",
+    "settings": [
+      {
+        "type": "text",
+        "id": "footer_copyright",
+        "label": "Copyright Text",
+        "default": "H-Track Music Group LLC / Pacific Beach Vinyl -USA-"
+      }
+    ]
   }
 ]
