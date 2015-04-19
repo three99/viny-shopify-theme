@@ -45,6 +45,11 @@
         "type": "link_list",
         "id": "fourth_aside_block",
         "label": "Fourth Section"
+      },
+      {
+        "type": "link_list",
+        "id": "fifth_aside_block",
+        "label": "Fifth Section"
       }
     ]
   },
