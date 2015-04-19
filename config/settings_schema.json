@@ -1,6 +1,6 @@
 [
   {
-    "name": "Navigation Bar",
+    "name": "Top Navigation",
     "settings": [
       {
         "type": "header",
@@ -16,6 +16,35 @@
         "type": "image",
         "id": "logo.png",
         "label": "Shop logo"
+      }
+    ]
+  },
+  {
+    "name": "Side Navigation",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Link List Order"
+      },
+      {
+        "type": "link_list",
+        "id": "first_aside_block",
+        "label": "First Section"
+      },
+      {
+        "type": "link_list",
+        "id": "second_aside_block",
+        "label": "Second Section"
+      },
+      {
+        "type": "link_list",
+        "id": "third_aside_block",
+        "label": "Third Section"
+      },
+      {
+        "type": "link_list",
+        "id": "fourth_aside_block",
+        "label": "Fourth Section"
       }
     ]
   },
