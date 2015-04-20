@@ -1,7 +1,7 @@
 
 
 <div class="nav-sidebar">
-  
+
   {% for i in (1..10) %}
     {% capture attr %}aside_block_{{i}}{% endcapture %}
     {% if settings[attr] %}
@@ -18,57 +18,5 @@
       </ul>
     {% endif %}
   {% endfor %}
-
-  {% comment %}
-  <hr>
-  <h5>{{ linklists.aside-inventory-time-line.title }}</h5>
-  <ul class="no-bullets">
-      {% for link in linklists.aside-inventory-time-line.links %}
-          <li {% if link.active %}class="site-nav--active"{% endif %}>
-              <a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
-          </li>
-      {% endfor %}
-  </ul>
-  {% endcomment %}
-  {% comment %}
-  <hr>
-  <h5>{{ linklists.aside-standard.title }}</h5>
-  <ul class="no-bullets">
-      {% for link in linklists.aside-standard.links %}
-          <li {% if link.active %}class="site-nav--active"{% endif %}>
-              <a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
-          </li>
-      {% endfor %}
-  </ul>
-  {% endcomment %}
-  {% comment %}
-  <hr>
-  <h5>{{ linklists.aside-misc.title }}</h5>
-  <ul class="no-bullets">
-      {% for link in linklists.aside-misc.links %}
-          <li {% if link.active %}class="site-nav--active"{% endif %}>
-              <a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
-          </li>
-      {% endfor %}
-  </ul>
-  <hr>
-  <h5>{{ linklists.aside-main-genre.title }}</h5>
-  <ul class="no-bullets">
-      {% for link in linklists.aside-main-genre.links %}
-          <li {% if link.active %}class="site-nav--active"{% endif %}>
-              <a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
-          </li>
-      {% endfor %}
-  </ul>
-  <hr>
-  <h5>{{ linklists.aside-power-plays.title }}</h5>
-  <ul class="no-bullets">
-      {% for link in linklists.aside-power-plays.links %}
-          <li {% if link.active %}class="site-nav--active"{% endif %}>
-              <a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
-          </li>
-      {% endfor %}
-  </ul>
-  <hr>
-  {% endcomment %}
+  
 </div>
