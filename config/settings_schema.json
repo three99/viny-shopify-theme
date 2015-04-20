@@ -28,27 +28,27 @@
       },
       {
         "type": "link_list",
-        "id": "first_aside_block",
+        "id": "aside_block_1",
         "label": "First Section"
       },
       {
         "type": "link_list",
-        "id": "second_aside_block",
+        "id": "aside_block_2",
         "label": "Second Section"
       },
       {
         "type": "link_list",
-        "id": "third_aside_block",
+        "id": "aside_block_3",
         "label": "Third Section"
       },
       {
         "type": "link_list",
-        "id": "fourth_aside_block",
+        "id": "aside_block_4",
         "label": "Fourth Section"
       },
       {
         "type": "link_list",
-        "id": "fifth_aside_block",
+        "id": "aside_block_5",
         "label": "Fifth Section"
       }
     ]

@@ -1,6 +1,25 @@
 
 
 <div class="nav-sidebar">
+  
+  {% for i in (1..10) %}
+    {% capture attr %}aside_block_{{i}}{% endcapture %}
+    {% if settings[attr] %}
+      <hr>
+      {% assign linklistname = settings[attr] %}
+      {% assign linklist = linklists[linklistname] %}
+      <h5>{{ linklist.title }}</h5>
+      <ul class="no-bullets">
+          {% for link in linklist.links %}
+              <li {% if link.active %}class="site-nav--active"{% endif %}>
+                  <a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
+              </li>
+          {% endfor %}
+      </ul>
+    {% endif %}
+  {% endfor %}
+
+  {% comment %}
   <hr>
   <h5>{{ linklists.aside-inventory-time-line.title }}</h5>
   <ul class="no-bullets">
@@ -10,6 +29,7 @@
           </li>
       {% endfor %}
   </ul>
+  {% endcomment %}
   {% comment %}
   <hr>
   <h5>{{ linklists.aside-standard.title }}</h5>
@@ -21,6 +41,7 @@
       {% endfor %}
   </ul>
   {% endcomment %}
+  {% comment %}
   <hr>
   <h5>{{ linklists.aside-misc.title }}</h5>
   <ul class="no-bullets">
@@ -49,4 +70,5 @@
       {% endfor %}
   </ul>
   <hr>
+  {% endcomment %}
 </div>
