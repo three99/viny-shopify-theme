@@ -29,27 +29,53 @@
       {
         "type": "link_list",
         "id": "aside_block_1",
-        "label": "First Section"
+        "label": "1. Section"
       },
       {
         "type": "link_list",
         "id": "aside_block_2",
-        "label": "Second Section"
+        "label": "2. Section"
       },
       {
         "type": "link_list",
         "id": "aside_block_3",
-        "label": "Third Section"
+        "label": "3. Section"
       },
       {
         "type": "link_list",
         "id": "aside_block_4",
-        "label": "Fourth Section"
+        "label": "4. Section"
       },
       {
         "type": "link_list",
         "id": "aside_block_5",
-        "label": "Fifth Section"
+        "label": "5. Section"
+      },
+
+      {
+        "type": "link_list",
+        "id": "aside_block_6",
+        "label": "6. Section"
+      },
+      {
+        "type": "link_list",
+        "id": "aside_block_7",
+        "label": "7. Section"
+      },
+      {
+        "type": "link_list",
+        "id": "aside_block_8",
+        "label": "8. Section"
+      },
+      {
+        "type": "link_list",
+        "id": "aside_block_9",
+        "label": "9. Section"
+      },
+      {
+        "type": "link_list",
+        "id": "aside_block_10",
+        "label": "10. Section"
       }
     ]
   },
