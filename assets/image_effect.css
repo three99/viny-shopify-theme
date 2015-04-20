@@ -33,6 +33,7 @@
 }
 
 .product-grid-item {
+  margin-top: 10px;
   opacity: 1;
   -webkit-transform: scale(1.0);
   -webkit-transform-origin: 50% 50%;
