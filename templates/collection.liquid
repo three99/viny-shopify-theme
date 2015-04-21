@@ -55,8 +55,9 @@ For more information on collection tags:
             {% comment %}
             If collection exists but is empty, display message
             {% endcomment %}
-            <div class="grid-item">
-              <p>{{ 'collections.general.no_matches' | t }}</p>
+            <div class="lead text-center">
+              <br>
+              {{ 'collections.general.no_matches' | t }}
             </div>
           {% endif %}
         {% endfor %}
