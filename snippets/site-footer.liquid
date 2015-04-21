@@ -1,64 +1,81 @@
 
 
-<footer class="site-footer small--text-center" role="contentinfo">
-    <div class="wrapper">
-        <div class="grid">
-            <div class="grid__item text-center">
-              <hr>
-            </div>
-            <div class="grid__item large--two-fifths medium--one-half">
-              <div class="grid">
-                <div class="grid__item large--two-thirds medium--one-half">
-                  {% if settings.footer_newsletter_enable %}
-                    <h5>{{ settings.footer_newsletter_title }}</h5>
-                    {% if settings.newsletter_form_action != blank %}
-                      {% assign form_action = settings.newsletter_form_action %}
-                    {% else %}
-                      {% assign form_action = '#' %}
-                    {% endif %}
-                    <form action="{{ form_action }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" class="input-group">
-                      <input type="email" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="{{ 'general.newsletter_form.newsletter_email' | t }}" name="EMAIL" id="mail" class="input-group-field" aria-label="{{ 'general.newsletter_form.newsletter_email' | t }}" autocorrect="off" autocapitalize="off">
-                        <span class="input-group-btn">
-                          <input type="submit" class="btn" name="subscribe" id="subscribe" value="{{ 'general.newsletter_form.submit' | t }}">
-                        </span>
-                    </form>
-                  {% endif %}
-                </div>
-              </div>
-            </div>
-            <div class="grid__item large--one-fifth medium--one-half">
-              <h5>{{ linklists.footer-customer.title }}</h5>
-              <ul class="no-bullets">
-                  {% for link in linklists.footer-customer.links %}
-                      <li {% if link.active %}class="site-nav--active"{% endif %}>
-                          <a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
-                      </li>
-                  {% endfor %}
-              </ul>
-            </div>
-            <div class="grid__item large--one-fifth medium--one-half">
-              <h5>{{ linklists.footer-about.title }}</h5>
-              <ul class="no-bullets">
-                  {% for link in linklists.footer-about.links %}
-                      <li {% if link.active %}class="site-nav--active"{% endif %}>
-                          <a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
-                      </li>
-                  {% endfor %}
-              </ul>
-            </div>
-            <div class="grid__item large--one-fifth medium--one-half">
-              <h5>{{ linklists.footer-social.title }}</h5>
-              <ul class="no-bullets">
-                  {% for link in linklists.footer-social.links %}
-                      <li {% if link.active %}class="site-nav--active"{% endif %}>
-                          <a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
-                      </li>
-                  {% endfor %}
-              </ul>
-            </div>
-            <div class="grid__item large--three-fifths push--large--two-fifths medium--one-half">
-              <small>&copy; 2014 - {{ 'now' | date: "%Y" }} {{ settings.footer_copyright }}</small>
-            </div>
-        </div>
+<footer class="site-footer" role="contentinfo">
+  <hr>
+  <div class="row">
+    <div class="col-md-5">
+      {% if settings.footer_newsletter_enable %}
+        <h5>{{ settings.footer_newsletter_title }}</h5>
+        {% if settings.newsletter_form_action != blank %}
+          {% assign form_action = settings.newsletter_form_action %}
+        {% else %}
+          {% assign form_action = '#' %}
+        {% endif %}
+        <form
+          action="{{ form_action }}"
+          method="post"
+          id="mc-embedded-subscribe-form"
+          name="mc-embedded-subscribe-form"
+          target="_blank"
+          class="input-group"
+          >
+          <input
+          type="email"
+          value="{% if customer %}{{ customer.email }}{% endif %}"
+          placeholder="{{ 'general.newsletter_form.newsletter_email' | t }}"
+          name="EMAIL"
+          id="mail"
+          class="form-control"
+          aria-label="{{ 'general.newsletter_form.newsletter_email' | t }}"
+          autocorrect="off"
+          autocapitalize="off"
+          >
+          <span class="input-group-btn">
+            <input
+            type="submit"
+            class="btn btn-default"
+            name="subscribe"
+            id="subscribe"
+            value="{{ 'general.newsletter_form.submit' | t }}"
+            >
+          </span>
+        </form>
+      {% endif %}
     </div>
+    <div class="col-md-2 col-md-offset-1">
+      <h5>{{ linklists.footer-customer.title }}</h5>
+      <ul class="list-unstyled">
+        {% for link in linklists.footer-customer.links %}
+          <li {% if link.active %}class="site-nav--active"{% endif %}>
+            <a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="col-md-2">
+      <h5>{{ linklists.footer-about.title }}</h5>
+      <ul class="list-unstyled">
+        {% for link in linklists.footer-about.links %}
+          <li {% if link.active %}class="site-nav--active"{% endif %}>
+            <a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="col-md-2">
+      <h5>{{ linklists.footer-social.title }}</h5>
+      <ul class="list-unstyled">
+        {% for link in linklists.footer-social.links %}
+          <li {% if link.active %}class="site-nav--active"{% endif %}>
+            <a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <hr>
+  <div class="text-center">
+    <small>&copy; 2014 - {{ 'now' | date: "%Y" }} {{ settings.footer_copyright }}</small>
+  </div>
 </footer>
+<br><br>

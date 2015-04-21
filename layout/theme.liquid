@@ -19,12 +19,10 @@
         "
     >
 
-        {% include "nav-drawer" %}
-        {% include "cart-drawer" %} 
-
-        <div id="PageContainer" class="is-moved-by-drawer">
+        <div id="PageContainer" class="container">
 
             {% include "navbar" %} 
+
             <main class="wrapper main-content" role="main">
                 {{ content_for_layout }}
             </main>

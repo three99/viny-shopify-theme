@@ -1,7 +1,6 @@
 
 
-<div class="nav-sidebar">
-
+<div class="nav-sidebar" data-spy="affix" data-offset-top="170" data-offset-bottom="350">
   {% for i in (1..10) %}
     {% capture attr %}aside_block_{{i}}{% endcapture %}
     {% if settings[attr] %}
@@ -10,7 +9,7 @@
       {% unless linklist.title == blank %}
         <hr>
         <h5>{{ linklist.title }}</h5>
-        <ul class="no-bullets">
+        <ul class="list-unstyled">
             {% for link in linklist.links %}
                 <li {% if link.active %}class="site-nav--active"{% endif %}>
                     <a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>

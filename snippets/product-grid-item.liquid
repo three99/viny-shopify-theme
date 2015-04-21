@@ -31,8 +31,8 @@ Example
     {% assign sold_out = false %}
 {% endif %}
 
-<div class="grid__item {{ grid_item_width }} product-grid-item">
-
+<div class="col-md-3 product-grid-item">
+  <div class="thumbnail">
     {% comment %}
     Link to your product with the 'within: collection' filter for the link to be aware of the collection.
     This allows you to create collection-based navigation on the product page.
@@ -49,11 +49,11 @@ Example
     </a>
     {% endcomment %}
 
-    <a href="{{ product.url | within: collection }}" class="grid__image">
+    <a href="{{ product.url | within: collection }}">
         <img src="{{ product.featured_image.src | img_url: 'medium' }}" alt="{{ product.featured_image.alt | escape }}"/>
     </a>
 
-    <a href="{{ product.url | within: collection }}" class="text">
+    <a href="{{ product.url | within: collection }}" class="caption">
       {% capture release_artist %}{{ product.title | split: " | " | first }}{% endcapture %}
       {% capture release_title %}{{ product.title | split: " | " | last }}{% endcapture %}
 
@@ -89,4 +89,5 @@ Example
       {% endif %}
     </a>
 
+  </div>
 </div>
