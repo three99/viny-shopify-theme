@@ -6,78 +6,74 @@ For more information on collection tags:
 
 {% paginate collection.products by 12 %}
 
-{% comment %}
-Use .grid--rev so that the collection tags appear below the products on mobile
-{% endcomment %}
+  {% comment %}
+  Use .grid--rev so that the collection tags appear below the products on mobile
+  {% endcomment %}
 
-<div class="grid--rev">
-    <div class="grid__item large--three-quarters">
+  <div class="row">
+    <div class="col-md-10 col-md-push-2">
 
-        <div class="section-header">
-            <div class="section-header__right">
-                {% include 'collection-sorting' %}
-            </div>
+      <div class="section-header hidden">
+        <div class="section-header__right">
+          {% include 'collection-sorting' %}
         </div>
-        {% if collection.description != blank %}
-            <header class="section-header">
-                <div class="rte rte--header">
-                    {{ collection.description }}
-                </div>
-            </header>
-        {% endif %}
+      </div>
+
+      {% if collection.description != blank %}
+        <header class="section-header hidden">
+          <div class="rte rte--header">
+            {{ collection.description }}
+          </div>
+        </header>
+      {% endif %}
+
+      {% comment %}
+      Use class grid-uniform to have evenly sized columns clear
+      each other properly at each breakpoint.
+      {% endcomment %}
+      
+      <div id="products-grid">
 
         {% comment %}
-        Use class grid-uniform to have evenly sized columns clear
-        each other properly at each breakpoint.
+        Loop through our products in the current collection.
+        See the snippet 'product-grid-item' for the layout.
         {% endcomment %}
-        <div id="products-grid" class="grid-uniform">
-
+       
+        {% for product in collection.products %}
+          {% include 'product-grid-item' %}
+        {% else %}
+          {% if collection.handle == 'all' %}
             {% comment %}
-            Loop through our products in the current collection.
-            See the snippet 'product-grid-item' for the layout.
+            Add default products to help with onboarding for collections/all only
             {% endcomment %}
-            {% for product in collection.products %}
+            {% unless emptyState %}
+              {{ 'theme-onboarding.css' | global_asset_url | stylesheet_tag }}
+              {% assign emptyState = true %}
+            {% endunless %}
+            {% include 'onboarding-empty-collection' %}
+          {% else %}
+            {% comment %}
+            If collection exists but is empty, display message
+            {% endcomment %}
+            <div class="grid-item">
+              <p>{{ 'collections.general.no_matches' | t }}</p>
+            </div>
+          {% endif %}
+        {% endfor %}
 
-                {% include 'product-grid-item' %}
+      </div>
 
-            {% else %}
-
-                {% if collection.handle == 'all' %}
-
-                    {% comment %}
-                    Add default products to help with onboarding for collections/all only
-                    {% endcomment %}
-                    {% unless emptyState %}
-                        {{ 'theme-onboarding.css' | global_asset_url | stylesheet_tag }}
-                        {% assign emptyState = true %}
-                    {% endunless %}
-                    {% include 'onboarding-empty-collection' %}
-
-                {% else %}
-
-                    {% comment %}
-                    If collection exists but is empty, display message
-                    {% endcomment %}
-                    <div class="grid-item">
-                        <p>{{ 'collections.general.no_matches' | t }}</p>
-                    </div>
-
-                {% endif %}
-
-            {% endfor %}
-
-        </div>
-
-        {% if paginate.next %}
-          <a id="more" href="{{ paginate.next.url }}">&nbsp;</a>
-        {% endif %}
+      {% if paginate.next %}
+        <a id="more" href="{{ paginate.next.url }}">&nbsp;</a>
+      {% endif %}
 
     </div>
 
-    <div class="grid__item large--one-quarter">
-        {% include "main-sidebar" %}
+    <div class="col-md-2 col-md-pull-10">
+      {% include "main-sidebar" %}
     </div>
-</div>
+
+  </div>
 
 {% endpaginate %}
 
