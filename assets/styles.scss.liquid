@@ -1,11 +1,19 @@
 
 
+a {
+  color: #111;
+  &:hover {
+    color: #111;
+  }
+}
+
 .nav-sidebar {
   hr {
     margin: 10px 0;
   }
   h5 {
     font-size: .8em;
+    font-weight: bold;
   }
   a {
     display: block;
@@ -13,6 +21,11 @@
   &.affix {
     position: fixed !important;
     top: 20px;
+  }
+  li.active {
+    a {
+      font-weight: bold;
+    }
   }
 }
 
