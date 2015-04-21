@@ -7,6 +7,34 @@ a {
   }
 }
 
+.nav-pills {
+  > li {
+    > a {
+      &:hover {
+        background: none;
+        text-decoration: underline;
+      }
+      &:focus {
+        background: none;
+      }
+      &:active, &:visited {
+        color: #111;
+      }
+    }
+    &.active {
+      > a {
+        color: #111;
+        background: none;
+        font-weight: bold;
+        &:hover {
+          background: none;
+          color: #111;
+        }
+      }
+    }
+  }
+}
+
 .nav-sidebar {
   hr {
     margin: 10px 0;
