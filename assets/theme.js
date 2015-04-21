@@ -40,4 +40,9 @@ $(document).ready(function () {
   $(window).scroll(function(){
     paginate();
   });
+  $(".thumbnail").on("click", function(){
+    $links = $(this).find("a");
+    if ($links.length)
+      location.href = $links.first().attr("href");
+  })
 });
