@@ -1,11 +1,27 @@
 
+@import url(http://fonts.googleapis.com/css?family=Arimo);
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans);
+@import url(http://fonts.googleapis.com/css?family=Hind);
+@import url(http://fonts.googleapis.com/css?family=Inconsolata);
+@import url(http://fonts.googleapis.com/css?family=PT+Sans);
+
+
+{% if settings.body_main_google_font == 'None' %}
+  {% assign bodyfont = settings.body_main_font %}
+  {% assign headersfont = settings.headers_main_font %}
+{% else %}
+  {% assign bodyfont = settings.body_main_google_font %}
+  {% assign headersfont = settings.headers_main_google_font %}
+{% endif %}
+
+
 
 body {
-  font-family: {{ settings.body_main_font }}, sans-serif;
+  font-family: {{ bodyfont }}, sans-serif;
 }
 
 h1,h2,h3,h4,h5,h6 {
-  font-family: {{ settings.headers_main_font }}, sans-serif;
+  font-family: {{ headersfont }}, sans-serif;
 }
 
 a {
@@ -120,4 +136,3 @@ a {
     transform: scale(0.0);
   }
 }
-

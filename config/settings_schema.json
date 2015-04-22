@@ -80,6 +80,61 @@
     ]
   },
   {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Google Fonts"
+      },
+      {
+        "type": "select",
+        "id": "body_main_google_font",
+        "options": [
+          { "value": "None", "label": "None - Use Web-safe Fonts"},
+          { "value": "Arimo", "label": "Arimo"},
+          { "value": "Droid Sans", "label": "Droid Sans"},
+          { "value": "Hind", "label": "Hind"},
+          { "value": "Inconsolata", "label": "Inconsolata"},
+          { "value": "PT Sans", "label": "PT Sans"}
+          ],
+            "label": "Body Font Family"
+      },
+      {
+        "type": "select",
+        "id": "headers_main_google_font",
+        "options": [
+          { "value": "None", "label": "None - Use Web-safe Fonts"},
+          { "value": "Arimo", "label": "Arimo"},
+          { "value": "Droid Sans", "label": "Droid Sans"},
+          { "value": "Hind", "label": "Hind"},
+          { "value": "Inconsolata", "label": "Inconsolata"},
+          { "value": "PT Sans", "label": "PT Sans"}
+          ],
+            "label": "Headers Font Family"
+      },
+      {
+        "type": "header",
+        "content": "Web-safe Fonts"
+      },
+      {
+        "type": "font",
+        "id": "body_main_font",
+        "label": "Body Font Family"
+      },
+      {
+        "type": "font",
+        "id": "headers_main_font",
+        "label": "Headers Font Family"
+      },
+      {
+        "type": "color",
+        "id": "color_primary",
+        "label": "Text Color",
+        "default": "#747474"
+      }
+    ]
+  },
+  {
     "name": "Colors & Style",
     "settings": [
       {
@@ -109,26 +164,6 @@
         "id": "color_borders",
         "label": "Borders Color",
         "default": "#e5e5e5"
-      },
-      {
-        "type": "header",
-        "content": "Text"
-      },
-      {
-        "type": "font",
-        "id": "body_main_font",
-        "label": "Body Font Family"
-      },
-      {
-        "type": "font",
-        "id": "headers_main_font",
-        "label": "Headers Font Family"
-      },
-      {
-        "type": "color",
-        "id": "color_primary",
-        "label": "Text Color",
-        "default": "#747474"
       },
       {
         "type": "header",
