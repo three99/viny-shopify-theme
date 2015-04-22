@@ -1,0 +1,17 @@
+
+
+<!-- /templates/index.alternate.liquid -->
+
+<div id="products-grid">
+  {% assign c_arr = "this-week,new-arrivals,pbv-originals,polysom-reissues" | split: ',' %}
+  {% for c in c_arr %}
+    <div class="row">
+      <h5>{{ collections[c].title }}</h5>
+      {% for product in collections[c].products limit:4 %}
+        {% include 'product-grid-item' %}
+      {% endfor %}
+    </div>
+    <hr>
+  {% endfor %}
+</div>
+
