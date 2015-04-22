@@ -3,15 +3,26 @@
 <!-- /templates/index.alternate.liquid -->
 
 <div id="products-grid">
-  {% assign c_arr = "this-week,new-arrivals,pbv-originals,polysom-reissues" | split: ',' %}
+  {% assign c_arr = "pbv-celebration,polysom-reissues" | split: ',' %}
   {% for c in c_arr %}
+    <hr>
     <div class="row">
-      <h5>{{ collections[c].title }}</h5>
-      {% for product in collections[c].products limit:4 %}
+      <h4 class="col-xs-12">{{ collections[c].title }}</h4>
+      {% for product in collections[c].products limit:6 %}
         {% include 'product-grid-item' %}
       {% endfor %}
+      <p class="col-xs-12 text-right">
+        <a href="/collections/{{collections[c].handle}}">More in {{ collections[c].title }} collection</a>
+      </p>
     </div>
-    <hr>
   {% endfor %}
+  <hr>
+  <h4>Browse By Style</h4>
+  <div class="tags">
+    {% for link in linklists.aside-main-genre.links %}
+      {% comment %} <a href="/collections/all/{{ tag | handle }}" class="btn btn-default">{{ tag }}</a> {% endcomment %}
+      <a href="{{ link.url }}" class="btn btn-default btn-lg">{{ link.title }}</a>
+    {% endfor %}
+  </div>
 </div>
 
