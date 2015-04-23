@@ -1,6 +1,4 @@
 
-
-function paginate(){
   var $more = $("#more");
   var $grid = $("#products-grid"); 
   var speed = 180;
@@ -49,7 +47,8 @@ $(document).ready(function () {
     $el = $(this);
     $el.css("height", $el.outerHeight());
   })
-  $("body").on("click", ".nav-sidebar.affix > h4", function(){
-    $(this).next().toggleClass("open");
-  })
+  // $("body").on("click", ".nav-sidebar.affix > h4", function(){
+    // $(this).siblings().removeClass("open");
+    // $(this).next().toggleClass("open");
+  // })
 });
