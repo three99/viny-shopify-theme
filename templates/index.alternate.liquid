@@ -18,10 +18,12 @@
   {% endfor %}
   <hr>
   <h4>Browse By Style</h4>
-  <div class="tags">
+  <div class="tags row">
     {% for link in linklists.aside-main-genre.links %}
       {% comment %} <a href="/collections/all/{{ tag | handle }}" class="btn btn-default">{{ tag }}</a> {% endcomment %}
-      <a href="{{ link.url }}" class="btn btn-default btn-lg">{{ link.title }}</a>
+      <div class="col-sm-4">
+        <a href="{{ link.url }}" class="btn btn-default btn-lg btn-block">{{ link.title }}</a>
+      </div>
     {% endfor %}
   </div>
 </div>
