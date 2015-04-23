@@ -45,4 +45,11 @@ $(document).ready(function () {
     if ($links.length)
       location.href = $links.first().attr("href");
   })
+  $(".nav-sidebar > ul").each(function(){
+    $el = $(this);
+    $el.css("height", $el.outerHeight());
+  })
+  $("body").on("click", ".nav-sidebar.affix > h4", function(){
+    $(this).next().toggleClass("open");
+  })
 });

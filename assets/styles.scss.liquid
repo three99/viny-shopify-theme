@@ -60,6 +60,10 @@ a {
 }
 
 .nav-sidebar {
+  ul {
+    transition: height .5s;
+    overflow: hidden;
+  }
   hr {
     margin: 10px 0;
   }
@@ -78,6 +82,12 @@ a {
   &.affix {
     position: fixed !important;
     top: 20px;
+    h4 {
+      cursor: pointer;
+    }
+    ul:not(.open) {
+      height: 0 !important;
+    }
   }
   li.active {
     a {
