@@ -33,6 +33,8 @@ a {
 
 .nav-pills {
   > li {
+    font-family: {{ headersfont }}, sans-serif;
+    text-transform: uppercase;
     > a {
       &:hover {
         background: none;
@@ -67,8 +69,13 @@ a {
     font-size: .8em;
     font-weight: bold;
   }
+  h4 {
+    font-size: .9em;
+    font-weight: bold;
+  }
   a {
     display: block;
+    font-size: .9em;
   }
   &.affix {
     position: fixed !important;
@@ -76,6 +83,7 @@ a {
   }
   li.active {
     a {
+      font-size: .9em;
       font-weight: bold;
     }
   }
@@ -141,5 +149,27 @@ a {
   text-align: center;
   a {
     margin-bottom: 10px;
+  }
+}
+
+.site-footer {
+  h5 {
+    font-size: .8em;
+    font-weight: bold;
+  }
+  h4 {
+    font-size: .9em;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  a {
+    display: block;
+    font-size: .9em;
+  }
+  li.active {
+    a {
+      font-size: .9em;
+      font-weight: bold;
+    }
   }
 }

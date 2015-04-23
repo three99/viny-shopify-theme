@@ -8,7 +8,7 @@
       {% assign linklist = linklists[linklistname] %}
       {% unless linklist.title == blank %}
         <hr>
-        <h5>{{ linklist.title }}</h5>
+        <h4>{{ linklist.title }}</h4>
         <ul class="list-unstyled">
             {% for link in linklist.links %}
                 <li {% if link.active %}class="active"{% endif %}>
@@ -19,5 +19,5 @@
       {% endunless %}
     {% endif %}
   {% endfor %}
-  <hr> 
+  <hr>
 </div>
