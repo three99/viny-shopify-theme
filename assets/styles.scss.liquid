@@ -36,25 +36,23 @@ a {
     font-family: {{ headersfont }}, sans-serif;
     text-transform: uppercase;
     > a {
+      &:focus,
+      &:active,
       &:hover {
-        background: none;
-        text-decoration: underline;
+        background: #CCC;
+        color: #111;
       }
-      &:focus {
+      &:visited {
         background: none;
-      }
-      &:active, &:visited {
         color: #111;
       }
     }
     &.active {
       > a {
-        color: #111;
-        background: none;
-        font-weight: bold;
+        color: #FFF;
+        background: #111;
         &:hover {
-          background: none;
-          color: #111;
+          background: #111;
         }
       }
     }
