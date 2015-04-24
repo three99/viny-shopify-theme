@@ -44,6 +44,12 @@
 
         </ul>
       {% endif %}
+      {% comment %}
+      Tags
+      {% endcomment %}
+      {% for tag in product.tags %}
+        <a href="/collections/all/{{ tag }}" class="btn btn-default">{{ tag }}</a>
+      {% endfor %}
     </div>
 
     <div class="col-md-8">
@@ -53,6 +59,16 @@
 
       <h1 itemprop="name">{{ release_artist }}</h1>
       <h2 style="text-transform: capitalize;" itemprop="name">{{ release_title | downcase }}</h2>
+      <hr>
+      <strong>Label:</strong> {{ product.vendor }}<br>
+      <strong>Format:</strong> {{ product.type }}<br>
+      <strong>Cat:</strong> {{ product.variants.first.sku }}<br>
+      <strong>Style:</strong>
+      {% for tag in product.tags %}
+        <a href="/collections/all/{{ tag }}">{{ tag }}</a>{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+      <br>
+      <br>
 
       <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
         <meta itemprop="priceCurrency" content="{{ shop.currency }}">
@@ -94,7 +110,7 @@
             {% endfor %}
           </select>
 
-          <span id="ProductPrice" class="h2" itemprop="price">
+          <span id="ProductPrice" class="lead" itemprop="price">
             {{ current_variant.price | money }}
           </span>
 
