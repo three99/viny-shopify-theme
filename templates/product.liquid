@@ -44,6 +44,14 @@
 
         </ul>
       {% endif %}
+
+      {% comment %}
+       Tags 
+      {% endcomment %}
+      {% for tag in product.tags %}
+        <a href="/collections/all/{{ tag }}" class="btn btn-default">{{ tag }}</a>
+      {% endfor %}
+
     </div>
 
     <div class="col-md-8">
