@@ -8,7 +8,7 @@ More info on global variables (available on all templates):
 - http://docs.shopify.com/themes/liquid-variables/global
 {% endcomment %}
 
-{% paginate collections[settings.fp_collection].products by 18 %}
+{% paginate collections[settings.fp_collection].products by 15 %}
 
   {% comment %}
   Use class grid-uniform to have evenly sized columns clear
@@ -18,11 +18,11 @@ More info on global variables (available on all templates):
   <div class="row">
 
       <div class="col-md-2 hidden-sm hidden-xs">
-          {% include "main-sidebar" %}
+        {% include "main-sidebar" %}
       </div>
 
       <div class="col-md-10">
-        <div class="row" id="products-grid">
+        <div id="products-grid">
 
           {% comment %}
           Loop through products in your Frontpage collection.
