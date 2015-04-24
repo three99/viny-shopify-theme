@@ -69,5 +69,36 @@
 
       {% endif %}
   </ul>
+  {% if collection %}
+    <div class="btn-group pull-right" style="margin:-7px -14px 0 0;">
+      {% if collection.previous_product or collection.next_product %}
+
+          {% if collection.previous_product %}
+            {% capture prev_url %}{{ collection.previous_product}}#content{% endcapture %}
+            <a
+              href="{{ prev_url }}"
+              class="btn btn-default"
+              title="{{ collection.previous_product.title }}"
+              data-toggle="tooltip"
+              data-placement="left">
+              &lt;
+            </a>
+          {% endif %}
+
+          {% if collection.next_product %}
+            {% capture next_url %}{{ collection.next_product}}#content{% endcapture %}
+            <a
+              href="{{ next_url }}"
+              class="btn btn-default"
+              title="{{ collection.next_product.title }}"
+              data-toggle="tooltip"
+              data-placement="left">
+              &gt;
+            </a>
+          {% endif %}
+
+      {% endif %}
+    </div>
+  {% endif %}
 </nav>
 {% endunless %}
