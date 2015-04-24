@@ -19,9 +19,9 @@
         "
     >
 
-        <div id="PageContainer" class="container">
+        {% include "navbar" %} 
 
-            {% include "navbar" %} 
+        <div id="PageContainer" class="container">
 
             <main class="wrapper main-content" role="main">
                 {{ content_for_layout }}

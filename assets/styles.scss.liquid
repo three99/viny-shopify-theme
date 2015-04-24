@@ -31,11 +31,23 @@ a {
   }
 }
 
+.nav-bar {
+  background: #EEE;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  margin-bottom: 15px;
+}
+
 .nav-pills {
+  margin: 20px 0;
   > li {
+    float: none;
+    display: inline-block;
     font-family: {{ headersfont }}, sans-serif;
     text-transform: uppercase;
     > a {
+      font-weight: bold;
+      font-size: .9em;
       &:focus,
       &:active,
       &:hover {
@@ -60,7 +72,7 @@ a {
 }
 
 .nav-sidebar {
-  padding-top: 30px;
+  padding-top: 15px;
   h4 {
     font-size: .8em;
     margin: 10px 0 4px; 
