@@ -9,18 +9,18 @@ a {
   }
 }
 
-//.nav-bar {
-//  margin-bottom: 15px;
-//  padding-top: 20px;
-//  padding-bottom: 30px;
-//}
+.nav-bar {
+  margin-bottom: 15px;
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
 
 .site-header__logo {
   margin: 30px 0 20px;
 }
 
 .nav-pills {
-  margin: 35px 0;
+  margin: 45px 0 20px;
   > li {
     float: none;
     display: inline-block;
@@ -31,19 +31,19 @@ a {
       &:link,
       &:visited {
         background: none;
-        color: #111;
+        color: #FFF;
       }
       &:focus,
       &:active,
       &:hover {
-        background: #CCC;
+        background: #FFF;
         color: #111;
       }
     }
     &.active {
       > a {
         color: #FFF;
-        background: #111;
+        background: #222;
         &:hover {
           background: #FFF;
           color: #111;

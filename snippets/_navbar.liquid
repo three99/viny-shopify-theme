@@ -1,12 +1,8 @@
 
 
-<br>
-<nav class="nav-bar" role="navigation">
-  <div class="row">
-    <div class="col-md-2">
+<nav class="nav-bar text-center" role="navigation">
+  <div class="container">
       {% include "brand" %}
-    </div>
-    <div class="col-md-10">
       {% comment %}
       List out your main-menu linklist (default)
 
@@ -15,7 +11,7 @@
       {% endcomment %}
       <!-- begin site-nav -->
       <div class="clearfix">
-        <ul class="nav nav-pills pull-right" id="AccessibleNav">
+        <ul class="nav nav-pills text-center" id="AccessibleNav">
           {% for link in linklists.main-menu.links %}
             <li {% if link.active %}class="active"{% endif %}>
               <a href="{{ link.url }}">{{ link.title | capitalize }}</a>
@@ -59,12 +55,6 @@
         </ul>
       </div>
       <!-- //site-nav -->
-      <br><br>
-      <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-          {% include 'search-bar' %}
-        </div>
-      </div>
-    </div> <!-- grid -->
-  </div>
+      {% include 'search-bar' %}
+    </div>
 </nav>
