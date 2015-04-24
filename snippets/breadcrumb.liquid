@@ -25,7 +25,11 @@
           {% endif %}
         {% endif %}
         <!--<span aria-hidden="true">&rsaquo;</span>-->
-        <li>{{ product.title | replace:' | ',' - ' }}</li>
+        {% capture release_artist %}{{ product.title | split: " | " | first }}{% endcapture %}
+        {% capture release_title %}{{ product.title | split: " | " | last }}{% endcapture %}
+        <li>
+          {{ release_artist }} - {{ release_title | capitalize }}
+        </li>
 
       {% elsif template contains 'collection' and collection.handle %}
 
