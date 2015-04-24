@@ -74,6 +74,7 @@
       {% if collection.previous_product or collection.next_product %}
 
           {% if collection.previous_product %}
+            {{ collection.previous_product.title }}
             {% capture prev_url %}{{ collection.previous_product}}#content{% endcapture %}
             <a
               href="{{ prev_url }}"
