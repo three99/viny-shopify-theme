@@ -52,7 +52,7 @@
       {% capture release_title %}{{ product.title | split: " | " | last }}{% endcapture %}
 
       <h1 itemprop="name">{{ release_artist }}</h1>
-      <h2 itemprop="name">{{ release_title | capitalize }}</h2>
+      <h2 style="text-transform: capitalize;" itemprop="name">{{ release_title | downcase }}</h2>
 
       <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
         <meta itemprop="priceCurrency" content="{{ shop.currency }}">

@@ -7,7 +7,7 @@
   <nav role="navigation" aria-label="breadcrumbs" class="hidden-xs hidden-sm">
     <ol class="breadcrumb">
       <li>
-        <a 
+        <a
           href="/"
           title="{{ 'general.breadcrumbs.home_link_title' | t }}"
         >
@@ -28,7 +28,7 @@
         {% capture release_artist %}{{ product.title | split: " | " | first }}{% endcapture %}
         {% capture release_title %}{{ product.title | split: " | " | last }}{% endcapture %}
         <li>
-          {{ release_artist }} - {{ release_title | capitalize }}
+          <span style="text-transform: capitalize;">{{ release_artist | downcase }} - {{ release_title | downcase }}</span>
         </li>
 
       {% elsif template contains 'collection' and collection.handle %}
