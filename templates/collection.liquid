@@ -4,7 +4,7 @@ For more information on collection tags:
 - http://docs.shopify.com/themes/liquid-variables/collection
 {% endcomment %}
 
-{% paginate collection.products by 12 %}
+{% paginate collection.products by 18 %}
 
   {% comment %}
   Use .grid--rev so that the collection tags appear below the products on mobile
@@ -32,7 +32,7 @@ For more information on collection tags:
       each other properly at each breakpoint.
       {% endcomment %}
       
-      <div id="products-grid">
+      <div id="products-grid" class="row">
 
         {% comment %}
         Loop through our products in the current collection.
@@ -40,7 +40,7 @@ For more information on collection tags:
         {% endcomment %}
        
         {% for product in collection.products %}
-          {% include 'product-grid-item' %}
+            {% include 'product-grid-item' %}
         {% else %}
           {% if collection.handle == 'all' %}
             {% comment %}
@@ -70,7 +70,7 @@ For more information on collection tags:
 
     </div>
 
-    <div class="col-md-2 col-md-pull-10">
+    <div class="col-md-2 col-md-pull-10 hidden-sm hidden-xs">
       {% include "main-sidebar" %}
     </div>
 

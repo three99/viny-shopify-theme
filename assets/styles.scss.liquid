@@ -60,12 +60,16 @@ a {
 }
 
 .nav-sidebar {
-  hr {
-    margin: 10px 0;
-  }
-  h5 {
+  padding-top: 30px;
+  h4 {
     font-size: .8em;
-    font-weight: bold;
+    margin: 10px 0 4px; 
+    text-transform: uppercase;
+    background: #111;
+    color: #FFF;
+    display: inline-block;
+    border-radius: 2px;
+    padding: 0 2px;
   }
   a {
     display: block;
@@ -73,6 +77,9 @@ a {
   &.affix {
     position: fixed !important;
     top: 20px;
+  }
+  &.affix-bottom {
+    position: absolute;
   }
   li.active {
     a {
@@ -82,7 +89,7 @@ a {
 }
 
 #products-grid {
-  padding-top: 10px;
+  padding-top: 20px;
 }
 
 .loader {
@@ -114,15 +121,16 @@ a {
   .thumbnail {
     cursor: pointer;
     border-color: #EEE;
-    min-height: 260px;
+    min-height: 275px;
   }
   .release-title {
     text-transform: capitalize;
   }
   .caption {
     display: block;
-    padding: 5px 10px;
+    padding: 10px;
     font-size: .9em;
+    line-height: 1.3;
     &:hover {
       text-decoration: none;
     }
