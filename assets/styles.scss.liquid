@@ -33,26 +33,26 @@ a {
 
 .nav-pills {
   > li {
+    font-family: {{ headersfont }}, sans-serif;
+    text-transform: uppercase;
     > a {
+      &:focus,
+      &:active,
       &:hover {
-        background: none;
-        text-decoration: underline;
+        background: #CCC;
+        color: #111;
       }
-      &:focus {
+      &:visited {
         background: none;
-      }
-      &:active, &:visited {
         color: #111;
       }
     }
     &.active {
       > a {
-        color: #111;
-        background: none;
-        font-weight: bold;
+        color: #FFF;
+        background: #111;
         &:hover {
-          background: none;
-          color: #111;
+          background: #111;
         }
       }
     }
@@ -73,6 +73,7 @@ a {
   }
   a {
     display: block;
+    font-size: .9em;
   }
   &.affix {
     position: fixed !important;
@@ -83,6 +84,7 @@ a {
   }
   li.active {
     a {
+      font-size: .9em;
       font-weight: bold;
     }
   }
@@ -150,4 +152,68 @@ a {
   a {
     margin-bottom: 10px;
   }
+}
+
+.site-footer {
+  h5 {
+    font-size: .8em;
+    font-weight: bold;
+  }
+  h4 {
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  a {
+    display: block;
+    font-size: .9em;
+  }
+  li.active {
+    a {
+      font-size: .9em;
+      font-weight: bold;
+    }
+  }
+}
+
+.template-page {
+  h1, h2, h3, h4, h5, h6 {
+    text-transform: uppercase;
+  }
+}
+
+/*============================================================================
+  #Rich Text Editor
+==============================================================================*/
+.rte {
+  // margin-bottom: $gutter / 2;
+
+  a {
+    text-decoration: underline;
+  }
+
+  // Add some top margin to headers from the rich text editor
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 2em;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  > div {
+    // margin-bottom: $gutter / 2;
+  }
+
+  li {
+    margin-bottom: 0.4em;
+  }
+}
+
+.rte--header {
+  margin-bottom: 0;
 }
