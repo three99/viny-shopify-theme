@@ -48,8 +48,15 @@
       Tags
       {% endcomment %}
       {% for tag in product.tags %}
-        <a href="/collections/all/{{ tag }}" class="btn btn-default">{{ tag }}</a>
-      {% endfor %}
+        {% capture name %}{{ tag }}{% endcapture %}
+          {% if name != '12" Import' %}
+            {% if current_tags contains tag %}
+              <span class="btn btn-default">{{ tag | link_to_remove_tag: tag }}</span>
+            {% else %}
+              <span class="btn btn-default">{{ tag | link_to_tag: tag }}</span>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
     </div>
 
     <div class="col-md-8">
@@ -58,16 +65,18 @@
       {% capture release_title %}{{ product.title | split: " | " | last }}{% endcapture %}
 
       <h1 itemprop="name">{{ release_artist }}</h1>
-      <h2 style="text-transform: capitalize;" itemprop="name">{{ release_title | downcase }}</h2>
+      <h2 itemprop="name">{{ release_title | downcase }}</h2>
       <hr>
-      <strong>Label:</strong> {{ product.vendor }}<br>
-      <strong>Format:</strong> {{ product.type }}<br>
+      <strong>Label:</strong> <a href="{{ product.vendor | url_for_vendor }}">{{ product.vendor }}</a><br>
+      <strong>Format:</strong> <a href="{{ product.type | url_for_type }}">{{ product.type }}</a><br>
       <strong>Cat:</strong> {{ product.variants.first.sku }}<br>
+      {% comment %}
       <strong>Style:</strong>
       {% for tag in product.tags %}
-        <a href="/collections/all/{{ tag }}">{{ tag }}</a>{% unless forloop.last %},{% endunless %}
+        <span class="btn btn-default">{{ tag | link_to_tag: tag }}</span>
+        {% unless forloop.last %},{% endunless %}
       {% endfor %}
-      <br>
+      {% endcomment %}
       <br>
 
       <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
