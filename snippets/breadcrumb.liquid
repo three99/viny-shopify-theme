@@ -28,7 +28,7 @@
         {% capture release_artist %}{{ product.title | split: " | " | first }}{% endcapture %}
         {% capture release_title %}{{ product.title | split: " | " | last }}{% endcapture %}
         <li>
-          <span style="text-transform: capitalize;">{{ release_artist | downcase }} - {{ release_title | downcase }}</span>
+          {{ release_artist | downcase }} - {{ release_title | downcase }}
         </li>
 
       {% elsif template contains 'collection' and collection.handle %}
