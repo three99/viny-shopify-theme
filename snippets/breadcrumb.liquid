@@ -42,6 +42,27 @@
         {% else %}
           <li>{{ collection.title }}</li>
         {% endif %}
+        
+        <form class="form-inline pull-right" style="margin:-6px -12px 0 0;">
+          <select id="filter" class="form-control input-sm">
+            <option value="">All Formats</option>
+            {% for tag in collection.all_tags %}
+              {% if collection.all_types contains tag %}
+                {% if current_tags contains tag %}
+                  <option value="{{ tag | handle }}" selected>{{ tag }}</option>
+                {% else %}
+                  <option value="{{ tag | handle }}">{{ tag }}</option>
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+          </select>
+        </form>
+
+        <script>
+          $("#filter").on("change", function(){
+            location.href = "/collections/{{collection.handle}}/" + $(this).val();
+          });
+        </script>
 
       {% elsif template == 'blog' %}
 
