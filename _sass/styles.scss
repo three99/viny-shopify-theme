@@ -20,6 +20,17 @@ a {
   border-color: #EEE;
 }
 
+.navbar-nav > li > .dropdown-menu {
+  border: 0;
+  margin: 1px;
+}
+
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus {
+  background-color: #000;
+}
+
 .affix {
   background: rgba(#FFF, .9);
   top: 0;
