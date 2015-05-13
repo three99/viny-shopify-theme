@@ -124,7 +124,7 @@
                   <!-- //list search results-->
                 {% else %}
                   <!-- begin grid search results-->
-                  <div class="product-grid-item">
+                  <div class="product-grid-item col-md-2">
                     <div class="thumbnail" style="min-height:340px;">
                       <a href="{{ product.url | within: collection }}">
                           <img src="{{ product.featured_image.src | img_url: 'medium' }}" alt="{{ product.featured_image.alt | escape }}"/>

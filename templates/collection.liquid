@@ -4,16 +4,17 @@ For more information on collection tags:
 - http://docs.shopify.com/themes/liquid-variables/collection
 {% endcomment %}
 
-{% paginate collection.products by 15 %}
-
+{% include "main-sidebar" %}
 {% include "breadcrumb" %}
+
+{% paginate collection.products by 18 %}
 
   {% comment %}
   Use .grid--rev so that the collection tags appear below the products on mobile
   {% endcomment %}
 
-  <div class="row">
-    <div class="col-md-10 col-md-push-2">
+  {% comment %} <div class="row"> {% endcomment %}
+    {% comment %} <div class="col-md-10 col-md-push-2"> {% endcomment %}
 
       <div class="section-header hidden">
         <div class="section-header__right">
@@ -69,14 +70,6 @@ For more information on collection tags:
       {% if paginate.next %}
         <a id="more" href="{{ paginate.next.url }}">&nbsp;</a>
       {% endif %}
-
-    </div>
-
-    <div class="col-md-2 col-md-pull-10 hidden-sm hidden-xs">
-      {% include "main-sidebar" %}
-    </div>
-
-  </div>
 
 {% endpaginate %}
 
