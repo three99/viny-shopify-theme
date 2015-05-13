@@ -39,6 +39,7 @@
   {% endfor %}
 </ul>
 {% if collection %}
+      {% unless template contains 'product' %}
         <form class="navbar-form pull-right">
           <select id="filter" class="form-control">
             <option value="">All Formats</option>
@@ -59,6 +60,7 @@
             location.href = "/collections/{{collection.handle}}/" + $(this).val();
           });
         </script>
+      {% endunless %}
       {% endif %}
 {% comment %} </div> {% endcomment %}
 </nav>

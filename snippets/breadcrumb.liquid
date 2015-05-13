@@ -6,6 +6,7 @@
 {% unless template == 'index' or template == 'cart' %}
   <nav role="navigation" aria-label="breadcrumbs" class="hidden-xs hidden-sm">
     <ol class="breadcrumb">
+{% comment %}
       <li>
         <a
           href="/"
@@ -14,6 +15,7 @@
           {{ 'general.breadcrumbs.home' | t }}
         </a>
       </li>
+{% endcomment %}
 
       {% if template contains 'product' %}
 
