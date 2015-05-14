@@ -3,7 +3,7 @@
 function paginate(){
   var $more = $("#more");
   var $grid = $("#products-grid"); 
-  var speed = 180;
+  var speed = 100;
   if ($more.length) {
     if($(document).height() - 500 < ($(document).scrollTop() + $(window).height())) {
       url = $more.attr("href");
