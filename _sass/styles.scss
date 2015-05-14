@@ -18,6 +18,13 @@ a {
 .navbar-default {
   background-color: #FFF;
   border-color: #EEE;
+  @media (max-width: $screen-xs-max) {
+    padding: 0 10px;
+  }
+}
+
+.navbar-default .navbar-toggle {
+  float: none;
 }
 
 .navbar-nav > li > .dropdown-menu {
@@ -32,12 +39,17 @@ a {
 }
 
 .affix {
+  @extend .container;
   background: rgba(#FFF, .9);
   top: 0;
   z-index: 1;
   padding-top: 10px;
+  margin: 0 -15px;
   .navbar {
     margin: 0;
+  }
+  @media (max-width: $screen-xs-max) {
+    position: relative;
   }
 }
 
