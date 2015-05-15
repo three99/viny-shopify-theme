@@ -12,9 +12,9 @@
 
 <hr class="hr--small">
 
-<div class="grid">
+<div class="row">
 
-  <div class="grid__item two-thirds medium-down--one-whole">
+  <div class="col-sm-8">
     <h4>{{ 'customer.orders.title' | t }}</h4>
 
     {% comment %}
@@ -23,8 +23,8 @@
     {% paginate customer.orders by 20 %}
       {% if customer.orders.size != 0 %}
 
-        <div class="table-wrap">
-          <table class="full">
+        <div>
+          <table class="table table-hover">
             <thead>
               <tr>
                 <th>{{ 'customer.orders.order_number' | t }}</th>
@@ -61,7 +61,7 @@
     {% endpaginate %}
   </div>
 
-  <div class="grid__item one-third medium-down--one-whole">
+  <div class="col-sm-4">
     <h4>{{ 'customer.account.details' | t }}</h4>
 
     <h5>{{ customer.name }}</h5>
@@ -75,11 +75,11 @@
       {% endif %}
 
       {% if customer.default_address.city != "" %}
-        {{ customer.default_address.city }}<br>
+        {{ customer.default_address.city }}
       {% endif %}
 
       {% if customer.default_address.province_code != "" %}
-        {{ customer.default_address.province_code | upcase }}<br>
+        {{ customer.default_address.province_code | upcase }}
       {% endif %}
 
       {% if customer.default_address.zip != "" %}
@@ -97,7 +97,7 @@
 
     {% endif %}
 
-    <p><a href="/account/addresses">{{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})</a></p>
+    <p><a class="btn btn-default" href="/account/addresses">{{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})</a></p>
   </div>
 
 </div>
