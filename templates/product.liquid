@@ -23,9 +23,9 @@
 
   <div class="row product-single">
     <div class="col-sm-4">
-      <div class="product-single__photos thumbnail" id="ProductPhoto">
+      <div class="product-single__photos img-thumbnail" id="ProductPhoto">
         {% assign featured_image = current_variant.featured_image | default: product.featured_image %}
-        <img src="{{ featured_image | img_url: 'large' }}" alt="{{ featured_image.alt | escape }}" id="ProductPhotoImg">
+        <img class="img-responsive" src="{{ featured_image | img_url: 'large' }}" alt="{{ featured_image.alt | escape }}" id="ProductPhotoImg">
       </div>
 
       {% comment %}
@@ -44,21 +44,6 @@
 
         </ul>
       {% endif %}
-      {% comment %}
-      Tags
-      {% endcomment %}
-      <div class="tags">
-        {% for tag in product.tags %}
-          {% capture name %}{{ tag }}{% endcapture %}
-          {% if name != '12" Import' %}
-            {% if current_tags contains tag %}
-              {{ tag | link_to_remove_tag: tag }}
-            {% else %}
-              {{ tag | link_to_tag: tag }}
-            {% endif %}
-          {% endif %}
-        {% endfor %}
-      </div>
     </div>
 
     <div class="col-sm-8">
@@ -73,13 +58,30 @@
       <strong>Format:</strong> <a href="{{ product.type | url_for_type }}">{{ product.type }}</a><br>
       <strong>Cat:</strong> {{ product.variants.first.sku }}<br>
       {% comment %}
+      Tags
+      {% endcomment %}
+      <strong>Tags:</strong>
+      <span class="tags">
+        {% for tag in product.tags %}
+          {% capture name %}{{ tag }}{% endcapture %}
+          {% if name != '12" Import' %}
+            {% if current_tags contains tag %}
+              {{ tag | link_to_remove_tag: tag }}
+            {% else %}
+              {{ tag | link_to_tag: tag }}
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </span>
+
+      {% comment %}
       <strong>Style:</strong>
       {% for tag in product.tags %}
         <span class="btn btn-default">{{ tag | link_to_tag: tag }}</span>
         {% unless forloop.last %},{% endunless %}
       {% endfor %}
       {% endcomment %}
-      <br>
+      <br><br>
 
       <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
         <meta itemprop="priceCurrency" content="{{ shop.currency }}">

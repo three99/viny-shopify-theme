@@ -5294,44 +5294,45 @@ a:hover, .btn-link:hover {
 
 /* line 256, ../_sass/styles.scss */
 .tags a {
-  margin-bottom: 10px;
+  padding: 0 5px;
+  line-height: 1.4;
 }
 
-/* line 265, ../_sass/styles.scss */
+/* line 266, ../_sass/styles.scss */
 .product-single h1 {
   font-size: 1.6em;
   font-weight: normal;
 }
-/* line 269, ../_sass/styles.scss */
+/* line 270, ../_sass/styles.scss */
 .product-single h2 {
   font-size: 1.4em;
   font-weight: normal;
   text-transform: capitalize;
 }
 
-/* line 277, ../_sass/styles.scss */
+/* line 278, ../_sass/styles.scss */
 .site-footer h5 {
   font-size: .8em;
   font-weight: bold;
 }
-/* line 281, ../_sass/styles.scss */
+/* line 282, ../_sass/styles.scss */
 .site-footer h4 {
   font-size: 1em;
   font-weight: bold;
   text-transform: uppercase;
 }
-/* line 286, ../_sass/styles.scss */
+/* line 287, ../_sass/styles.scss */
 .site-footer a {
   display: block;
   font-size: .9em;
 }
-/* line 291, ../_sass/styles.scss */
+/* line 292, ../_sass/styles.scss */
 .site-footer li.active a {
   font-size: .9em;
   font-weight: bold;
 }
 
-/* line 299, ../_sass/styles.scss */
+/* line 300, ../_sass/styles.scss */
 .template-page h1, .template-page h2, .template-page h3, .template-page h4, .template-page h5, .template-page h6 {
   text-transform: uppercase;
 }
@@ -5339,28 +5340,28 @@ a:hover, .btn-link:hover {
 /*============================================================================
   #Rich Text Editor
 ==============================================================================*/
-/* line 317, ../_sass/styles.scss */
+/* line 318, ../_sass/styles.scss */
 .rte a {
   text-decoration: underline;
 }
-/* line 322, ../_sass/styles.scss */
+/* line 323, ../_sass/styles.scss */
 .rte h1, .rte h2, .rte h3, .rte h4, .rte h5, .rte h6 {
   margin-top: 2em;
 }
-/* line 325, ../_sass/styles.scss */
+/* line 326, ../_sass/styles.scss */
 .rte h1:first-child, .rte h2:first-child, .rte h3:first-child, .rte h4:first-child, .rte h5:first-child, .rte h6:first-child {
   margin-top: 0;
 }
-/* line 329, ../_sass/styles.scss */
+/* line 330, ../_sass/styles.scss */
 .rte h1 a, .rte h2 a, .rte h3 a, .rte h4 a, .rte h5 a, .rte h6 a {
   text-decoration: none;
 }
-/* line 338, ../_sass/styles.scss */
+/* line 339, ../_sass/styles.scss */
 .rte li {
   margin-bottom: 0.4em;
 }
 
-/* line 343, ../_sass/styles.scss */
+/* line 344, ../_sass/styles.scss */
 .rte--header {
   margin-bottom: 0;
 }

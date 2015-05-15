@@ -257,7 +257,8 @@ a, .btn-link {
     @extend .btn;
     @extend .btn-default;
     @extend .btn-xs;
-    margin-bottom: 10px;
+    padding: 0 5px;
+    line-height: 1.4;
   }
 }
 
