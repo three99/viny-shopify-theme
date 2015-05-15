@@ -121,7 +121,7 @@
       {% if settings.cart_notes_enable %}
         <div class="col-sm-6">
           <label for="CartSpecialInstructions">{{ 'cart.general.note' | t }}</label>
-          <textarea name="note" class="form-control" id="CartSpecialInstructions">{{ cart.note }}</textarea>
+          <textarea name="note" class="form-control" id="CartSpecialInstructions" rows="4">{{ cart.note }}</textarea>
           <hr class="visible-xs">
         </div>
       {% endif %}
