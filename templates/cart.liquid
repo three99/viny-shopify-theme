@@ -15,7 +15,7 @@
 
   <form action="/cart" method="post" novalidate class="cart">
 
-    <div class="row">
+    <div class="row hidden-xs">
       <div class="col-sm-6">
         {{ 'cart.label.product' | t }}
       </div>
@@ -28,16 +28,15 @@
       <div class="col-sm-2 text-right">
         {{ 'cart.label.total' | t }}
       </div>
+      <hr>
     </div>
-
-    <hr>
 
     {% comment %}
       Loop through products in the cart
     {% endcomment %}
     {% for item in cart.items %}
       <div class="row">
-        <div class="col-sm-1">
+        <div class="col-sm-1 col-xs-4">
           <a href="{{ item.url | within: collections.all }}" class="cart__image">
 
             {% comment %}
@@ -47,7 +46,7 @@
             <img src="{{ item | img_url: 'medium' }}" alt="{{ item.title | escape }}" class="img-responsive">
           </a>
         </div>
-        <div class="col-sm-5">
+        <div class="col-sm-5 col-xs-8">
           <a href="{{ item.url }}" class="h4">
             {{ item.product.title }}
           </a>
@@ -92,17 +91,17 @@
           </a>
         </div>
 
-        <div class="col-sm-2 text-center">
+        <div class="col-sm-2 text-center hidden-xs">
           <span class="h3">{{ item.price | money }}</span>
         </div>
 
-        <div class="col-sm-2">
-          <div class="col-md-6 col-md-offset-3 text-center">
+        <div class="col-sm-2 col-xs-6">
+          <div class="col-md-6 col-md-offset-3 col-xs-offset-0 text-center">
             <input class="form-control input-sm text-center" type="number" name="updates[]" id="updates_{{ item.id }}" value="{{ item.quantity }}" min="0">
           </div>
         </div>
 
-        <div class="col-sm-2 text-right">
+        <div class="col-xs-6 col-sm-2 text-right">
           <span class="h3">{{ item.line_price | money }}</span>
         </div>
 
@@ -119,9 +118,8 @@
       {% if settings.cart_notes_enable %}
         <div class="col-sm-6">
           <label for="CartSpecialInstructions">{{ 'cart.general.note' | t }}</label>
-          <textarea name="note" class="form-control" id="CartSpecialInstructions">
-            {{ cart.note }}
-          </textarea>
+          <textarea name="note" class="form-control" id="CartSpecialInstructions">{{ cart.note }}</textarea>
+          <hr class="visible-xs">
         </div>
       {% endif %}
       <div class="text-right {% if settings.cart_notes_enable %}col-sm-6{% endif %}">
