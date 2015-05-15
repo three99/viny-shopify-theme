@@ -253,8 +253,10 @@ a {
 }
 
 .tags {
-  text-align: center;
   a {
+    @extend .btn;
+    @extend .btn-default;
+    @extend .btn-xs;
     margin-bottom: 10px;
   }
 }
