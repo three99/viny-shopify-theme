@@ -20,11 +20,13 @@
     ]
   },
   {
-    "name": "Side Navigation",
+    "name": "Main Navigation",
     "settings": [
       {
-        "type": "header",
-        "content": "Link List Order"
+        "type": "text",
+        "id": "home_link_label",
+        "label": "Home Link Label",
+        "default": "Home"
       },
       {
         "type": "link_list",

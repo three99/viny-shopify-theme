@@ -2,7 +2,7 @@
 
 @import "../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 
-a {
+a, .btn-link {
   color: #111;
   &:hover {
     color: #111;
@@ -253,8 +253,10 @@ a {
 }
 
 .tags {
-  text-align: center;
   a {
+    @extend .btn;
+    @extend .btn-default;
+    @extend .btn-xs;
     margin-bottom: 10px;
   }
 }
