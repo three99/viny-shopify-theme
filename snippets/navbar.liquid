@@ -13,23 +13,14 @@
       <div class="clearfix">
         <ul class="nav nav-pills text-center" id="AccessibleNav">
           {% for link in linklists.main-menu.links %}
-            <li {% if link.active %}class="active"{% endif %}>
+            <li class="hidden {% if link.active %}active{% endif %}">
               <a href="{{ link.url }}">{{ link.title | capitalize }}</a>
             </li>
           {% endfor %}
           {% if shop.customer_accounts_enabled %}
             {% if customer %}
-              <li>
-                {% if customer.first_name != blank %}
-                  {% capture first_name %}
-                    <a href="/account">{{ customer.first_name }}</a>
-                  {% endcapture %}
-                  {{ 'layout.customer.logged_in_as_html' | t: first_name: first_name }}
-                {% else %}
-                  <a href="/account">{{ 'layout.customer.account' | t }}</a>
-                {% endif %}
-                {{ 'layout.customer.log_out' | t | customer_logout_link }}
-              </li>
+              <li><a href="/account">My Account</a></li>
+              <li>{{ 'layout.customer.log_out' | t | customer_logout_link }}</li>
             {% else %}
               <li class="hidden-xs">{{ 'layout.customer.log_in' | t | customer_login_link }}</li>
               {% if shop.customer_accounts_optional %}
