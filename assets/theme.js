@@ -37,13 +37,20 @@ function paginate(){
 }
 
 $(document).ready(function () {
+
+  $affix_wrapper = $(".affix-wrapper");
+  $affix_wrapper.height($affix_wrapper.height());
+
   $(window).scroll(function(){
     paginate();
   });
+
   $(".thumbnail").on("click", function(){
     $links = $(this).find("a");
     if ($links.length)
       location.href = $links.first().attr("href");
   })
+
   $('[data-toggle="tooltip"]').tooltip();
+
 });

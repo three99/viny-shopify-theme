@@ -1,7 +1,8 @@
 
 
-<div style="min-height:72px;">
-  <div data-spy="affix" data-offset-top="335">
+<div class="affix-wrapper">
+  <div data-spy="affix" data-offset-top="303">
+
     <nav class="navbar navbar-default">
       <div class="navbar-header">
         <button
@@ -55,29 +56,46 @@
           {% endfor %}
         </ul>
       </div>
-      {% if collection %}
-        {% unless template contains 'product' %}
-          <form class="navbar-form pull-right">
-            <select id="filter" class="form-control">
-              <option value="">All Formats</option>
-              {% for tag in collection.all_tags %}
-                {% if collection.all_types contains tag %}
-                  {% if current_tags contains tag %}
-                    <option value="{{ tag | handle }}" selected>{{ tag }}</option>
-                  {% else %}
-                    <option value="{{ tag | handle }}">{{ tag }}</option>
-                  {% endif %}
-                {% endif %}
-              {% endfor %}
-            </select>
-          </form>
-          <script>
-            $("#filter").on("change", function(){
-              location.href = "/collections/{{collection.handle}}/" + $(this).val();
-            });
-          </script>
-        {% endunless %}
-      {% endif %}
     </nav>
+
+    {% if collection %}
+      {% unless template contains 'product' %}
+        <nav class="navbar navbar-default navbar-collection">
+          <div class="navbar-header">
+            <span class="navbar-brand">
+              {% unless collection.title == "Products" %}
+                {{ collection.title }}
+              {% else %}
+                {{ current_tags | join: ', ' }}
+              {% endunless %}
+            </span>
+          </div>
+          {% unless collection.title == "Products" %}
+            <form class="navbar-form pull-right">
+              <select id="filter" class="form-control input-sm">
+                <option value="">All Formats</option>
+                {% for tag in collection.all_tags %}
+                  {% if collection.all_types contains tag %}
+                    {% if current_tags contains tag %}
+                      <option value="{{ tag | handle }}" selected>{{ tag }}</option>
+                    {% else %}
+                      <option value="{{ tag | handle }}">{{ tag }}</option>
+                    {% endif %}
+                  {% endif %}
+                {% endfor %}
+              </select>
+            </form>
+          {% endunless %}
+        </nav>
+        <script>
+          $("#filter").on("change", function(){
+            location.href = "/collections/{{collection.handle}}/" + $(this).val();
+          });
+        </script>
+      {% endunless %}
+    {% endif %}
+
   </div>
 </div>
+
+
