@@ -32,13 +32,6 @@ a {
   margin: 1px;
 }
 
-.navbar-collapse {
-  overflow: hidden;
-  &:not(.in) {
-    border: 0;
-  }
-}
-
 .dropdown-menu > .active > a,
 .dropdown-menu > .active > a:hover,
 .dropdown-menu > .active > a:focus {
@@ -47,6 +40,9 @@ a {
 
 .affix-wrapper {
   margin-bottom: 20px;
+  @media (max-width: $screen-sm-max) {
+    min-height: 0 !important;
+  }
 }
 
 .affix {

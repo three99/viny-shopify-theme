@@ -39,7 +39,7 @@ function paginate(){
 $(document).ready(function () {
 
   $affix_wrapper = $(".affix-wrapper");
-  $affix_wrapper.height($affix_wrapper.height());
+  $affix_wrapper.css("min-height", $affix_wrapper.height());
 
   $(window).scroll(function(){
     paginate();
