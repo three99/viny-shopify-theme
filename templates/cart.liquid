@@ -37,19 +37,21 @@
     {% endcomment %}
     {% for item in cart.items %}
       <div class="row">
-        <div class="col-sm-2 col-xs-4">
+        <div class="col-sm-2 col-xs-3">
           <a href="{{ item.url | within: collections.all }}" class="cart__image">
-
             {% comment %}
               More image size options at:
                 - http://docs.shopify.com/themes/filters/product-img-url
             {% endcomment %}
-            <img src="{{ item | img_url: 'medium' }}" alt="{{ item.title | escape }}" class="img-responsive">
+            <img src="{{ item | img_url: 'medium' }}" alt="{{ item.title | escape }}" class="img-responsive img-thumbnail">
           </a>
         </div>
-        <div class="col-md-4 col-sm-6 col-xs-8">
-          <a href="{{ item.url }}" class="h4">
-            {{ item.product.title }}
+        <div class="col-md-4 col-sm-6 col-xs-6">
+          {% capture release_artist %}{{ item.title | split: " | " | first }}{% endcapture %}
+          {% capture release_title %}{{ item.title | split: " | " | last }}{% endcapture %}
+          <a href="{{ item.url }}">
+            <span class="h4" itemprop="name">{{ release_artist }}</span><br>
+            <span class="h5 text-muted" itemprop="name">{{ release_title | downcase }}</span>
           </a>
           {% unless item.variant.title contains 'Default' %}
             <br>
@@ -87,23 +89,23 @@
           {% endif %}
 
           <br><br>
-          <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="cart__remove btn btn-xs btn-danger hidden-xs">
-            {{ 'cart.general.remove' | t }}
-          </a>
+          <small>
+            <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="cart__remove">
+              {{ 'cart.general.remove' | t }}
+            </a>
+          </small>
         </div>
 
         <div class="col-md-2 text-center hidden-xs hidden-sm">
-          <span class="h3">{{ item.price | money }}</span>
+          <span class="h4">{{ item.price | money }}</span>
         </div>
 
-        <div class="col-sm-2 col-xs-6 hidden-xs">
-          <div class="col-md-6 col-md-offset-3 col-xs-offset-0 text-center">
-            <input style="width:60px;" class="form-control input-sm text-center" type="number" name="updates[]" id="updates_{{ item.id }}" value="{{ item.quantity }}" min="0">
-          </div>
+        <div class="col-sm-2 col-xs-6 hidden-xs text-center">
+          <input style="width:60px;margin:0 auto;" class="form-control input-sm" type="number" name="updates[]" id="updates_{{ item.id }}" value="{{ item.quantity }}" min="0">
         </div>
 
-        <div class="col-xs-8 col-sm-2 text-right">
-          <span class="h3">{{ item.line_price | money }}</span>
+        <div class="col-xs-3 col-sm-2 text-right">
+          <span class="h4" style="white-space:nowrap;">{{ item.line_price | money }}</span>
         </div>
 
       </div>
