@@ -16,10 +16,10 @@
   <form action="/cart" method="post" novalidate class="cart">
 
     <div class="row hidden-xs">
-      <div class="col-sm-6">
+      <div class="col-md-6 col-sm-8">
         {{ 'cart.label.product' | t }}
       </div>
-      <div class="col-sm-2 text-center">
+      <div class="col-md-2 text-center hidden-sm">
         {{ 'cart.label.price' | t }}
       </div>
       <div class="col-sm-2 text-center">
@@ -28,15 +28,16 @@
       <div class="col-sm-2 text-right">
         {{ 'cart.label.total' | t }}
       </div>
-      <hr>
     </div>
+
+    <hr class="hidden-xs">
 
     {% comment %}
       Loop through products in the cart
     {% endcomment %}
     {% for item in cart.items %}
       <div class="row">
-        <div class="col-sm-1 col-xs-4">
+        <div class="col-sm-2 col-xs-4">
           <a href="{{ item.url | within: collections.all }}" class="cart__image">
 
             {% comment %}
@@ -46,7 +47,7 @@
             <img src="{{ item | img_url: 'medium' }}" alt="{{ item.title | escape }}" class="img-responsive">
           </a>
         </div>
-        <div class="col-sm-5 col-xs-8">
+        <div class="col-md-4 col-sm-6 col-xs-8">
           <a href="{{ item.url }}" class="h4">
             {{ item.product.title }}
           </a>
@@ -86,22 +87,22 @@
           {% endif %}
 
           <br><br>
-          <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="cart__remove btn btn-xs btn-danger">
+          <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="cart__remove btn btn-xs btn-danger hidden-xs">
             {{ 'cart.general.remove' | t }}
           </a>
         </div>
 
-        <div class="col-sm-2 text-center hidden-xs">
+        <div class="col-md-2 text-center hidden-xs hidden-sm">
           <span class="h3">{{ item.price | money }}</span>
         </div>
 
-        <div class="col-sm-2 col-xs-6">
+        <div class="col-sm-2 col-xs-6 hidden-xs">
           <div class="col-md-6 col-md-offset-3 col-xs-offset-0 text-center">
-            <input class="form-control input-sm text-center" type="number" name="updates[]" id="updates_{{ item.id }}" value="{{ item.quantity }}" min="0">
+            <input style="width:60px;" class="form-control input-sm text-center" type="number" name="updates[]" id="updates_{{ item.id }}" value="{{ item.quantity }}" min="0">
           </div>
         </div>
 
-        <div class="col-xs-6 col-sm-2 text-right">
+        <div class="col-xs-8 col-sm-2 text-right">
           <span class="h3">{{ item.line_price | money }}</span>
         </div>
 
