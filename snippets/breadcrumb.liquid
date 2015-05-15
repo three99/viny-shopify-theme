@@ -105,11 +105,11 @@
             {% capture prev_url %}{{ collection.previous_product}}#content{% endcapture %}
             <a
               href="{{ prev_url }}"
-              class="btn btn-default"
+              class="btn btn-link"
               title="{{ collection.previous_product.title }}"
               data-toggle="tooltip"
               data-placement="left">
-              &lt;
+              &lt;&lt;
             </a>
           {% endif %}
 
@@ -117,11 +117,11 @@
             {% capture next_url %}{{ collection.next_product}}#content{% endcapture %}
             <a
               href="{{ next_url }}"
-              class="btn btn-default"
+              class="btn btn-link"
               title="{{ collection.next_product.title }}"
               data-toggle="tooltip"
               data-placement="left">
-              &gt;
+              &gt;&gt;
             </a>
           {% endif %}
 
