@@ -22,9 +22,9 @@
               <li><a href="/account">My Account</a></li>
               <li>{{ 'layout.customer.log_out' | t | customer_logout_link }}</li>
             {% else %}
-              <li class="hidden-xs">{{ 'layout.customer.log_in' | t | customer_login_link }}</li>
+              <li>{{ 'layout.customer.log_in' | t | customer_login_link }}</li>
               {% if shop.customer_accounts_optional %}
-                <li class="hidden-xs">{{ 'layout.customer.create_account' | t | customer_register_link }}</li>
+                <li>{{ 'layout.customer.create_account' | t | customer_register_link }}</li>
               {% endif %}
             {% endif %}
           {% endif %}
@@ -39,9 +39,9 @@
               </span>
               {{ 'layout.cart.title' | t }}
               <span class="hidden-xs">
-                (<span id="CartCount">{{ cart.item_count }}</span>
+                <span id="CartCount">{{ cart.item_count }}</span>
                 {{ 'layout.cart.items_count' | t: count: cart.item_count }}
-                <span id="CartCost">{{ cart.total_price | money }}</span>)
+                <span id="CartCost">{{ cart.total_price | money }}</span>
               </span>
             </a>
           </li>
