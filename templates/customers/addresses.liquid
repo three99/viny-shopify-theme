@@ -10,6 +10,10 @@
 
 {% layout settings.customer_layout %}
 
+<div class="visible-xs">
+  {% include "main-sidebar" %}
+</div>
+
 <header class="section-header">
   <h1 class="section-header__left">{{ 'customer.account.title' | t }}</h1>
   <div class="section-header__right">
