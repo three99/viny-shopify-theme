@@ -3,16 +3,33 @@
 <div class="affix-wrapper">
   <div data-spy="affix" data-offset-top="303">
 
-    <nav class="navbar navbar-default">
-      <div class="navbar-header">
-        <button
-          type="button"
-          class="navbar-toggle collapsed"
-          data-toggle="collapse"
-          data-target="#navbar-1"
-        >
-          Collections and Filters
-        </button>
+    <nav class="navbar navbar-default navbar-main">
+      <div class="btn-group btn-group-justified visible-xs" role="group" aria-label="...">
+        <div class="btn-group" role="group">
+          <button
+            type="button"
+            class="btn btn-default"
+            data-toggle="collapse"
+            data-target="#navbar-1"
+            >
+            {{ 'bird.svg' | asset_url | img_tag }}
+          </button>
+        </div>
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-default">
+            {{ 'filter.svg' | asset_url | img_tag }}
+          </button>
+        </div>
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-default">
+            {{ 'search.svg' | asset_url | img_tag }}
+          </button>
+        </div>
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-default">
+            {{ 'user.svg' | asset_url | img_tag }}
+          </button>
+        </div>
       </div>
       <div class="collapse navbar-collapse" id="navbar-1">
         <ul class="nav navbar-nav">
