@@ -347,6 +347,11 @@ a, .btn-link {
   display: none;
 }
 
+#notify-me {
+  @extend .btn;
+  @extend .btn-default;
+}
+
 .site-footer {
   h5 {
     font-size: .8em;
