@@ -2507,9 +2507,11 @@ input[type="checkbox"] {
 .form-control-static.input-lg, .input-group-lg > .form-control-static.form-control,
 .input-group-lg > .form-control-static.input-group-addon,
 .input-group-lg > .input-group-btn > .form-control-static.btn,
+.make-buttons .input-group-lg > .input-group-btn > a.form-control-static,
 .tags .input-group-lg > .input-group-btn > a.form-control-static, .form-control-static.input-sm, .input-group-sm > .form-control-static.form-control,
 .input-group-sm > .form-control-static.input-group-addon,
 .input-group-sm > .input-group-btn > .form-control-static.btn,
+.make-buttons .input-group-sm > .input-group-btn > a.form-control-static,
 .tags .input-group-sm > .input-group-btn > a.form-control-static {
   padding-left: 0;
   padding-right: 0;
@@ -2519,6 +2521,7 @@ input[type="checkbox"] {
 .input-sm, .input-group-sm > .form-control,
 .input-group-sm > .input-group-addon,
 .input-group-sm > .input-group-btn > .btn,
+.make-buttons .input-group-sm > .input-group-btn > a,
 .tags .input-group-sm > .input-group-btn > a {
   height: 30px;
   padding: 5px 10px;
@@ -2577,6 +2580,7 @@ select[multiple].input-sm,
 .input-lg, .input-group-lg > .form-control,
 .input-group-lg > .input-group-addon,
 .input-group-lg > .input-group-btn > .btn,
+.make-buttons .input-group-lg > .input-group-btn > a,
 .tags .input-group-lg > .input-group-btn > a {
   height: 46px;
   padding: 10px 16px;
@@ -2658,6 +2662,7 @@ select[multiple].input-lg,
 .input-lg + .form-control-feedback, .input-group-lg > .form-control + .form-control-feedback,
 .input-group-lg > .input-group-addon + .form-control-feedback,
 .input-group-lg > .input-group-btn > .btn + .form-control-feedback,
+.make-buttons .input-group-lg > .input-group-btn > a + .form-control-feedback,
 .tags .input-group-lg > .input-group-btn > a + .form-control-feedback {
   width: 46px;
   height: 46px;
@@ -2668,6 +2673,7 @@ select[multiple].input-lg,
 .input-sm + .form-control-feedback, .input-group-sm > .form-control + .form-control-feedback,
 .input-group-sm > .input-group-addon + .form-control-feedback,
 .input-group-sm > .input-group-btn > .btn + .form-control-feedback,
+.make-buttons .input-group-sm > .input-group-btn > a + .form-control-feedback,
 .tags .input-group-sm > .input-group-btn > a + .form-control-feedback {
   width: 30px;
   height: 30px;
@@ -2903,7 +2909,7 @@ select[multiple].input-lg,
 }
 
 /* line 9, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_buttons.scss */
-.btn, .tags a {
+.btn, .make-buttons a, .tags a {
   display: inline-block;
   margin-bottom: 0;
   font-weight: normal;
@@ -2924,25 +2930,25 @@ select[multiple].input-lg,
   user-select: none;
 }
 /* line 26, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_buttons.scss */
-.btn:focus, .tags a:focus, .btn.focus, .tags a.focus, .btn:active:focus, .tags a:active:focus, .btn:active.focus, .tags a:active.focus, .btn.active:focus, .tags a.active:focus, .btn.active.focus, .tags a.active.focus {
+.btn:focus, .make-buttons a:focus, .tags a:focus, .btn.focus, .make-buttons a.focus, .tags a.focus, .btn:active:focus, .make-buttons a:active:focus, .tags a:active:focus, .btn:active.focus, .make-buttons a:active.focus, .tags a:active.focus, .btn.active:focus, .make-buttons a.active:focus, .tags a.active:focus, .btn.active.focus, .make-buttons a.active.focus, .tags a.active.focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
 /* line 32, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_buttons.scss */
-.btn:hover, .tags a:hover, .btn:focus, .tags a:focus, .btn.focus, .tags a.focus {
+.btn:hover, .make-buttons a:hover, .tags a:hover, .btn:focus, .make-buttons a:focus, .tags a:focus, .btn.focus, .make-buttons a.focus, .tags a.focus {
   color: #333;
   text-decoration: none;
 }
 /* line 39, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_buttons.scss */
-.btn:active, .tags a:active, .btn.active, .tags a.active {
+.btn:active, .make-buttons a:active, .tags a:active, .btn.active, .make-buttons a.active, .tags a.active {
   outline: 0;
   background-image: none;
   -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
 /* line 46, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_buttons.scss */
-.btn.disabled, .tags a.disabled, .btn[disabled], .tags a[disabled], fieldset[disabled] .btn, fieldset[disabled] .tags a, .tags fieldset[disabled] a {
+.btn.disabled, .make-buttons a.disabled, .tags a.disabled, .btn[disabled], .make-buttons a[disabled], .tags a[disabled], fieldset[disabled] .btn, fieldset[disabled] .make-buttons a, .make-buttons fieldset[disabled] a, fieldset[disabled] .tags a, .tags fieldset[disabled] a {
   cursor: not-allowed;
   pointer-events: none;
   opacity: 0.65;
@@ -2952,28 +2958,28 @@ select[multiple].input-lg,
 }
 
 /* line 60, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_buttons.scss */
-.btn-default, .tags a {
+.btn-default, .make-buttons a, .tags a {
   color: #333;
   background-color: #fff;
   border-color: #ccc;
 }
 /* line 11, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_buttons.scss */
-.btn-default:hover, .tags a:hover, .btn-default:focus, .tags a:focus, .btn-default.focus, .tags a.focus, .btn-default:active, .tags a:active, .btn-default.active, .tags a.active, .open > .btn-default.dropdown-toggle, .tags .open > a.dropdown-toggle {
+.btn-default:hover, .make-buttons a:hover, .tags a:hover, .btn-default:focus, .make-buttons a:focus, .tags a:focus, .btn-default.focus, .make-buttons a.focus, .tags a.focus, .btn-default:active, .make-buttons a:active, .tags a:active, .btn-default.active, .make-buttons a.active, .tags a.active, .open > .btn-default.dropdown-toggle, .make-buttons .open > a.dropdown-toggle, .tags .open > a.dropdown-toggle {
   color: #333;
   background-color: #e6e6e6;
   border-color: #adadad;
 }
 /* line 21, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_buttons.scss */
-.btn-default:active, .tags a:active, .btn-default.active, .tags a.active, .open > .btn-default.dropdown-toggle, .tags .open > a.dropdown-toggle {
+.btn-default:active, .make-buttons a:active, .tags a:active, .btn-default.active, .make-buttons a.active, .tags a.active, .open > .btn-default.dropdown-toggle, .make-buttons .open > a.dropdown-toggle, .tags .open > a.dropdown-toggle {
   background-image: none;
 }
 /* line 29, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_buttons.scss */
-.btn-default.disabled, .tags a.disabled, .btn-default.disabled:hover, .tags a.disabled:hover, .btn-default.disabled:focus, .tags a.disabled:focus, .btn-default.disabled.focus, .tags a.disabled.focus, .btn-default.disabled:active, .tags a.disabled:active, .btn-default.disabled.active, .tags a.disabled.active, .btn-default[disabled], .tags a[disabled], .btn-default[disabled]:hover, .tags a[disabled]:hover, .btn-default[disabled]:focus, .tags a[disabled]:focus, .btn-default[disabled].focus, .tags a[disabled].focus, .btn-default[disabled]:active, .tags a[disabled]:active, .btn-default[disabled].active, .tags a[disabled].active, fieldset[disabled] .btn-default, fieldset[disabled] .tags a, .tags fieldset[disabled] a, fieldset[disabled] .btn-default:hover, fieldset[disabled] .tags a:hover, .tags fieldset[disabled] a:hover, fieldset[disabled] .btn-default:focus, fieldset[disabled] .tags a:focus, .tags fieldset[disabled] a:focus, fieldset[disabled] .btn-default.focus, fieldset[disabled] .tags a.focus, .tags fieldset[disabled] a.focus, fieldset[disabled] .btn-default:active, fieldset[disabled] .tags a:active, .tags fieldset[disabled] a:active, fieldset[disabled] .btn-default.active, fieldset[disabled] .tags a.active, .tags fieldset[disabled] a.active {
+.btn-default.disabled, .make-buttons a.disabled, .tags a.disabled, .btn-default.disabled:hover, .make-buttons a.disabled:hover, .tags a.disabled:hover, .btn-default.disabled:focus, .make-buttons a.disabled:focus, .tags a.disabled:focus, .btn-default.disabled.focus, .make-buttons a.disabled.focus, .tags a.disabled.focus, .btn-default.disabled:active, .make-buttons a.disabled:active, .tags a.disabled:active, .btn-default.disabled.active, .make-buttons a.disabled.active, .tags a.disabled.active, .btn-default[disabled], .make-buttons a[disabled], .tags a[disabled], .btn-default[disabled]:hover, .make-buttons a[disabled]:hover, .tags a[disabled]:hover, .btn-default[disabled]:focus, .make-buttons a[disabled]:focus, .tags a[disabled]:focus, .btn-default[disabled].focus, .make-buttons a[disabled].focus, .tags a[disabled].focus, .btn-default[disabled]:active, .make-buttons a[disabled]:active, .tags a[disabled]:active, .btn-default[disabled].active, .make-buttons a[disabled].active, .tags a[disabled].active, fieldset[disabled] .btn-default, fieldset[disabled] .make-buttons a, .make-buttons fieldset[disabled] a, fieldset[disabled] .tags a, .tags fieldset[disabled] a, fieldset[disabled] .btn-default:hover, fieldset[disabled] .make-buttons a:hover, .make-buttons fieldset[disabled] a:hover, fieldset[disabled] .tags a:hover, .tags fieldset[disabled] a:hover, fieldset[disabled] .btn-default:focus, fieldset[disabled] .make-buttons a:focus, .make-buttons fieldset[disabled] a:focus, fieldset[disabled] .tags a:focus, .tags fieldset[disabled] a:focus, fieldset[disabled] .btn-default.focus, fieldset[disabled] .make-buttons a.focus, .make-buttons fieldset[disabled] a.focus, fieldset[disabled] .tags a.focus, .tags fieldset[disabled] a.focus, fieldset[disabled] .btn-default:active, fieldset[disabled] .make-buttons a:active, .make-buttons fieldset[disabled] a:active, fieldset[disabled] .tags a:active, .tags fieldset[disabled] a:active, fieldset[disabled] .btn-default.active, fieldset[disabled] .make-buttons a.active, .make-buttons fieldset[disabled] a.active, fieldset[disabled] .tags a.active, .tags fieldset[disabled] a.active {
   background-color: #fff;
   border-color: #ccc;
 }
 /* line 40, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_buttons.scss */
-.btn-default .badge, .tags a .badge {
+.btn-default .badge, .make-buttons a .badge, .tags a .badge {
   color: #fff;
   background-color: #333;
 }
@@ -3142,7 +3148,7 @@ select[multiple].input-lg,
 }
 
 /* line 127, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_buttons.scss */
-.btn-lg, .btn-group-lg > .btn, .tags .btn-group-lg > a {
+.btn-lg, .btn-group-lg > .btn, .make-buttons .btn-group-lg > a, .tags .btn-group-lg > a {
   padding: 10px 16px;
   font-size: 18px;
   line-height: 1.33333;
@@ -3150,7 +3156,7 @@ select[multiple].input-lg,
 }
 
 /* line 131, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_buttons.scss */
-.btn-sm, .btn-group-sm > .btn, .tags .btn-group-sm > a {
+.btn-sm, .btn-group-sm > .btn, .make-buttons .btn-group-sm > a, .tags .btn-group-sm > a {
   padding: 5px 10px;
   font-size: 12px;
   line-height: 1.5;
@@ -3158,7 +3164,7 @@ select[multiple].input-lg,
 }
 
 /* line 135, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_buttons.scss */
-.btn-xs, .btn-group-xs > .btn, .tags .btn-group-xs > a, .tags a {
+.btn-xs, .btn-group-xs > .btn, .make-buttons .btn-group-xs > a, .tags .btn-group-xs > a, .make-buttons-xs a, .tags a {
   padding: 1px 5px;
   font-size: 12px;
   line-height: 1.5;
@@ -3405,31 +3411,40 @@ tbody.collapse.in {
   vertical-align: middle;
 }
 /* line 11, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group > .btn, .tags .btn-group > a,
+.btn-group > .btn, .make-buttons .btn-group > a, .tags .btn-group > a,
 .btn-group-vertical > .btn,
+.make-buttons .btn-group-vertical > a,
 .tags .btn-group-vertical > a {
   position: relative;
   float: left;
 }
 /* line 15, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group > .btn:hover, .tags .btn-group > a:hover, .btn-group > .btn:focus, .tags .btn-group > a:focus, .btn-group > .btn:active, .tags .btn-group > a:active, .btn-group > .btn.active, .tags .btn-group > a.active,
+.btn-group > .btn:hover, .make-buttons .btn-group > a:hover, .tags .btn-group > a:hover, .btn-group > .btn:focus, .make-buttons .btn-group > a:focus, .tags .btn-group > a:focus, .btn-group > .btn:active, .make-buttons .btn-group > a:active, .tags .btn-group > a:active, .btn-group > .btn.active, .make-buttons .btn-group > a.active, .tags .btn-group > a.active,
 .btn-group-vertical > .btn:hover,
+.make-buttons .btn-group-vertical > a:hover,
 .tags .btn-group-vertical > a:hover,
 .btn-group-vertical > .btn:focus,
+.make-buttons .btn-group-vertical > a:focus,
 .tags .btn-group-vertical > a:focus,
 .btn-group-vertical > .btn:active,
+.make-buttons .btn-group-vertical > a:active,
 .tags .btn-group-vertical > a:active,
 .btn-group-vertical > .btn.active,
+.make-buttons .btn-group-vertical > a.active,
 .tags .btn-group-vertical > a.active {
   z-index: 2;
 }
 
 /* line 26, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group .btn + .btn, .btn-group .tags a + .btn, .tags .btn-group a + .btn, .btn-group .tags .btn + a, .tags .btn-group .btn + a, .btn-group .tags a + a, .tags .btn-group a + a,
+.btn-group .btn + .btn, .btn-group .make-buttons a + .btn, .make-buttons .btn-group a + .btn, .btn-group .tags a + .btn, .tags .btn-group a + .btn, .btn-group .make-buttons .btn + a, .make-buttons .btn-group .btn + a, .btn-group .make-buttons a + a, .make-buttons .btn-group a + a, .btn-group .tags .make-buttons a + a, .make-buttons .tags .btn-group a + a, .btn-group .tags .btn + a, .tags .btn-group .btn + a, .btn-group .make-buttons .tags a + a, .tags .btn-group .make-buttons a + a, .make-buttons .btn-group .tags a + a, .tags .make-buttons .btn-group a + a, .btn-group .tags a + a, .tags .btn-group a + a,
 .btn-group .btn + .btn-group,
+.btn-group .make-buttons a + .btn-group,
+.make-buttons .btn-group a + .btn-group,
 .btn-group .tags a + .btn-group,
 .tags .btn-group a + .btn-group,
 .btn-group .btn-group + .btn,
+.btn-group .make-buttons .btn-group + a,
+.make-buttons .btn-group .btn-group + a,
 .btn-group .tags .btn-group + a,
 .tags .btn-group .btn-group + a,
 .btn-group .btn-group + .btn-group {
@@ -3455,29 +3470,29 @@ tbody.collapse.in {
   float: left;
 }
 /* line 43, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-toolbar > .btn, .tags .btn-toolbar > a,
+.btn-toolbar > .btn, .make-buttons .btn-toolbar > a, .tags .btn-toolbar > a,
 .btn-toolbar > .btn-group,
 .btn-toolbar > .input-group {
   margin-left: 5px;
 }
 
 /* line 50, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle), .tags .btn-group > a:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle), .make-buttons .btn-group > a:not(:first-child):not(:last-child):not(.dropdown-toggle), .tags .btn-group > a:not(:first-child):not(:last-child):not(.dropdown-toggle) {
   border-radius: 0;
 }
 
 /* line 55, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group > .btn:first-child, .tags .btn-group > a:first-child {
+.btn-group > .btn:first-child, .make-buttons .btn-group > a:first-child, .tags .btn-group > a:first-child {
   margin-left: 0;
 }
 /* line 57, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle), .tags .btn-group > a:first-child:not(:last-child):not(.dropdown-toggle) {
+.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle), .make-buttons .btn-group > a:first-child:not(:last-child):not(.dropdown-toggle), .tags .btn-group > a:first-child:not(:last-child):not(.dropdown-toggle) {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
 
 /* line 62, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group > .btn:last-child:not(:first-child), .tags .btn-group > a:last-child:not(:first-child),
+.btn-group > .btn:last-child:not(:first-child), .make-buttons .btn-group > a:last-child:not(:first-child), .tags .btn-group > a:last-child:not(:first-child),
 .btn-group > .dropdown-toggle:not(:first-child) {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
@@ -3489,19 +3504,19 @@ tbody.collapse.in {
 }
 
 /* line 71, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn, .tags .btn-group > .btn-group:not(:first-child):not(:last-child) > a {
+.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn, .make-buttons .btn-group > .btn-group:not(:first-child):not(:last-child) > a, .tags .btn-group > .btn-group:not(:first-child):not(:last-child) > a {
   border-radius: 0;
 }
 
 /* line 75, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child, .tags .btn-group > .btn-group:first-child:not(:last-child) > a:last-child,
+.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child, .make-buttons .btn-group > .btn-group:first-child:not(:last-child) > a:last-child, .tags .btn-group > .btn-group:first-child:not(:last-child) > a:last-child,
 .btn-group > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
 
 /* line 80, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child, .tags .btn-group > .btn-group:last-child:not(:first-child) > a:first-child {
+.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child, .make-buttons .btn-group > .btn-group:last-child:not(:first-child) > a:first-child, .tags .btn-group > .btn-group:last-child:not(:first-child) > a:first-child {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 }
@@ -3513,13 +3528,13 @@ tbody.collapse.in {
 }
 
 /* line 104, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group > .btn + .dropdown-toggle, .tags .btn-group > a + .dropdown-toggle {
+.btn-group > .btn + .dropdown-toggle, .make-buttons .btn-group > a + .dropdown-toggle, .tags .btn-group > a + .dropdown-toggle {
   padding-left: 8px;
   padding-right: 8px;
 }
 
 /* line 108, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group > .btn-lg + .dropdown-toggle, .btn-group-lg.btn-group > .btn + .dropdown-toggle, .tags .btn-group-lg.btn-group > a + .dropdown-toggle {
+.btn-group > .btn-lg + .dropdown-toggle, .btn-group-lg.btn-group > .btn + .dropdown-toggle, .make-buttons .btn-group-lg.btn-group > a + .dropdown-toggle, .tags .btn-group-lg.btn-group > a + .dropdown-toggle {
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -3536,25 +3551,26 @@ tbody.collapse.in {
 }
 
 /* line 126, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn .caret, .tags a .caret {
+.btn .caret, .make-buttons a .caret, .tags a .caret {
   margin-left: 0;
 }
 
 /* line 130, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-lg .caret, .btn-group-lg > .btn .caret, .tags .btn-group-lg > a .caret {
+.btn-lg .caret, .btn-group-lg > .btn .caret, .make-buttons .btn-group-lg > a .caret, .tags .btn-group-lg > a .caret {
   border-width: 5px 5px 0;
   border-bottom-width: 0;
 }
 
 /* line 135, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_button-groups.scss */
-.dropup .btn-lg .caret, .dropup .btn-group-lg > .btn .caret, .dropup .tags .btn-group-lg > a .caret, .tags .dropup .btn-group-lg > a .caret {
+.dropup .btn-lg .caret, .dropup .btn-group-lg > .btn .caret, .dropup .make-buttons .btn-group-lg > a .caret, .make-buttons .dropup .btn-group-lg > a .caret, .dropup .tags .btn-group-lg > a .caret, .tags .dropup .btn-group-lg > a .caret {
   border-width: 0 5px 5px;
 }
 
 /* line 144, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn, .tags .btn-group-vertical > a,
+.btn-group-vertical > .btn, .make-buttons .btn-group-vertical > a, .tags .btn-group-vertical > a,
 .btn-group-vertical > .btn-group,
 .btn-group-vertical > .btn-group > .btn,
+.make-buttons .btn-group-vertical > .btn-group > a,
 .tags .btn-group-vertical > .btn-group > a {
   display: block;
   float: none;
@@ -3571,14 +3587,16 @@ tbody.collapse.in {
   clear: both;
 }
 /* line 156, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn-group > .btn, .tags .btn-group-vertical > .btn-group > a {
+.btn-group-vertical > .btn-group > .btn, .make-buttons .btn-group-vertical > .btn-group > a, .tags .btn-group-vertical > .btn-group > a {
   float: none;
 }
 /* line 161, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn + .btn, .tags .btn-group-vertical > a + .btn, .tags .btn-group-vertical > .btn + a, .tags .btn-group-vertical > a + a,
+.btn-group-vertical > .btn + .btn, .make-buttons .btn-group-vertical > a + .btn, .tags .btn-group-vertical > a + .btn, .make-buttons .btn-group-vertical > .btn + a, .make-buttons .btn-group-vertical > a + a, .tags .btn-group-vertical > .btn + a, .make-buttons .tags .btn-group-vertical > a + a, .tags .make-buttons .btn-group-vertical > a + a, .tags .btn-group-vertical > a + a,
 .btn-group-vertical > .btn + .btn-group,
+.make-buttons .btn-group-vertical > a + .btn-group,
 .tags .btn-group-vertical > a + .btn-group,
 .btn-group-vertical > .btn-group + .btn,
+.make-buttons .btn-group-vertical > .btn-group + a,
 .tags .btn-group-vertical > .btn-group + a,
 .btn-group-vertical > .btn-group + .btn-group {
   margin-top: -1px;
@@ -3586,36 +3604,36 @@ tbody.collapse.in {
 }
 
 /* line 171, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn:not(:first-child):not(:last-child), .tags .btn-group-vertical > a:not(:first-child):not(:last-child) {
+.btn-group-vertical > .btn:not(:first-child):not(:last-child), .make-buttons .btn-group-vertical > a:not(:first-child):not(:last-child), .tags .btn-group-vertical > a:not(:first-child):not(:last-child) {
   border-radius: 0;
 }
 /* line 174, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn:first-child:not(:last-child), .tags .btn-group-vertical > a:first-child:not(:last-child) {
+.btn-group-vertical > .btn:first-child:not(:last-child), .make-buttons .btn-group-vertical > a:first-child:not(:last-child), .tags .btn-group-vertical > a:first-child:not(:last-child) {
   border-top-right-radius: 4px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 /* line 178, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn:last-child:not(:first-child), .tags .btn-group-vertical > a:last-child:not(:first-child) {
+.btn-group-vertical > .btn:last-child:not(:first-child), .make-buttons .btn-group-vertical > a:last-child:not(:first-child), .tags .btn-group-vertical > a:last-child:not(:first-child) {
   border-bottom-left-radius: 4px;
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
 
 /* line 183, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn, .tags .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > a {
+.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn, .make-buttons .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > a, .tags .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > a {
   border-radius: 0;
 }
 
 /* line 187, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child, .tags .btn-group-vertical > .btn-group:first-child:not(:last-child) > a:last-child,
+.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child, .make-buttons .btn-group-vertical > .btn-group:first-child:not(:last-child) > a:last-child, .tags .btn-group-vertical > .btn-group:first-child:not(:last-child) > a:last-child,
 .btn-group-vertical > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 
 /* line 192, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child, .tags .btn-group-vertical > .btn-group:last-child:not(:first-child) > a:first-child {
+.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child, .make-buttons .btn-group-vertical > .btn-group:last-child:not(:first-child) > a:first-child, .tags .btn-group-vertical > .btn-group:last-child:not(:first-child) > a:first-child {
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
@@ -3628,14 +3646,14 @@ tbody.collapse.in {
   border-collapse: separate;
 }
 /* line 205, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group-justified > .btn, .tags .btn-group-justified > a,
+.btn-group-justified > .btn, .make-buttons .btn-group-justified > a, .tags .btn-group-justified > a,
 .btn-group-justified > .btn-group {
   float: none;
   display: table-cell;
   width: 1%;
 }
 /* line 211, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group-justified > .btn-group .btn, .btn-group-justified > .btn-group .tags a, .tags .btn-group-justified > .btn-group a {
+.btn-group-justified > .btn-group .btn, .btn-group-justified > .btn-group .make-buttons a, .make-buttons .btn-group-justified > .btn-group a, .btn-group-justified > .btn-group .tags a, .tags .btn-group-justified > .btn-group a {
   width: 100%;
 }
 /* line 215, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_button-groups.scss */
@@ -3644,12 +3662,15 @@ tbody.collapse.in {
 }
 
 /* line 236, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_button-groups.scss */
-[data-toggle="buttons"] > .btn input[type="radio"], .tags [data-toggle="buttons"] > a input[type="radio"],
+[data-toggle="buttons"] > .btn input[type="radio"], .make-buttons [data-toggle="buttons"] > a input[type="radio"], .tags [data-toggle="buttons"] > a input[type="radio"],
 [data-toggle="buttons"] > .btn input[type="checkbox"],
+.make-buttons [data-toggle="buttons"] > a input[type="checkbox"],
 .tags [data-toggle="buttons"] > a input[type="checkbox"],
 [data-toggle="buttons"] > .btn-group > .btn input[type="radio"],
+.make-buttons [data-toggle="buttons"] > .btn-group > a input[type="radio"],
 .tags [data-toggle="buttons"] > .btn-group > a input[type="radio"],
 [data-toggle="buttons"] > .btn-group > .btn input[type="checkbox"],
+.make-buttons [data-toggle="buttons"] > .btn-group > a input[type="checkbox"],
 .tags [data-toggle="buttons"] > .btn-group > a input[type="checkbox"] {
   position: absolute;
   clip: rect(0, 0, 0, 0);
@@ -3714,6 +3735,7 @@ tbody.collapse.in {
 .input-group-addon.input-sm,
 .input-group-sm > .input-group-addon,
 .input-group-sm > .input-group-btn > .input-group-addon.btn,
+.make-buttons .input-group-sm > .input-group-btn > a.input-group-addon,
 .tags .input-group-sm > .input-group-btn > a.input-group-addon {
   padding: 5px 10px;
   font-size: 12px;
@@ -3723,6 +3745,7 @@ tbody.collapse.in {
 .input-group-addon.input-lg,
 .input-group-lg > .input-group-addon,
 .input-group-lg > .input-group-btn > .input-group-addon.btn,
+.make-buttons .input-group-lg > .input-group-btn > a.input-group-addon,
 .tags .input-group-lg > .input-group-btn > a.input-group-addon {
   padding: 10px 16px;
   font-size: 18px;
@@ -3738,13 +3761,17 @@ tbody.collapse.in {
 .input-group .form-control:first-child,
 .input-group-addon:first-child,
 .input-group-btn:first-child > .btn,
+.make-buttons .input-group-btn:first-child > a,
 .tags .input-group-btn:first-child > a,
 .input-group-btn:first-child > .btn-group > .btn,
+.make-buttons .input-group-btn:first-child > .btn-group > a,
 .tags .input-group-btn:first-child > .btn-group > a,
 .input-group-btn:first-child > .dropdown-toggle,
 .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+.make-buttons .input-group-btn:last-child > a:not(:last-child):not(.dropdown-toggle),
 .tags .input-group-btn:last-child > a:not(:last-child):not(.dropdown-toggle),
 .input-group-btn:last-child > .btn-group:not(:last-child) > .btn,
+.make-buttons .input-group-btn:last-child > .btn-group:not(:last-child) > a,
 .tags .input-group-btn:last-child > .btn-group:not(:last-child) > a {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
@@ -3759,13 +3786,17 @@ tbody.collapse.in {
 .input-group .form-control:last-child,
 .input-group-addon:last-child,
 .input-group-btn:last-child > .btn,
+.make-buttons .input-group-btn:last-child > a,
 .tags .input-group-btn:last-child > a,
 .input-group-btn:last-child > .btn-group > .btn,
+.make-buttons .input-group-btn:last-child > .btn-group > a,
 .tags .input-group-btn:last-child > .btn-group > a,
 .input-group-btn:last-child > .dropdown-toggle,
 .input-group-btn:first-child > .btn:not(:first-child),
+.make-buttons .input-group-btn:first-child > a:not(:first-child),
 .tags .input-group-btn:first-child > a:not(:first-child),
 .input-group-btn:first-child > .btn-group:not(:first-child) > .btn,
+.make-buttons .input-group-btn:first-child > .btn-group:not(:first-child) > a,
 .tags .input-group-btn:first-child > .btn-group:not(:first-child) > a {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
@@ -3783,24 +3814,24 @@ tbody.collapse.in {
   white-space: nowrap;
 }
 /* line 140, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_input-groups.scss */
-.input-group-btn > .btn, .tags .input-group-btn > a {
+.input-group-btn > .btn, .make-buttons .input-group-btn > a, .tags .input-group-btn > a {
   position: relative;
 }
 /* line 142, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_input-groups.scss */
-.input-group-btn > .btn + .btn, .tags .input-group-btn > a + .btn, .tags .input-group-btn > .btn + a, .tags .input-group-btn > a + a {
+.input-group-btn > .btn + .btn, .make-buttons .input-group-btn > a + .btn, .tags .input-group-btn > a + .btn, .make-buttons .input-group-btn > .btn + a, .make-buttons .input-group-btn > a + a, .tags .input-group-btn > .btn + a, .make-buttons .tags .input-group-btn > a + a, .tags .make-buttons .input-group-btn > a + a, .tags .input-group-btn > a + a {
   margin-left: -1px;
 }
 /* line 146, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_input-groups.scss */
-.input-group-btn > .btn:hover, .tags .input-group-btn > a:hover, .input-group-btn > .btn:focus, .tags .input-group-btn > a:focus, .input-group-btn > .btn:active, .tags .input-group-btn > a:active {
+.input-group-btn > .btn:hover, .make-buttons .input-group-btn > a:hover, .tags .input-group-btn > a:hover, .input-group-btn > .btn:focus, .make-buttons .input-group-btn > a:focus, .tags .input-group-btn > a:focus, .input-group-btn > .btn:active, .make-buttons .input-group-btn > a:active, .tags .input-group-btn > a:active {
   z-index: 2;
 }
 /* line 155, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_input-groups.scss */
-.input-group-btn:first-child > .btn, .tags .input-group-btn:first-child > a,
+.input-group-btn:first-child > .btn, .make-buttons .input-group-btn:first-child > a, .tags .input-group-btn:first-child > a,
 .input-group-btn:first-child > .btn-group {
   margin-right: -1px;
 }
 /* line 161, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_input-groups.scss */
-.input-group-btn:last-child > .btn, .tags .input-group-btn:last-child > a,
+.input-group-btn:last-child > .btn, .make-buttons .input-group-btn:last-child > a, .tags .input-group-btn:last-child > a,
 .input-group-btn:last-child > .btn-group {
   margin-left: -1px;
 }
@@ -4390,12 +4421,12 @@ tbody.collapse.in {
   margin-bottom: 8px;
 }
 /* line 346, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_navbar.scss */
-.navbar-btn.btn-sm, .btn-group-sm > .navbar-btn.btn, .tags .btn-group-sm > a.navbar-btn {
+.navbar-btn.btn-sm, .btn-group-sm > .navbar-btn.btn, .make-buttons .btn-group-sm > a.navbar-btn, .tags .btn-group-sm > a.navbar-btn {
   margin-top: 10px;
   margin-bottom: 10px;
 }
 /* line 349, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_navbar.scss */
-.navbar-btn.btn-xs, .btn-group-xs > .navbar-btn.btn, .tags a.navbar-btn {
+.navbar-btn.btn-xs, .btn-group-xs > .navbar-btn.btn, .make-buttons .btn-group-xs > a.navbar-btn, .make-buttons-xs a.navbar-btn, .tags a.navbar-btn {
   margin-top: 14px;
   margin-bottom: 14px;
 }
@@ -4904,6 +4935,480 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
   line-height: 1.3;
 }
 
+/* line 7, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_panels.scss */
+.panel {
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+/* line 16, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_panels.scss */
+.panel-body {
+  padding: 15px;
+}
+/* line 14, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_clearfix.scss */
+.panel-body:before, .panel-body:after {
+  content: " ";
+  display: table;
+}
+/* line 19, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_clearfix.scss */
+.panel-body:after {
+  clear: both;
+}
+
+/* line 22, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_panels.scss */
+.panel-heading {
+  padding: 10px 15px;
+  border-bottom: 1px solid transparent;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+/* line 27, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_panels.scss */
+.panel-heading > .dropdown .dropdown-toggle {
+  color: inherit;
+}
+
+/* line 33, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_panels.scss */
+.panel-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 16px;
+  color: inherit;
+}
+/* line 39, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_panels.scss */
+.panel-title > a,
+.panel-title > small,
+.panel-title > .small,
+.panel-title > small > a,
+.panel-title > .small > a {
+  color: inherit;
+}
+
+/* line 49, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_panels.scss */
+.panel-footer {
+  padding: 10px 15px;
+  background-color: #f5f5f5;
+  border-top: 1px solid #ddd;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+/* line 63, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_panels.scss */
+.panel > .list-group, .rte .panel > ul, .rte .panel > ol,
+.panel > .panel-collapse > .list-group,
+.rte .panel > .panel-collapse > ul,
+.rte .panel > .panel-collapse > ol {
+  margin-bottom: 0;
+}
+/* line 67, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_panels.scss */
+.panel > .list-group .list-group-item, .rte .panel > ul .list-group-item, .rte .panel > ol .list-group-item, .panel > .list-group .rte ul li, .rte ul .panel > .list-group li, .rte .panel > ul li, .rte .panel > ol ul li, .rte ul .panel > ol li, .panel > .list-group .rte ol li, .rte ol .panel > .list-group li, .rte .panel > ul ol li, .rte ol .panel > ul li, .rte .panel > ol li,
+.panel > .panel-collapse > .list-group .list-group-item,
+.rte .panel > .panel-collapse > ul .list-group-item,
+.rte .panel > .panel-collapse > ol .list-group-item,
+.panel > .panel-collapse > .list-group .rte ul li,
+.rte ul .panel > .panel-collapse > .list-group li,
+.rte .panel > .panel-collapse > ul li,
+.rte .panel > .panel-collapse > ol ul li,
+.rte ul .panel > .panel-collapse > ol li,
+.panel > .panel-collapse > .list-group .rte ol li,
+.rte ol .panel > .panel-collapse > .list-group li,
+.rte .panel > .panel-collapse > ul ol li,
+.rte ol .panel > .panel-collapse > ul li,
+.rte .panel > .panel-collapse > ol li {
+  border-width: 1px 0;
+  border-radius: 0;
+}
+/* line 74, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_panels.scss */
+.panel > .list-group:first-child .list-group-item:first-child, .rte .panel > ul:first-child .list-group-item:first-child, .rte .panel > ol:first-child .list-group-item:first-child, .panel > .list-group:first-child .rte ul li:first-child, .rte ul .panel > .list-group:first-child li:first-child, .rte .panel > ul:first-child li:first-child, .rte .panel > ol:first-child ul li:first-child, .rte ul .panel > ol:first-child li:first-child, .panel > .list-group:first-child .rte ol li:first-child, .rte ol .panel > .list-group:first-child li:first-child, .rte .panel > ul:first-child ol li:first-child, .rte ol .panel > ul:first-child li:first-child, .rte .panel > ol:first-child li:first-child,
+.panel > .panel-collapse > .list-group:first-child .list-group-item:first-child,
+.rte .panel > .panel-collapse > ul:first-child .list-group-item:first-child,
+.rte .panel > .panel-collapse > ol:first-child .list-group-item:first-child,
+.panel > .panel-collapse > .list-group:first-child .rte ul li:first-child,
+.rte ul .panel > .panel-collapse > .list-group:first-child li:first-child,
+.rte .panel > .panel-collapse > ul:first-child li:first-child,
+.rte .panel > .panel-collapse > ol:first-child ul li:first-child,
+.rte ul .panel > .panel-collapse > ol:first-child li:first-child,
+.panel > .panel-collapse > .list-group:first-child .rte ol li:first-child,
+.rte ol .panel > .panel-collapse > .list-group:first-child li:first-child,
+.rte .panel > .panel-collapse > ul:first-child ol li:first-child,
+.rte ol .panel > .panel-collapse > ul:first-child li:first-child,
+.rte .panel > .panel-collapse > ol:first-child li:first-child {
+  border-top: 0;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+/* line 81, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_panels.scss */
+.panel > .list-group:last-child .list-group-item:last-child, .rte .panel > ul:last-child .list-group-item:last-child, .rte .panel > ol:last-child .list-group-item:last-child, .panel > .list-group:last-child .rte ul li:last-child, .rte ul .panel > .list-group:last-child li:last-child, .rte .panel > ul:last-child li:last-child, .rte .panel > ol:last-child ul li:last-child, .rte ul .panel > ol:last-child li:last-child, .panel > .list-group:last-child .rte ol li:last-child, .rte ol .panel > .list-group:last-child li:last-child, .rte .panel > ul:last-child ol li:last-child, .rte ol .panel > ul:last-child li:last-child, .rte .panel > ol:last-child li:last-child,
+.panel > .panel-collapse > .list-group:last-child .list-group-item:last-child,
+.rte .panel > .panel-collapse > ul:last-child .list-group-item:last-child,
+.rte .panel > .panel-collapse > ol:last-child .list-group-item:last-child,
+.panel > .panel-collapse > .list-group:last-child .rte ul li:last-child,
+.rte ul .panel > .panel-collapse > .list-group:last-child li:last-child,
+.rte .panel > .panel-collapse > ul:last-child li:last-child,
+.rte .panel > .panel-collapse > ol:last-child ul li:last-child,
+.rte ul .panel > .panel-collapse > ol:last-child li:last-child,
+.panel > .panel-collapse > .list-group:last-child .rte ol li:last-child,
+.rte ol .panel > .panel-collapse > .list-group:last-child li:last-child,
+.rte .panel > .panel-collapse > ul:last-child ol li:last-child,
+.rte ol .panel > .panel-collapse > ul:last-child li:last-child,
+.rte .panel > .panel-collapse > ol:last-child li:last-child {
+  border-bottom: 0;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+/* line 90, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_panels.scss */
+.panel-heading + .list-group .list-group-item:first-child, .rte .panel-heading + ul .list-group-item:first-child, .rte .panel-heading + ol .list-group-item:first-child, .panel-heading + .list-group .rte ul li:first-child, .rte ul .panel-heading + .list-group li:first-child, .rte .panel-heading + ul li:first-child, .rte .panel-heading + ol ul li:first-child, .rte ul .panel-heading + ol li:first-child, .panel-heading + .list-group .rte ol li:first-child, .rte ol .panel-heading + .list-group li:first-child, .rte .panel-heading + ul ol li:first-child, .rte ol .panel-heading + ul li:first-child, .rte .panel-heading + ol li:first-child {
+  border-top-width: 0;
+}
+
+/* line 94, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_panels.scss */
+.list-group + .panel-footer, .rte ul + .panel-footer, .rte ol + .panel-footer {
+  border-top-width: 0;
+}
+
+/* line 104, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_panels.scss */
+.panel > .table,
+.panel > .table-responsive > .table,
+.panel > .panel-collapse > .table {
+  margin-bottom: 0;
+}
+/* line 109, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_panels.scss */
+.panel > .table caption,
+.panel > .table-responsive > .table caption,
+.panel > .panel-collapse > .table caption {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+/* line 115, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_panels.scss */
+.panel > .table:first-child,
+.panel > .table-responsive:first-child > .table:first-child {
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+/* line 121, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_panels.scss */
+.panel > .table:first-child > thead:first-child > tr:first-child,
+.panel > .table:first-child > tbody:first-child > tr:first-child,
+.panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child,
+.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+/* line 125, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_panels.scss */
+.panel > .table:first-child > thead:first-child > tr:first-child td:first-child,
+.panel > .table:first-child > thead:first-child > tr:first-child th:first-child,
+.panel > .table:first-child > tbody:first-child > tr:first-child td:first-child,
+.panel > .table:first-child > tbody:first-child > tr:first-child th:first-child,
+.panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child,
+.panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:first-child,
+.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:first-child,
+.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child {
+  border-top-left-radius: 3px;
+}
+/* line 129, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_panels.scss */
+.panel > .table:first-child > thead:first-child > tr:first-child td:last-child,
+.panel > .table:first-child > thead:first-child > tr:first-child th:last-child,
+.panel > .table:first-child > tbody:first-child > tr:first-child td:last-child,
+.panel > .table:first-child > tbody:first-child > tr:first-child th:last-child,
+.panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:last-child,
+.panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:last-child,
+.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:last-child,
+.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child {
+  border-top-right-radius: 3px;
+}
+/* line 137, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_panels.scss */
+.panel > .table:last-child,
+.panel > .table-responsive:last-child > .table:last-child {
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+/* line 143, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_panels.scss */
+.panel > .table:last-child > tbody:last-child > tr:last-child,
+.panel > .table:last-child > tfoot:last-child > tr:last-child,
+.panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child,
+.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+/* line 147, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_panels.scss */
+.panel > .table:last-child > tbody:last-child > tr:last-child td:first-child,
+.panel > .table:last-child > tbody:last-child > tr:last-child th:first-child,
+.panel > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
+.panel > .table:last-child > tfoot:last-child > tr:last-child th:first-child,
+.panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:first-child,
+.panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:first-child,
+.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
+.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child {
+  border-bottom-left-radius: 3px;
+}
+/* line 151, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_panels.scss */
+.panel > .table:last-child > tbody:last-child > tr:last-child td:last-child,
+.panel > .table:last-child > tbody:last-child > tr:last-child th:last-child,
+.panel > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
+.panel > .table:last-child > tfoot:last-child > tr:last-child th:last-child,
+.panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:last-child,
+.panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:last-child,
+.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
+.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child {
+  border-bottom-right-radius: 3px;
+}
+/* line 158, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_panels.scss */
+.panel > .panel-body + .table,
+.panel > .panel-body + .table-responsive,
+.panel > .table + .panel-body,
+.panel > .table-responsive + .panel-body {
+  border-top: 1px solid #ddd;
+}
+/* line 164, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_panels.scss */
+.panel > .table > tbody:first-child > tr:first-child th,
+.panel > .table > tbody:first-child > tr:first-child td {
+  border-top: 0;
+}
+/* line 168, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_panels.scss */
+.panel > .table-bordered,
+.panel > .table-responsive > .table-bordered {
+  border: 0;
+}
+/* line 175, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_panels.scss */
+.panel > .table-bordered > thead > tr > th:first-child,
+.panel > .table-bordered > thead > tr > td:first-child,
+.panel > .table-bordered > tbody > tr > th:first-child,
+.panel > .table-bordered > tbody > tr > td:first-child,
+.panel > .table-bordered > tfoot > tr > th:first-child,
+.panel > .table-bordered > tfoot > tr > td:first-child,
+.panel > .table-responsive > .table-bordered > thead > tr > th:first-child,
+.panel > .table-responsive > .table-bordered > thead > tr > td:first-child,
+.panel > .table-responsive > .table-bordered > tbody > tr > th:first-child,
+.panel > .table-responsive > .table-bordered > tbody > tr > td:first-child,
+.panel > .table-responsive > .table-bordered > tfoot > tr > th:first-child,
+.panel > .table-responsive > .table-bordered > tfoot > tr > td:first-child {
+  border-left: 0;
+}
+/* line 179, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_panels.scss */
+.panel > .table-bordered > thead > tr > th:last-child,
+.panel > .table-bordered > thead > tr > td:last-child,
+.panel > .table-bordered > tbody > tr > th:last-child,
+.panel > .table-bordered > tbody > tr > td:last-child,
+.panel > .table-bordered > tfoot > tr > th:last-child,
+.panel > .table-bordered > tfoot > tr > td:last-child,
+.panel > .table-responsive > .table-bordered > thead > tr > th:last-child,
+.panel > .table-responsive > .table-bordered > thead > tr > td:last-child,
+.panel > .table-responsive > .table-bordered > tbody > tr > th:last-child,
+.panel > .table-responsive > .table-bordered > tbody > tr > td:last-child,
+.panel > .table-responsive > .table-bordered > tfoot > tr > th:last-child,
+.panel > .table-responsive > .table-bordered > tfoot > tr > td:last-child {
+  border-right: 0;
+}
+/* line 188, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_panels.scss */
+.panel > .table-bordered > thead > tr:first-child > td,
+.panel > .table-bordered > thead > tr:first-child > th,
+.panel > .table-bordered > tbody > tr:first-child > td,
+.panel > .table-bordered > tbody > tr:first-child > th,
+.panel > .table-responsive > .table-bordered > thead > tr:first-child > td,
+.panel > .table-responsive > .table-bordered > thead > tr:first-child > th,
+.panel > .table-responsive > .table-bordered > tbody > tr:first-child > td,
+.panel > .table-responsive > .table-bordered > tbody > tr:first-child > th {
+  border-bottom: 0;
+}
+/* line 197, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_panels.scss */
+.panel > .table-bordered > tbody > tr:last-child > td,
+.panel > .table-bordered > tbody > tr:last-child > th,
+.panel > .table-bordered > tfoot > tr:last-child > td,
+.panel > .table-bordered > tfoot > tr:last-child > th,
+.panel > .table-responsive > .table-bordered > tbody > tr:last-child > td,
+.panel > .table-responsive > .table-bordered > tbody > tr:last-child > th,
+.panel > .table-responsive > .table-bordered > tfoot > tr:last-child > td,
+.panel > .table-responsive > .table-bordered > tfoot > tr:last-child > th {
+  border-bottom: 0;
+}
+/* line 204, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_panels.scss */
+.panel > .table-responsive {
+  border: 0;
+  margin-bottom: 0;
+}
+
+/* line 216, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_panels.scss */
+.panel-group {
+  margin-bottom: 20px;
+}
+/* line 220, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_panels.scss */
+.panel-group .panel {
+  margin-bottom: 0;
+  border-radius: 4px;
+}
+/* line 224, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_panels.scss */
+.panel-group .panel + .panel {
+  margin-top: 5px;
+}
+/* line 229, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_panels.scss */
+.panel-group .panel-heading {
+  border-bottom: 0;
+}
+/* line 232, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_panels.scss */
+.panel-group .panel-heading + .panel-collapse > .panel-body,
+.panel-group .panel-heading + .panel-collapse > .list-group,
+.panel-group .rte .panel-heading + .panel-collapse > ul,
+.rte .panel-group .panel-heading + .panel-collapse > ul,
+.panel-group .rte .panel-heading + .panel-collapse > ol,
+.rte .panel-group .panel-heading + .panel-collapse > ol {
+  border-top: 1px solid #ddd;
+}
+/* line 238, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_panels.scss */
+.panel-group .panel-footer {
+  border-top: 0;
+}
+/* line 240, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_panels.scss */
+.panel-group .panel-footer + .panel-collapse .panel-body {
+  border-bottom: 1px solid #ddd;
+}
+
+/* line 248, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_panels.scss */
+.panel-default {
+  border-color: #ddd;
+}
+/* line 6, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_panels.scss */
+.panel-default > .panel-heading {
+  color: #333333;
+  background-color: #f5f5f5;
+  border-color: #ddd;
+}
+/* line 11, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_panels.scss */
+.panel-default > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #ddd;
+}
+/* line 14, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_panels.scss */
+.panel-default > .panel-heading .badge {
+  color: #f5f5f5;
+  background-color: #333333;
+}
+/* line 20, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_panels.scss */
+.panel-default > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #ddd;
+}
+
+/* line 251, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_panels.scss */
+.panel-primary {
+  border-color: #337ab7;
+}
+/* line 6, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_panels.scss */
+.panel-primary > .panel-heading {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #337ab7;
+}
+/* line 11, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_panels.scss */
+.panel-primary > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #337ab7;
+}
+/* line 14, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_panels.scss */
+.panel-primary > .panel-heading .badge {
+  color: #337ab7;
+  background-color: #fff;
+}
+/* line 20, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_panels.scss */
+.panel-primary > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #337ab7;
+}
+
+/* line 254, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_panels.scss */
+.panel-success {
+  border-color: #d6e9c6;
+}
+/* line 6, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_panels.scss */
+.panel-success > .panel-heading {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+/* line 11, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_panels.scss */
+.panel-success > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #d6e9c6;
+}
+/* line 14, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_panels.scss */
+.panel-success > .panel-heading .badge {
+  color: #dff0d8;
+  background-color: #3c763d;
+}
+/* line 20, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_panels.scss */
+.panel-success > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #d6e9c6;
+}
+
+/* line 257, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_panels.scss */
+.panel-info {
+  border-color: #bce8f1;
+}
+/* line 6, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_panels.scss */
+.panel-info > .panel-heading {
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+/* line 11, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_panels.scss */
+.panel-info > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #bce8f1;
+}
+/* line 14, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_panels.scss */
+.panel-info > .panel-heading .badge {
+  color: #d9edf7;
+  background-color: #31708f;
+}
+/* line 20, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_panels.scss */
+.panel-info > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #bce8f1;
+}
+
+/* line 260, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_panels.scss */
+.panel-warning {
+  border-color: #faebcc;
+}
+/* line 6, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_panels.scss */
+.panel-warning > .panel-heading {
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+}
+/* line 11, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_panels.scss */
+.panel-warning > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #faebcc;
+}
+/* line 14, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_panels.scss */
+.panel-warning > .panel-heading .badge {
+  color: #fcf8e3;
+  background-color: #8a6d3b;
+}
+/* line 20, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_panels.scss */
+.panel-warning > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #faebcc;
+}
+
+/* line 263, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_panels.scss */
+.panel-danger {
+  border-color: #ebccd1;
+}
+/* line 6, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_panels.scss */
+.panel-danger > .panel-heading {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+/* line 11, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_panels.scss */
+.panel-danger > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #ebccd1;
+}
+/* line 14, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_panels.scss */
+.panel-danger > .panel-heading .badge {
+  color: #f2dede;
+  background-color: #a94442;
+}
+/* line 20, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_panels.scss */
+.panel-danger > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #ebccd1;
+}
+
 /* line 14, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_clearfix.scss */
 .clearfix:before, .clearfix:after {
   content: " ";
@@ -5275,60 +5780,72 @@ a:hover, .btn-link:hover {
   color: #111;
 }
 
-/* line 12, ../_sass/styles.scss */
+/* line 25, ../_sass/styles.scss */
 .form-control {
   height: 33px;
 }
 
-/* line 16, ../_sass/styles.scss */
+/* line 29, ../_sass/styles.scss */
 .nav-bar {
   margin-bottom: 15px;
   padding-bottom: 15px;
 }
 
-/* line 21, ../_sass/styles.scss */
+/* line 34, ../_sass/styles.scss */
 .navbar-default {
   margin-bottom: 0;
   background-color: #FFF;
   border-color: #EEE;
 }
+/* line 38, ../_sass/styles.scss */
+.navbar-default .panel {
+  margin: 0;
+  border: 0;
+  box-shadow: none;
+  background: none;
+  border-radius: 0;
+}
+/* line 45, ../_sass/styles.scss */
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+  border-color: transparent;
+}
 @media (max-width: 767px) {
-  /* line 21, ../_sass/styles.scss */
+  /* line 34, ../_sass/styles.scss */
   .navbar-default {
     padding: 0 10px;
   }
 }
 
-/* line 30, ../_sass/styles.scss */
+/* line 53, ../_sass/styles.scss */
 .navbar-default .navbar-toggle {
   float: none;
 }
 
-/* line 34, ../_sass/styles.scss */
+/* line 57, ../_sass/styles.scss */
 .navbar-nav > li > .dropdown-menu {
   border: 0;
   margin: 1px;
 }
 
-/* line 39, ../_sass/styles.scss */
+/* line 62, ../_sass/styles.scss */
 .dropdown-menu > .active > a,
 .dropdown-menu > .active > a:hover,
 .dropdown-menu > .active > a:focus {
   background-color: #000;
 }
 
-/* line 45, ../_sass/styles.scss */
+/* line 68, ../_sass/styles.scss */
 .affix-wrapper {
   margin-bottom: 20px;
 }
 @media (max-width: 991px) {
-  /* line 45, ../_sass/styles.scss */
+  /* line 68, ../_sass/styles.scss */
   .affix-wrapper {
     min-height: 0 !important;
   }
 }
 
-/* line 52, ../_sass/styles.scss */
+/* line 75, ../_sass/styles.scss */
 .affix {
   background: rgba(255, 255, 255, 0.9);
   top: 0;
@@ -5337,35 +5854,35 @@ a:hover, .btn-link:hover {
   margin: 0 -15px;
 }
 @media (max-width: 767px) {
-  /* line 52, ../_sass/styles.scss */
+  /* line 75, ../_sass/styles.scss */
   .affix {
     position: relative;
   }
 }
 
-/* line 64, ../_sass/styles.scss */
+/* line 87, ../_sass/styles.scss */
 .navbar {
   margin: 0;
 }
 
-/* line 68, ../_sass/styles.scss */
+/* line 91, ../_sass/styles.scss */
 .navbar-collection {
   min-height: 0;
   margin-top: 10px;
   background: #EEE;
 }
-/* line 72, ../_sass/styles.scss */
+/* line 95, ../_sass/styles.scss */
 .navbar-collection .navbar-header {
   float: left;
 }
-/* line 75, ../_sass/styles.scss */
+/* line 98, ../_sass/styles.scss */
 .navbar-collection .navbar-brand {
   text-transform: capitalize;
   padding: 9px 15px;
   line-height: 1;
   height: inherit;
 }
-/* line 81, ../_sass/styles.scss */
+/* line 104, ../_sass/styles.scss */
 .navbar-collection .navbar-form {
   margin-top: 3px;
   margin-bottom: 3px;
@@ -5375,18 +5892,18 @@ a:hover, .btn-link:hover {
 }
 
 @media (max-width: 767px) {
-  /* line 91, ../_sass/styles.scss */
+  /* line 114, ../_sass/styles.scss */
   body {
     padding-top: 60px;
   }
 
-  /* line 95, ../_sass/styles.scss */
+  /* line 118, ../_sass/styles.scss */
   .navbar-search input {
     margin: 10px 0;
     text-align: left;
   }
 
-  /* line 100, ../_sass/styles.scss */
+  /* line 123, ../_sass/styles.scss */
   .navbar-main {
     width: 100%;
     position: fixed;
@@ -5397,19 +5914,19 @@ a:hover, .btn-link:hover {
     border: 0;
     background: #000;
   }
-  /* line 109, ../_sass/styles.scss */
+  /* line 132, ../_sass/styles.scss */
   .navbar-main a {
     color: #FFF !important;
   }
-  /* line 112, ../_sass/styles.scss */
+  /* line 135, ../_sass/styles.scss */
   .navbar-main .active > a,
   .navbar-main .open > a,
   .navbar-main .open > a:hover,
   .navbar-main .open > a:focus {
     color: #000 !important;
   }
-  /* line 118, ../_sass/styles.scss */
-  .navbar-main .btn-default, .navbar-main .tags a, .tags .navbar-main a {
+  /* line 141, ../_sass/styles.scss */
+  .navbar-main .btn-default, .navbar-main .make-buttons a, .make-buttons .navbar-main a, .navbar-main .tags a, .tags .navbar-main a {
     outline: none !important;
     line-height: 50px;
     background: #000;
@@ -5417,62 +5934,62 @@ a:hover, .btn-link:hover {
     border-radius: 0;
     opacity: .3;
   }
-  /* line 125, ../_sass/styles.scss */
-  .navbar-main .btn-default[aria-expanded=true], .navbar-main .tags a[aria-expanded=true], .tags .navbar-main a[aria-expanded=true] {
+  /* line 148, ../_sass/styles.scss */
+  .navbar-main .btn-default[aria-expanded=true], .navbar-main .make-buttons a[aria-expanded=true], .make-buttons .navbar-main a[aria-expanded=true], .navbar-main .tags a[aria-expanded=true], .tags .navbar-main a[aria-expanded=true] {
     opacity: 1;
   }
 }
-/* line 132, ../_sass/styles.scss */
+/* line 155, ../_sass/styles.scss */
 .site-header__logo {
   margin: 38px 0 10px;
 }
 
-/* line 137, ../_sass/styles.scss */
+/* line 160, ../_sass/styles.scss */
 .breadcrumb > li {
   text-transform: capitalize;
 }
 
-/* line 142, ../_sass/styles.scss */
+/* line 165, ../_sass/styles.scss */
 .nav-pills {
   margin: 35px 0 10px;
 }
-/* line 144, ../_sass/styles.scss */
+/* line 167, ../_sass/styles.scss */
 .nav-pills > li {
   float: none;
   display: inline-block;
   text-transform: uppercase;
 }
-/* line 148, ../_sass/styles.scss */
+/* line 171, ../_sass/styles.scss */
 .nav-pills > li > a {
   font-weight: bold;
   font-size: .9em;
 }
-/* line 151, ../_sass/styles.scss */
+/* line 174, ../_sass/styles.scss */
 .nav-pills > li > a:link, .nav-pills > li > a:visited {
   background: none;
   color: #FFF;
 }
-/* line 156, ../_sass/styles.scss */
+/* line 179, ../_sass/styles.scss */
 .nav-pills > li > a:focus, .nav-pills > li > a:active, .nav-pills > li > a:hover {
   background: #FFF;
   color: #111;
 }
-/* line 164, ../_sass/styles.scss */
+/* line 187, ../_sass/styles.scss */
 .nav-pills > li.active > a {
   color: #FFF;
   background: #222;
 }
-/* line 167, ../_sass/styles.scss */
+/* line 190, ../_sass/styles.scss */
 .nav-pills > li.active > a:hover {
   background: #FFF;
   color: #111;
 }
 
-/* line 176, ../_sass/styles.scss */
+/* line 199, ../_sass/styles.scss */
 .nav-sidebar {
   padding-top: 15px;
 }
-/* line 178, ../_sass/styles.scss */
+/* line 201, ../_sass/styles.scss */
 .nav-sidebar h4 {
   font-size: 1em;
   font-weight: bold;
@@ -5480,27 +5997,27 @@ a:hover, .btn-link:hover {
   color: #000;
   display: inline-block;
 }
-/* line 189, ../_sass/styles.scss */
+/* line 212, ../_sass/styles.scss */
 .nav-sidebar a {
   display: block;
   font-size: .9em;
 }
-/* line 193, ../_sass/styles.scss */
+/* line 216, ../_sass/styles.scss */
 .nav-sidebar.affix {
   position: fixed !important;
   top: 20px;
 }
-/* line 197, ../_sass/styles.scss */
+/* line 220, ../_sass/styles.scss */
 .nav-sidebar.affix-bottom {
   position: absolute;
 }
-/* line 201, ../_sass/styles.scss */
+/* line 224, ../_sass/styles.scss */
 .nav-sidebar li.active a {
   font-size: .9em;
   font-weight: bold;
 }
 
-/* line 208, ../_sass/styles.scss */
+/* line 231, ../_sass/styles.scss */
 #products-grid {
   min-height: 300px;
   display: -webkit-flex;
@@ -5510,17 +6027,17 @@ a:hover, .btn-link:hover {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
-/* line 217, ../_sass/styles.scss */
+/* line 240, ../_sass/styles.scss */
 #products-grid:before, #products-grid:after {
   display: none;
 }
 
-/* line 222, ../_sass/styles.scss */
+/* line 245, ../_sass/styles.scss */
 .empty-collection {
   width: 100%;
 }
 
-/* line 226, ../_sass/styles.scss */
+/* line 249, ../_sass/styles.scss */
 .loader {
   display: block;
   text-align: center;
@@ -5531,12 +6048,12 @@ a:hover, .btn-link:hover {
   text-transform: uppercase;
 }
 
-/* line 236, ../_sass/styles.scss */
+/* line 259, ../_sass/styles.scss */
 .img-thumbnail {
   border-color: #EEE;
 }
 
-/* line 240, ../_sass/styles.scss */
+/* line 263, ../_sass/styles.scss */
 .product-grid-item {
   opacity: 1;
   -webkit-transform: scale(1);
@@ -5556,45 +6073,45 @@ a:hover, .btn-link:hover {
   display: -ms-flexbox;
   display: flex;
 }
-/* line 258, ../_sass/styles.scss */
+/* line 281, ../_sass/styles.scss */
 .product-grid-item a {
   display: block;
 }
-/* line 261, ../_sass/styles.scss */
+/* line 284, ../_sass/styles.scss */
 .product-grid-item img {
   width: 100%;
 }
-/* line 264, ../_sass/styles.scss */
+/* line 287, ../_sass/styles.scss */
 .product-grid-item .thumbnail {
   width: 100%;
   cursor: pointer;
   border-color: #EEE;
   position: relative;
 }
-/* line 271, ../_sass/styles.scss */
+/* line 294, ../_sass/styles.scss */
 .product-grid-item .release-title {
   text-transform: capitalize;
   overflow: hidden;
   display: block;
 }
-/* line 277, ../_sass/styles.scss */
+/* line 300, ../_sass/styles.scss */
 .product-grid-item .caption {
   display: block;
   padding: 10px 10px 50px;
   font-size: .9em;
   line-height: 1.3;
 }
-/* line 282, ../_sass/styles.scss */
+/* line 305, ../_sass/styles.scss */
 .product-grid-item .caption:hover {
   text-decoration: none;
 }
-/* line 286, ../_sass/styles.scss */
+/* line 309, ../_sass/styles.scss */
 .product-grid-item .price {
   position: absolute;
   bottom: 10px;
   left: 14px;
 }
-/* line 291, ../_sass/styles.scss */
+/* line 314, ../_sass/styles.scss */
 .product-grid-item.invisible {
   opacity: 0;
   -webkit-transform: scale(0);
@@ -5604,52 +6121,52 @@ a:hover, .btn-link:hover {
   transform: scale(0);
 }
 
-/* line 302, ../_sass/styles.scss */
+/* line 325, ../_sass/styles.scss */
 .tags a {
   padding: 0 5px;
   line-height: 1.4;
 }
 
-/* line 312, ../_sass/styles.scss */
+/* line 335, ../_sass/styles.scss */
 .product-single h1 {
   font-size: 1.6em;
   font-weight: normal;
 }
-/* line 316, ../_sass/styles.scss */
+/* line 339, ../_sass/styles.scss */
 .product-single h2 {
   font-size: 1.4em;
   font-weight: normal;
   text-transform: capitalize;
 }
 
-/* line 323, ../_sass/styles.scss */
+/* line 346, ../_sass/styles.scss */
 .product-single__variants {
   display: none;
 }
 
-/* line 328, ../_sass/styles.scss */
+/* line 351, ../_sass/styles.scss */
 .site-footer h5 {
   font-size: .8em;
   font-weight: bold;
 }
-/* line 332, ../_sass/styles.scss */
+/* line 355, ../_sass/styles.scss */
 .site-footer h4 {
   font-size: 1em;
   font-weight: bold;
   text-transform: uppercase;
 }
-/* line 337, ../_sass/styles.scss */
+/* line 360, ../_sass/styles.scss */
 .site-footer a {
   display: block;
   font-size: .9em;
 }
-/* line 342, ../_sass/styles.scss */
+/* line 365, ../_sass/styles.scss */
 .site-footer li.active a {
   font-size: .9em;
   font-weight: bold;
 }
 
-/* line 350, ../_sass/styles.scss */
+/* line 373, ../_sass/styles.scss */
 .template-page h1, .template-page h2, .template-page h3, .template-page h4, .template-page h5, .template-page h6 {
   text-transform: uppercase;
 }
@@ -5657,28 +6174,28 @@ a:hover, .btn-link:hover {
 /*============================================================================
   #Rich Text Editor
 ==============================================================================*/
-/* line 368, ../_sass/styles.scss */
+/* line 391, ../_sass/styles.scss */
 .rte a {
   text-decoration: underline;
 }
-/* line 373, ../_sass/styles.scss */
+/* line 396, ../_sass/styles.scss */
 .rte h1, .rte h2, .rte h3, .rte h4, .rte h5, .rte h6 {
   margin-top: 2em;
 }
-/* line 376, ../_sass/styles.scss */
+/* line 399, ../_sass/styles.scss */
 .rte h1:first-child, .rte h2:first-child, .rte h3:first-child, .rte h4:first-child, .rte h5:first-child, .rte h6:first-child {
   margin-top: 0;
 }
-/* line 380, ../_sass/styles.scss */
+/* line 403, ../_sass/styles.scss */
 .rte h1 a, .rte h2 a, .rte h3 a, .rte h4 a, .rte h5 a, .rte h6 a {
   text-decoration: none;
 }
-/* line 389, ../_sass/styles.scss */
+/* line 412, ../_sass/styles.scss */
 .rte li {
   margin-bottom: 0.4em;
 }
 
-/* line 394, ../_sass/styles.scss */
+/* line 417, ../_sass/styles.scss */
 .rte--header {
   margin-bottom: 0;
 }

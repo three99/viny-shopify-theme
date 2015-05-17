@@ -9,6 +9,19 @@ a, .btn-link {
   }
 }
 
+.make-buttons {
+ a {
+  @extend .btn;
+  @extend .btn-default;
+ }
+}
+
+.make-buttons-xs {
+  a {
+    @extend .btn-xs;
+  }
+}
+
 .form-control {
   height: 33px;
 }
@@ -22,6 +35,16 @@ a, .btn-link {
   margin-bottom: 0;
   background-color: #FFF;
   border-color: #EEE;
+  .panel {
+    margin: 0;
+    border: 0;
+    box-shadow: none;
+    background: none;
+    border-radius: 0;
+  }
+  .navbar-collapse, .navbar-form {
+    border-color: transparent;
+  }
   @media (max-width: $screen-xs-max) {
     padding: 0 10px;
   }

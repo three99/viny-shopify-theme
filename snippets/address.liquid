@@ -1,0 +1,27 @@
+
+<div class="col-md-6">
+  <div class="panel panel-default">
+    <div class="panel-body" style="min-height:160px;">
+      <strong>
+        {{ address.first_name | capitalize }} {{ address.last_name | capitalize }}
+        {% if address == customer.default_address %}({{ 'customer.addresses.default' | t }}){% endif %}
+      </strong>
+      <p>
+        {{ address.company }}<br>
+        {{ address.street }}<br>
+        {{ address.city | capitalize }}
+        {% if address.province_code %}
+          {{ address.province_code | upcase }}
+        {% endif %}
+        {{ address.zip | upcase }}<br>
+        {{ address.country }}<br>
+        {{ address.phone }}
+      </p>
+    </div>
+    <div class="panel-footer make-buttons make-buttons-xs">
+      {{ 'customer.addresses.edit' | t | edit_customer_address_link: address.id }}
+      {{ 'customer.addresses.delete' | t | delete_customer_address_link: address.id }}
+    </div>
+  </div>
+  {% include "edit_address" %}
+</div>

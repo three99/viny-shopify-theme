@@ -1,0 +1,106 @@
+
+
+{% comment %}
+Add address form, hidden by default
+{% endcomment %}
+
+<div id="AddAddress" class="panel panel-default" style="display: none;">
+  <div class="panel-heading">
+    {{ 'customer.addresses.add' | t }}
+  </div>
+  {% form 'customer_address', customer.new_address %}
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-6 col-sm-8">
+
+          <div class="form-group">
+            <label class="sr-only" for="AddressFirstNameNew">
+              {{ 'customer.addresses.first_name' | t }}
+            </label>
+            <input type="text" placeholder="First Name" id="AddressFirstNameNew" class="form-control" name="address[first_name]" value="{{ form.first_name }}" autocapitalize="words">
+          </div>
+
+          <div class="form-group">
+            <label class="sr-only" for="AddressLastNameNew">
+              {{ 'customer.addresses.last_name' | t }}
+            </label>
+            <input type="text" placeholder="Last Name" id="AddressLastNameNew" class="form-control" name="address[last_name]" value="{{ form.last_name }}" autocapitalize="words">
+          </div>
+
+          <div class="form-group">
+            <label class="sr-only" for="AddressCompanyNew">
+              {{ 'customer.addresses.company' | t }}
+            </label>
+            <input type="text" placeholder="Company" id="AddressCompanyNew" class="form-control" name="address[company]" value="{{ form.company }}" autocapitalize="words">
+          </div>
+
+          <div class="form-group">
+            <label class="sr-only" for="AddressAddress1New">
+              {{ 'customer.addresses.address1' | t }}
+            </label>
+            <input type="text" placeholder="Address 1" id="AddressAddress1New" class="form-control" name="address[address1]" value="{{ form.address1 }}" autocapitalize="words">
+          </div>
+
+          <div class="form-group">
+            <label class="sr-only" for="AddressAddress2New">
+              {{ 'customer.addresses.address2' | t }}
+            </label>
+            <input type="text" placeholder="Address 2" id="AddressAddress2New" class="form-control" name="address[address2]" value="{{ form.address2 }}" autocapitalize="words">
+          </div>
+
+          <div class="form-group">
+            <label class="sr-only" for="AddressCityNew">
+              {{ 'customer.addresses.city' | t }}
+            </label>
+            <input type="text" placeholder="City" id="AddressCityNew" class="form-control" name="address[city]" value="{{ form.city }}" autocapitalize="words">
+          </div>
+
+          <div class="form-group">
+            <label class="sr-only" for="AddressCountryNew">
+              {{ 'customer.addresses.country' | t }}
+            </label>
+            <select id="AddressCountryNew" class="form-control" name="address[country]" data-default="{{ form.country }}">{{ country_option_tags }}</select>
+          </div>
+
+          <div class="form-group" id="AddressProvinceContainerNew" style="display:none">
+            <label class="sr-only" for="AddressProvinceNew">
+              {{ 'customer.addresses.province' | t }}
+            </label>
+            <select id="AddressProvinceNew" class="form-control" name="address[province]" data-default="{{ form.province }}"></select>
+          </div>
+
+          <div class="form-group">
+            <label class="sr-only" for="AddressZipNew">
+              {{ 'customer.addresses.zip' | t }}
+            </label>
+            <input type="text" placeholder="Zip / Postal Code" id="AddressZipNew" class="form-control" name="address[zip]" value="{{ form.zip }}" autocapitalize="characters">
+          </div>
+
+          <div class="form-group">
+            <label class="sr-only" for="AddressPhoneNew">
+              {{ 'customer.addresses.phone' | t }}
+            </label>
+            <input type="tel" placeholder="Phone" id="AddressPhoneNew" class="form-control" name="address[phone]" value="{{ form.phone }}">
+          </div>
+
+        </div>
+      </div>
+
+      <hr>
+
+      <label for="address_default_address_new" class="checkbox-inline">
+        {{ form.set_as_default_checkbox }}
+        {{ 'customer.addresses.set_default' | t }}
+      </label>
+
+    </div>
+
+    <div class="panel-footer">
+      <input type="submit" class="btn btn-default inline-block" value="{{ 'customer.addresses.add' | t }}">
+      <a href="#" class="btn btn-default" onclick="Shopify.CustomerAddress.toggleNewForm(); return false;">
+        {{ 'customer.addresses.cancel' | t }}
+      </a>
+    </div>
+
+  {% endform %}
+</div>
