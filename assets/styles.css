@@ -6187,29 +6187,34 @@ a:hover, .btn-link:hover {
   display: none;
 }
 
-/* line 356, ../_sass/styles.scss */
+/* line 350, ../_sass/styles.scss */
+#notify-me {
+  margin-left: 10px;
+}
+
+/* line 357, ../_sass/styles.scss */
 .site-footer h5 {
   font-size: .8em;
   font-weight: bold;
 }
-/* line 360, ../_sass/styles.scss */
+/* line 361, ../_sass/styles.scss */
 .site-footer h4 {
   font-size: 1em;
   font-weight: bold;
   text-transform: uppercase;
 }
-/* line 365, ../_sass/styles.scss */
+/* line 366, ../_sass/styles.scss */
 .site-footer a {
   display: block;
   font-size: .9em;
 }
-/* line 370, ../_sass/styles.scss */
+/* line 371, ../_sass/styles.scss */
 .site-footer li.active a {
   font-size: .9em;
   font-weight: bold;
 }
 
-/* line 378, ../_sass/styles.scss */
+/* line 379, ../_sass/styles.scss */
 .template-page h1, .template-page h2, .template-page h3, .template-page h4, .template-page h5, .template-page h6 {
   text-transform: uppercase;
 }
@@ -6217,28 +6222,28 @@ a:hover, .btn-link:hover {
 /*============================================================================
   #Rich Text Editor
 ==============================================================================*/
-/* line 396, ../_sass/styles.scss */
+/* line 397, ../_sass/styles.scss */
 .rte a {
   text-decoration: underline;
 }
-/* line 401, ../_sass/styles.scss */
+/* line 402, ../_sass/styles.scss */
 .rte h1, .rte h2, .rte h3, .rte h4, .rte h5, .rte h6 {
   margin-top: 2em;
 }
-/* line 404, ../_sass/styles.scss */
+/* line 405, ../_sass/styles.scss */
 .rte h1:first-child, .rte h2:first-child, .rte h3:first-child, .rte h4:first-child, .rte h5:first-child, .rte h6:first-child {
   margin-top: 0;
 }
-/* line 408, ../_sass/styles.scss */
+/* line 409, ../_sass/styles.scss */
 .rte h1 a, .rte h2 a, .rte h3 a, .rte h4 a, .rte h5 a, .rte h6 a {
   text-decoration: none;
 }
-/* line 417, ../_sass/styles.scss */
+/* line 418, ../_sass/styles.scss */
 .rte li {
   margin-bottom: 0.4em;
 }
 
-/* line 422, ../_sass/styles.scss */
+/* line 423, ../_sass/styles.scss */
 .rte--header {
   margin-bottom: 0;
 }

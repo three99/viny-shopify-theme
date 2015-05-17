@@ -350,6 +350,7 @@ a, .btn-link {
 #notify-me {
   @extend .btn;
   @extend .btn-default;
+  margin-left: 10px;
 }
 
 .site-footer {
