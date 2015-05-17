@@ -5415,7 +5415,7 @@ a:hover, .btn-link:hover {
     background: #000;
     border: 0;
     border-radius: 0;
-    opacity: .6;
+    opacity: .3;
   }
   /* line 125, ../_sass/styles.scss */
   .navbar-main .btn-default[aria-expanded=true], .navbar-main .tags a[aria-expanded=true], .tags .navbar-main a[aria-expanded=true] {
