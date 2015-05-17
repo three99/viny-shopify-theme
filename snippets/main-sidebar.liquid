@@ -16,6 +16,7 @@
             class="btn btn-default"
             data-toggle="collapse"
             data-target="#navbar-1"
+            data-parent="#accordion"
             >
             {{ 'filter.svg' | asset_url | img_tag }}
           </button>
@@ -26,6 +27,7 @@
             class="btn btn-default"
             data-toggle="collapse"
             data-target="#navbar-search"
+            data-parent="#accordion"
           >
             {{ 'search.svg' | asset_url | img_tag }}
           </button>
@@ -36,52 +38,56 @@
           </a>
         </div>
       </div>
-      <div class="visible-xs">
-        <div id="navbar-search" class="navbar-search collapse navbar-collapse">
-          {% include 'search-bar' %}
+      <div id="accordion">
+        <div class="visible-xs panel">
+          <div id="navbar-search" class="panel-collapse navbar-search collapse navbar-collapse">
+            {% include 'search-bar' %}
+          </div>
         </div>
-      </div>
-      <div class="collapse navbar-collapse" id="navbar-1">
-        <ul class="nav navbar-nav">
-          <li class="hidden-xs">
-            <a
-              href="/"
-              title="{{ 'general.breadcrumbs.home_link_title' | t }}"
-            >
-              {{ settings.home_link_label }}
-            </a>
-          </li>
-          {% for i in (1..10) %}
-            {% capture attr %}aside_block_{{i}}{% endcapture %}
-            {% if settings[attr] %}
-              {% assign linklistname = settings[attr] %}
-              {% assign linklist = linklists[linklistname] %}
-              {% unless linklist.title == blank %}
-                {% comment %} <h4>{{ linklist.title }}</h4> {% endcomment %}
-                <li class="dropdown">
-                  <a
-                    href="#"
-                    class="dropdown-toggle"
-                    data-toggle="dropdown"
-                    role="button"
-                    aria-expanded="false"
-                  >
-                    {{ linklist.title }}
-                    <span class="caret"></span>
-                  </a>
-                  {% comment %} <ul class="list-unstyled"> {% endcomment %}
-                  <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                      {% for link in linklist.links %}
-                          <li {% if link.active %}class="active"{% endif %}>
-                              <a href="{{ link.url }}">{{ link.title }}</a>
-                          </li>
-                      {% endfor %}
-                  </ul>
-                </li>
-              {% endunless %}
-            {% endif %}
-          {% endfor %}
-        </ul>
+        <div class="panel">
+        <div class="panel-collapse collapse navbar-collapse" id="navbar-1">
+          <ul class="nav navbar-nav">
+            <li class="hidden-xs">
+              <a
+                href="/"
+                title="{{ 'general.breadcrumbs.home_link_title' | t }}"
+              >
+                {{ settings.home_link_label }}
+              </a>
+            </li>
+            {% for i in (1..10) %}
+              {% capture attr %}aside_block_{{i}}{% endcapture %}
+              {% if settings[attr] %}
+                {% assign linklistname = settings[attr] %}
+                {% assign linklist = linklists[linklistname] %}
+                {% unless linklist.title == blank %}
+                  {% comment %} <h4>{{ linklist.title }}</h4> {% endcomment %}
+                  <li class="dropdown">
+                    <a
+                      href="#"
+                      class="dropdown-toggle"
+                      data-toggle="dropdown"
+                      role="button"
+                      aria-expanded="false"
+                    >
+                      {{ linklist.title }}
+                      <span class="caret"></span>
+                    </a>
+                    {% comment %} <ul class="list-unstyled"> {% endcomment %}
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                        {% for link in linklist.links %}
+                            <li {% if link.active %}class="active"{% endif %}>
+                                <a href="{{ link.url }}">{{ link.title }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                  </li>
+                {% endunless %}
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+        </div>
       </div>
     </nav>
 
