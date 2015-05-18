@@ -47,24 +47,10 @@ For more information on collection tags:
         {% for product in collection.products %}
             {% include 'product-grid-item' %}
         {% else %}
-          {% if collection.handle == 'all' %}
-            {% comment %}
-            Add default products to help with onboarding for collections/all only
-            {% endcomment %}
-            {% unless emptyState %}
-              {{ 'theme-onboarding.css' | global_asset_url | stylesheet_tag }}
-              {% assign emptyState = true %}
-            {% endunless %}
-            {% include 'onboarding-empty-collection' %}
-          {% else %}
-            {% comment %}
-            If collection exists but is empty, display message
-            {% endcomment %}
-            <div class="lead text-center empty-collection">
-              <br>
-              {{ 'collections.general.no_matches' | t }}
-            </div>
-          {% endif %}
+          <div class="lead text-center empty-collection">
+            <br>
+            {{ 'collections.general.no_matches' | t }}
+          </div>
         {% endfor %}
 
       </div>
