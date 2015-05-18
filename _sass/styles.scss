@@ -104,6 +104,9 @@ a, .btn-link {
     height: inherit;
     @media (max-width: $screen-xs-max) {
       padding: 15px 15px 10px;
+      display: block;
+      float: none;
+      text-align: center;
     }
   }
   .navbar-form {
