@@ -64,13 +64,13 @@
       <span class="tags">
         {% for tag in product.tags %}
           {% capture name %}{{ tag }}{% endcapture %}
-          {% if name != '12" Import' %}
+          {% unless shop.types contains tag %}
             {% if current_tags contains tag %}
               {{ tag | link_to_remove_tag: tag }}
             {% else %}
               {{ tag | link_to_tag: tag }}
             {% endif %}
-          {% endif %}
+          {% endunless %}
         {% endfor %}
       </span>
 
