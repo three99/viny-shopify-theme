@@ -110,7 +110,7 @@
             </span>
           </div>
           {% unless collection.title == "Products" %}
-            <form class="navbar-form pull-right">
+            <form class="navbar-form navbar-right">
               <select id="filter" class="form-control input-sm">
                 <option value="">All Formats</option>
                 {% for tag in collection.all_tags %}
@@ -125,11 +125,16 @@
               </select>
             </form>
           {% endunless %}
+          {% include 'collection-sorting' %}
         </nav>
         <script>
-          $("#filter").on("change", function(){
+          var $filter = $("#filter");
+          $filter.on("change", function(){
             location.href = "/collections/{{collection.handle}}/" + $(this).val();
           });
+          if ($filter.find("option").length == 1) {
+            $filter.parent().remove();
+          }
         </script>
       {% endunless %}
     {% endif %}

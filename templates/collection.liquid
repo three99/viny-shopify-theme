@@ -16,7 +16,8 @@ For more information on collection tags:
   {% comment %} <div class="row"> {% endcomment %}
     {% comment %} <div class="col-md-10 col-md-push-2"> {% endcomment %}
 
-      <div class="section-header hidden">
+      {% comment %}
+      <div class="section-header">
         <div class="section-header__right">
           {% include 'collection-sorting' %}
         </div>
@@ -29,6 +30,7 @@ For more information on collection tags:
           </div>
         </header>
       {% endif %}
+      {% endcomment %}
 
       {% comment %}
       Use class grid-uniform to have evenly sized columns clear
