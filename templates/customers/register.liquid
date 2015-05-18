@@ -5,9 +5,12 @@
   {% include "main-sidebar" %}
 </div>
 
+<div class="page-header">
+  <h1>{{ 'customer.register.title' | t }}</h1>
+</div>
+
   <div class="row">
     <div class="col-md-4">
-      <h1>{{ 'customer.register.title' | t }}</h1>
       {% form 'create_customer' %}
         <div class="form-group">
           {{ form.errors | default_errors }}
