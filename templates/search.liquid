@@ -19,9 +19,7 @@
 {% assign respond_js_secret_key = shop.domain | md5 %}
 {% unless search.terms == respond_js_secret_key %}
 
-<div class="visible-xs">
   {% include "main-nav" %}
-</div>
 
   {% comment %} <div class="grid"> {% endcomment %}
     {% comment %} <div class="grid__item large--two-thirds push--large--one-sixth"> {% endcomment %}
