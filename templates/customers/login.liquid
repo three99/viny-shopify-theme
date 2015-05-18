@@ -2,7 +2,11 @@
 {% layout settings.customer_layout %}
 
 <div class="visible-xs">
-  {% include "main-sidebar" %}
+  {% include "main-nav", current: "user" %}
+</div>
+
+<div class="page-header">
+  <h1>{{ 'customer.login.title' | t }}</h1>
 </div>
 
   <div class="row">
@@ -25,7 +29,6 @@
 
       <div id="CustomerLoginForm" class="form-vertical">
 
-        <h1>{{ 'customer.login.title' | t }}</h1>
 
         {% form 'customer_login' %}
 
@@ -45,7 +48,7 @@
             <label for="CustomerPassword" class="hidden-label sr-only">{{ 'customer.login.password' | t }}</label>
             <input type="password" value="" name="customer[password]" id="CustomerPassword" class="input-full{% if form.errors contains 'password' %} error{% endif %} form-control" placeholder="{{ 'customer.login.password' | t }}">
 
-            <p style="margin-top: 10px;">
+            <p style="margin-top:10px;" class="text-right">
               <a href="#recover" id="RecoverPassword">{{ 'customer.login.forgot_password' | t }}</a>
             </p>
 

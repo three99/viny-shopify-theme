@@ -8,7 +8,7 @@
 {% endcomment %}
 
 <div class="visible-xs">
-  {% include "main-sidebar", current: "cart" %}
+  {% include "main-nav", current: "cart" %}
 </div>
 
 <div class="page-header">
@@ -94,7 +94,7 @@
 
           <br><br>
           <small>
-            <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="cart__remove">
+            <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="btn btn-default btn-xs">
               {{ 'cart.general.remove' | t }}
             </a>
           </small>
@@ -139,6 +139,7 @@
     </div>
     <hr>
     <div class="text-right">
+      <a href="/" class="btn btn-default">Continue Shopping</a>
       <input type="submit" name="update" class="btn btn-default update-cart" value="{{ 'cart.general.update' | t }}">
       <input type="submit" name="checkout" class="btn btn-default" value="{{ 'cart.general.checkout' | t }}">
       {% if additional_checkout_buttons %}

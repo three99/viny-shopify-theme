@@ -1,23 +1,25 @@
 <!-- /snippets/collection-sorting.liquid -->
-<div class="form-horizontal">
-  <label for="SortBy">{{ 'collections.sorting.title' | t }}</label>
-  <select name="SortBy" id="SortBy">
-    <option value="manual">{{ 'collections.sorting.featured' | t }}</option>
-    <option value="best-selling">{{ 'collections.sorting.best_selling' | t }}</option>
-    <option value="title-ascending">{{ 'collections.sorting.az' | t }}</option>
-    <option value="title-descending">{{ 'collections.sorting.za' | t }}</option>
-    <option value="price-ascending">{{ 'collections.sorting.price_ascending' | t }}</option>
-    <option value="price-descending">{{ 'collections.sorting.price_descending' | t }}</option>
-    <option value="created-descending">{{ 'collections.sorting.date_descending' | t }}</option>
-    <option value="created-ascending">{{ 'collections.sorting.date_ascending' | t }}</option>
-  </select>
+<div class="navbar-form navbar-right">
+  <div class="form-group">
+    <label for="SortBy">{{ 'collections.sorting.title' | t }}</label>
+    <select name="SortBy" id="SortBy" class="form-control input-sm">
+      <option value="manual">{{ 'collections.sorting.featured' | t }}</option>
+      <option value="best-selling">{{ 'collections.sorting.best_selling' | t }}</option>
+      <option value="title-ascending">{{ 'collections.sorting.az' | t }}</option>
+      <option value="title-descending">{{ 'collections.sorting.za' | t }}</option>
+      <option value="price-ascending">{{ 'collections.sorting.price_ascending' | t }}</option>
+      <option value="price-descending">{{ 'collections.sorting.price_descending' | t }}</option>
+      <option value="created-descending">{{ 'collections.sorting.date_descending' | t }}</option>
+      <option value="created-ascending">{{ 'collections.sorting.date_ascending' | t }}</option>
+    </select>
+  </div>
 </div>
 
 {% comment %}
   Toggle between collection.liquid and collection.list.liquid with the
   ?view= parameter.
 {% endcomment %}
-<div class="collection-view">
+<div class="collection-view hidden">
   <button type="button" title="{{ 'collections.general.grid_view' | t }}" class="change-view{% unless template contains 'list' %} change-view--active{% endunless %}" data-view="grid">
     <span class="icon-fallback-text">
       <span class="icon icon-grid-view" aria-hidden="true"></span>

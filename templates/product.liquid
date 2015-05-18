@@ -7,7 +7,7 @@
     - http://schema.org/docs/gs.html
 {% endcomment %}
 
-{% include "main-sidebar" %}
+{% include "main-nav" %}
 
 <div itemscope itemtype="http://schema.org/Product">
 
@@ -56,11 +56,11 @@
       <hr>
       <strong>Label:</strong> <a href="{{ product.vendor | url_for_vendor }}">{{ product.vendor }}</a><br>
       <strong>Format:</strong> <a href="{{ product.type | url_for_type }}">{{ product.type }}</a><br>
-      <strong>Cat:</strong> {{ product.variants.first.sku }}<br>
+      <strong>Cat:</strong> {{ product.variants.first.sku }}<br><br>
       {% comment %}
       Tags
       {% endcomment %}
-      <strong>Tags:</strong>
+      
       <span class="tags">
         {% for tag in product.tags %}
           {% capture name %}{{ tag }}{% endcapture %}
