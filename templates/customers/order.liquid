@@ -5,18 +5,19 @@
   {% include "main-sidebar" %}
 </div>
 
-<h1>{{ 'customer.account.title' | t }}</h1>
+<div class="page-header">
+  <h1>{{ 'customer.account.title' | t }}</h1>
+</div
 
 <hr class="hr--small">
 
-<p><a href="/account">{{ 'customer.account.return' | t }}</a></p>
+<p><a class="btn btn-default" href="/account">{{ 'customer.account.return' | t }}</a></p>
 
-<div class="grid">
-
-  <div class="grid__item two-thirds medium-down--one-whole">
-    <h4>{{ 'customer.order.title' | t: name: order.name }}</h4>
-
-    <p>{{ 'customer.order.date' | t: date: order.created_at | date: "%B %d, %Y %I:%M%p" }}</p>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    {{ 'customer.order.title' | t: name: order.name }}
+    <span class="pull-right">{{ 'customer.order.date' | t: date: order.created_at | date: "%B %d, %Y %I:%M%p" }}</span>
+  </div>
 
     {% if order.cancelled %}
       <div class="errors">
@@ -26,8 +27,8 @@
       </div>
     {% endif %}
 
-    <div class="table-wrap">
-      <table class="full">
+    <div class="table-responsive">
+      <table class="table">
         <thead>
           <tr>
             <th>{{ 'customer.order.product' | t }}</th>
@@ -60,7 +61,7 @@
           {% endfor %}
         </tbody>
         <tfoot>
-          <tr>
+          <tr class="active">
             <td colspan="4">{{ 'customer.order.subtotal' | t }}</td>
             <td class="text-right">{{ order.subtotal_price | money }}</td>
           </tr>
@@ -73,7 +74,7 @@
           {% endfor %}
 
           {% for shipping_method in order.shipping_methods %}
-          <tr>
+          <tr class="active">
             <td colspan="4">{{ 'customer.order.shipping' | t }} ({{ shipping_method.title }})</td>
             <td class="text-right">{{ shipping_method.price | money }}</td>
           </tr>
@@ -86,7 +87,7 @@
             </tr>
           {% endfor %}
 
-          <tr>
+          <tr class="warning">
             <td colspan="4"><strong>{{ 'customer.order.total' | t }}</strong></td>
             <td class="text-right"><strong>{{ order.total_price | money }} {{ order.currency }}</strong></td>
           </tr>
