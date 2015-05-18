@@ -138,6 +138,8 @@
           <button type="submit" name="add" id="AddToCart" class="btn btn-default">
             <span id="AddToCartText">{{ 'products.product.add_to_cart' | t }}</span>
           </button>
+          <script data-product="{{ product | json | escape }}" id="out-of-stock" src="//setup.shopapps.io/out-of-stock/script/pbvinyl.js"></script>
+
         </form>
 
       </div>
