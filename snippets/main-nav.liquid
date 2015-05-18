@@ -110,8 +110,8 @@
             </span>
           </div>
           {% if collection.products_count > 0 %}
-            {% unless collection.title == "Products" %}
-              <form class="navbar-form navbar-right">
+            <form class="navbar-form navbar-right">
+              {% unless collection.title == "Products" %}
                 <select id="filter" class="form-control input-sm">
                   <option value="">All Formats</option>
                   {% for tag in collection.all_tags %}
@@ -124,19 +124,61 @@
                     {% endif %}
                   {% endfor %}
                 </select>
-              </form>
-            {% endunless %}
+              {% elsif current_tags.size == 1 %}
+                <select id="addtag" class="form-control input-sm">
+                  <option value="">All Formats</option>
+                  {% for product in collection.products %}
+                    {% for tag in product.tags %}
+                      {% if collection.all_types contains tag %}
+                        {% if current_tags contains tag %}
+                          <option value="{{ tag | handle }}" selected>{{ tag }}</option>
+                        {% else %}
+                          <option value="{{ tag | handle }}">{{ tag }}</option>
+                        {% endif %}
+                      {% endif %}
+                    {% endfor %}
+                  {% endfor %}
+                </select>
+              {% else %}
+                {% for tag in current_tags %}
+                  {% if collection.all_types contains tag %}
+                    <span class="make-buttons make-buttons-sm">
+                      {{ "All Formats" | link_to_remove_tag: tag }}
+                    </span>
+                  {% endif %}
+                {% endfor %}
+              {% endunless %}
+            </form>
             {% include 'collection-sorting' %}
           {% endif %}
         </nav>
         <script>
-          var $filter = $("#filter");
-          $filter.on("change", function(){
-            location.href = "/collections/{{collection.handle}}/" + $(this).val();
-          });
-          if ($filter.find("option").length == 1) {
-            $filter.parent().remove();
-          }
+          $(function(){
+            var $filter = $("#filter");
+            $filter.on("change", function(){
+              location.href = "/collections/{{collection.handle}}/" + $(this).val();
+            });
+            if ($filter.find("option").length == 1) {
+              $filter.parent().remove();
+            }
+            var $addtag = $("#addtag");
+            var qtags = [];
+            $addtag.find("option").each(function(){
+              var $option = $(this);
+              var value = $option.attr("value");
+              if (qtags.indexOf(value) != -1) {
+                $option.remove();
+              } else {
+                qtags.push(value);
+              }
+            });
+            $addtag.on("change", function(){
+              location.href = "/collections/all/{{ current_tags | handle | join: '+' }}+" + $(this).val();
+            });
+            if ($addtag.find("option").length == 1) {
+              $filter.parent().remove();
+            }
+          })
         </script>
       {% endunless %}
     {% endif %}

@@ -22,6 +22,12 @@ a, .btn-link {
   }
 }
 
+.make-buttons-sm {
+  a {
+    @extend .btn-sm;
+  }
+}
+
 .form-control {
   height: 33px;
 }
