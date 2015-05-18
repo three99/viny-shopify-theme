@@ -109,23 +109,25 @@
               {% endunless %}
             </span>
           </div>
-          {% unless collection.title == "Products" %}
-            <form class="navbar-form navbar-right">
-              <select id="filter" class="form-control input-sm">
-                <option value="">All Formats</option>
-                {% for tag in collection.all_tags %}
-                  {% if collection.all_types contains tag %}
-                    {% if current_tags contains tag %}
-                      <option value="{{ tag | handle }}" selected>{{ tag }}</option>
-                    {% else %}
-                      <option value="{{ tag | handle }}">{{ tag }}</option>
+          {% if collection.products_count > 0 %}
+            {% unless collection.title == "Products" %}
+              <form class="navbar-form navbar-right">
+                <select id="filter" class="form-control input-sm">
+                  <option value="">All Formats</option>
+                  {% for tag in collection.all_tags %}
+                    {% if collection.all_types contains tag %}
+                      {% if current_tags contains tag %}
+                        <option value="{{ tag | handle }}" selected>{{ tag }}</option>
+                      {% else %}
+                        <option value="{{ tag | handle }}">{{ tag }}</option>
+                      {% endif %}
                     {% endif %}
-                  {% endif %}
-                {% endfor %}
-              </select>
-            </form>
-          {% endunless %}
-          {% include 'collection-sorting' %}
+                  {% endfor %}
+                </select>
+              </form>
+            {% endunless %}
+            {% include 'collection-sorting' %}
+          {% endif %}
         </nav>
         <script>
           var $filter = $("#filter");
