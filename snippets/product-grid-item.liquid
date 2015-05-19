@@ -23,6 +23,10 @@ Example
     {% assign on_sale = true %}
 {% endif %}
 
+{% capture sale_percent %}
+  {{ product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by: product.compare_at_price_max | round }}
+{% endcapture %}
+
 {% assign sold_out = true %}
 {% if product.available %}
     {% comment %}
@@ -32,7 +36,12 @@ Example
 {% endif %}
 
 <div class="product-grid-item col-md-2 col-sm-3 col-xs-6">
-  <div class="thumbnail">
+  <div
+     class="thumbnail {% if on_sale %}onsale{% endif %}"
+     {% if on_sale %}
+       data-sale = {{ sale_percent }}
+     {% endif %}  
+   >
     {% comment %}
     Link to your product with the 'within: collection' filter for the link to be aware of the collection.
     This allows you to create collection-based navigation on the product page.

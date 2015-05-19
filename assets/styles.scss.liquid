@@ -8,20 +8,21 @@
 
 {% if settings.body_main_google_font == 'None' %}
   {% assign bodyfont = settings.body_main_font %}
-  {% assign headersfont = settings.headers_main_font %}
+  {% assign headfont = settings.headers_main_font %}
 {% else %}
   {% assign bodyfont = settings.body_main_google_font %}
-  {% assign headersfont = settings.headers_main_google_font %}
+  {% assign headfont = settings.headers_main_google_font %}
 {% endif %}
 
-
+$bodyfont: {{ bodyfont }}, sans-serif;
+$headfont: {{ headfont }}, sans-serif;
 
 body {
-  font-family: {{ bodyfont }}, sans-serif;
+  font-family: $bodyfont;
 }
 
 h1,h2,h3,h4,h5,h6 {
-  font-family: {{ headersfont }}, sans-serif;
+  font-family: $headfont;
 }
 
 .nav-bar {
@@ -34,13 +35,13 @@ h1,h2,h3,h4,h5,h6 {
 
 .nav-pills {
   > li {
-    font-family: {{ headersfont }}, sans-serif;
+    font-family: $headfont;
   }
 }
 
 .navbar {
   li > a {
     font-size: .9em;
-    font-family: {{ headersfont }}, sans-serif;
+    font-family: $headfont;
   }
 }
