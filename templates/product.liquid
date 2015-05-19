@@ -113,13 +113,12 @@
         {% endcomment %}
         <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm" class="form-vertical">
 
-          <span id="ProductPrice" class="lead" itemprop="price">
+          <p id="ProductPrice" class="lead" itemprop="price">
             {% if on_sale %}
               <strong>{{ 'products.product.on_sale' | t }}</strong>
             {% endif %}
             {{ current_variant.price | money }}
-          </span>
-          <br>
+          </p>
 
           {% if on_sale %}
             <p id="ComparePrice">
