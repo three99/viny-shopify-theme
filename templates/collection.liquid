@@ -26,9 +26,9 @@ For more information on collection tags:
 
       {% if collection.description != blank %}
         <div class="well">
-          <div class="col-md-6">
+
             {{ collection.description }}
-          </div>
+          
         </div>
       {% endif %}
 
@@ -36,14 +36,14 @@ For more information on collection tags:
       Use class grid-uniform to have evenly sized columns clear
       each other properly at each breakpoint.
       {% endcomment %}
-      
+
       <div id="products-grid" class="row">
 
         {% comment %}
         Loop through our products in the current collection.
         See the snippet 'product-grid-item' for the layout.
         {% endcomment %}
-       
+
         {% for product in collection.products %}
             {% include 'product-grid-item' %}
         {% else %}
@@ -60,4 +60,3 @@ For more information on collection tags:
       {% endif %}
 
 {% endpaginate %}
-
