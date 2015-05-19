@@ -6196,38 +6196,56 @@ a:hover, .btn-link:hover {
 }
 
 /* line 356, ../_sass/styles.scss */
+.onsale {
+  position: relative;
+  overflow: hidden;
+}
+/* line 359, ../_sass/styles.scss */
+.onsale:after {
+  transform: rotate(-40deg);
+  content: attr(data-sale) "% OFF";
+  position: absolute;
+  top: 17px;
+  left: -44px;
+  background: red;
+  padding: 1px 50px 0;
+  font-size: .9em;
+  color: #FFF;
+}
+
+/* line 372, ../_sass/styles.scss */
 .product-single__variants {
   display: none;
 }
 
-/* line 360, ../_sass/styles.scss */
+/* line 376, ../_sass/styles.scss */
 #notify-me {
   margin-left: 10px;
 }
 
-/* line 367, ../_sass/styles.scss */
+/* line 383, ../_sass/styles.scss */
 .site-footer h5 {
   font-size: .8em;
   font-weight: bold;
 }
-/* line 371, ../_sass/styles.scss */
+/* line 387, ../_sass/styles.scss */
 .site-footer h4 {
   font-size: 1em;
   font-weight: bold;
   text-transform: uppercase;
 }
-/* line 376, ../_sass/styles.scss */
+/* line 392, ../_sass/styles.scss */
 .site-footer a {
   display: block;
   font-size: .9em;
 }
-/* line 381, ../_sass/styles.scss */
+/* line 397, ../_sass/styles.scss */
 .site-footer li.active a {
   font-size: .9em;
   font-weight: bold;
 }
 
-/* line 389, ../_sass/styles.scss */
+/* line 405, ../_sass/styles.scss */
 .template-page h1, .template-page h2, .template-page h3, .template-page h4, .template-page h5, .template-page h6 {
   text-transform: uppercase;
 }
@@ -6235,28 +6253,28 @@ a:hover, .btn-link:hover {
 /*============================================================================
   #Rich Text Editor
 ==============================================================================*/
-/* line 407, ../_sass/styles.scss */
+/* line 423, ../_sass/styles.scss */
 .rte a {
   text-decoration: underline;
 }
-/* line 412, ../_sass/styles.scss */
+/* line 428, ../_sass/styles.scss */
 .rte h1, .rte h2, .rte h3, .rte h4, .rte h5, .rte h6 {
   margin-top: 2em;
 }
-/* line 415, ../_sass/styles.scss */
+/* line 431, ../_sass/styles.scss */
 .rte h1:first-child, .rte h2:first-child, .rte h3:first-child, .rte h4:first-child, .rte h5:first-child, .rte h6:first-child {
   margin-top: 0;
 }
-/* line 419, ../_sass/styles.scss */
+/* line 435, ../_sass/styles.scss */
 .rte h1 a, .rte h2 a, .rte h3 a, .rte h4 a, .rte h5 a, .rte h6 a {
   text-decoration: none;
 }
-/* line 428, ../_sass/styles.scss */
+/* line 444, ../_sass/styles.scss */
 .rte li {
   margin-bottom: 0.4em;
 }
 
-/* line 433, ../_sass/styles.scss */
+/* line 449, ../_sass/styles.scss */
 .rte--header {
   margin-bottom: 0;
 }

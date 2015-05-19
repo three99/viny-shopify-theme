@@ -353,6 +353,22 @@ a, .btn-link {
   }
 }
 
+.onsale {
+  position: relative;
+  overflow: hidden;
+  &:after {
+    transform: rotate(-40deg);
+    content: attr(data-sale) "% OFF" ;
+    position: absolute;
+    top: 17px;
+    left: -44px;
+    background: red;
+    padding: 1px 50px 0;
+    font-size: .9em;
+    color: #FFF;
+  }
+}
+
 .product-single__variants {
   display: none;
 }
