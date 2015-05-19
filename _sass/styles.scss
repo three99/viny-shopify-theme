@@ -372,7 +372,6 @@ a, .btn-link {
   }
   &.thumbnail {
     &:after {
-      content: attr(data-sale) "%";
       left: 0;
       padding-left: 5px;
       padding-right: 5px;
