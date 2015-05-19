@@ -40,7 +40,7 @@ Example
      class="thumbnail {% if on_sale %}onsale{% endif %}"
      {% if on_sale %}
        data-sale = {{ sale_percent }}
-     {% endif %}  
+     {% endif %}
    >
     {% comment %}
     Link to your product with the 'within: collection' filter for the link to be aware of the collection.
@@ -93,9 +93,12 @@ Example
         {% if sold_out %}
             <br><strong>{{ 'products.product.sold_out' | t }}</strong>
         {% endif %}
+        {% comment %}
+        No need to show original price in grid.
         {% if on_sale %}
             <br><s>{{ product.compare_at_price | money }}</s>
         {% endif %}
+        {% endcomment %}
       </span>
     </a>
 
