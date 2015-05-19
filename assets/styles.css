@@ -6215,46 +6215,45 @@ a:hover, .btn-link:hover {
 }
 /* line 374, ../_sass/styles.scss */
 .onsale.thumbnail:after {
-  content: attr(data-sale) "%";
   left: 0;
   padding-left: 5px;
   padding-right: 5px;
   border-radius: 0 0 5px 0;
 }
 
-/* line 384, ../_sass/styles.scss */
+/* line 383, ../_sass/styles.scss */
 .product-single__variants {
   display: none;
 }
 
-/* line 388, ../_sass/styles.scss */
+/* line 387, ../_sass/styles.scss */
 #notify-me {
   margin-left: 10px;
 }
 
-/* line 395, ../_sass/styles.scss */
+/* line 394, ../_sass/styles.scss */
 .site-footer h5 {
   font-size: .8em;
   font-weight: bold;
 }
-/* line 399, ../_sass/styles.scss */
+/* line 398, ../_sass/styles.scss */
 .site-footer h4 {
   font-size: 1em;
   font-weight: bold;
   text-transform: uppercase;
 }
-/* line 404, ../_sass/styles.scss */
+/* line 403, ../_sass/styles.scss */
 .site-footer a {
   display: block;
   font-size: .9em;
 }
-/* line 409, ../_sass/styles.scss */
+/* line 408, ../_sass/styles.scss */
 .site-footer li.active a {
   font-size: .9em;
   font-weight: bold;
 }
 
-/* line 417, ../_sass/styles.scss */
+/* line 416, ../_sass/styles.scss */
 .template-page h1, .template-page h2, .template-page h3, .template-page h4, .template-page h5, .template-page h6 {
   text-transform: uppercase;
 }
@@ -6262,28 +6261,28 @@ a:hover, .btn-link:hover {
 /*============================================================================
   #Rich Text Editor
 ==============================================================================*/
-/* line 435, ../_sass/styles.scss */
+/* line 434, ../_sass/styles.scss */
 .rte a {
   text-decoration: underline;
 }
-/* line 440, ../_sass/styles.scss */
+/* line 439, ../_sass/styles.scss */
 .rte h1, .rte h2, .rte h3, .rte h4, .rte h5, .rte h6 {
   margin-top: 2em;
 }
-/* line 443, ../_sass/styles.scss */
+/* line 442, ../_sass/styles.scss */
 .rte h1:first-child, .rte h2:first-child, .rte h3:first-child, .rte h4:first-child, .rte h5:first-child, .rte h6:first-child {
   margin-top: 0;
 }
-/* line 447, ../_sass/styles.scss */
+/* line 446, ../_sass/styles.scss */
 .rte h1 a, .rte h2 a, .rte h3 a, .rte h4 a, .rte h5 a, .rte h6 a {
   text-decoration: none;
 }
-/* line 456, ../_sass/styles.scss */
+/* line 455, ../_sass/styles.scss */
 .rte li {
   margin-bottom: 0.4em;
 }
 
-/* line 461, ../_sass/styles.scss */
+/* line 460, ../_sass/styles.scss */
 .rte--header {
   margin-bottom: 0;
 }
