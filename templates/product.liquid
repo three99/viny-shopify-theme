@@ -20,10 +20,15 @@
     Get first variant, or deep linked one
   {% endcomment %}
   {% assign current_variant = product.selected_or_first_available_variant %}
-  {% assign on_sale = product.compare_at_price_max > product.price %}
-  {% capture sale_percent %}
-    {{ product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by: product.compare_at_price_max | round }}
-  {% endcapture %}
+  {% if product.compare_at_price > product.price %}
+    {% comment %}
+        Check if the product is on sale and set a variable to be used below.
+    {% endcomment %}
+    {% assign on_sale = true %}
+    {% capture sale_percent %}
+      {{ product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by: product.compare_at_price_max | round }}
+    {% endcapture %}
+  {% endif %}
   
   <div class="row product-single">
     <div class="col-sm-4">
