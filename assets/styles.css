@@ -6264,31 +6264,32 @@ a:hover, .btn-link:hover {
 .well {
   box-shadow: none;
   border: 0;
+  padding: 15px;
 }
 
-/* line 399, ../_sass/styles.scss */
+/* line 400, ../_sass/styles.scss */
 .site-footer h5 {
   font-size: .8em;
   font-weight: bold;
 }
-/* line 403, ../_sass/styles.scss */
+/* line 404, ../_sass/styles.scss */
 .site-footer h4 {
   font-size: 1em;
   font-weight: bold;
   text-transform: uppercase;
 }
-/* line 408, ../_sass/styles.scss */
+/* line 409, ../_sass/styles.scss */
 .site-footer a {
   display: block;
   font-size: .9em;
 }
-/* line 413, ../_sass/styles.scss */
+/* line 414, ../_sass/styles.scss */
 .site-footer li.active a {
   font-size: .9em;
   font-weight: bold;
 }
 
-/* line 421, ../_sass/styles.scss */
+/* line 422, ../_sass/styles.scss */
 .template-page h1, .template-page h2, .template-page h3, .template-page h4, .template-page h5, .template-page h6 {
   text-transform: uppercase;
 }
@@ -6296,28 +6297,28 @@ a:hover, .btn-link:hover {
 /*============================================================================
   #Rich Text Editor
 ==============================================================================*/
-/* line 439, ../_sass/styles.scss */
+/* line 440, ../_sass/styles.scss */
 .rte a {
   text-decoration: underline;
 }
-/* line 444, ../_sass/styles.scss */
+/* line 445, ../_sass/styles.scss */
 .rte h1, .rte h2, .rte h3, .rte h4, .rte h5, .rte h6 {
   margin-top: 2em;
 }
-/* line 447, ../_sass/styles.scss */
+/* line 448, ../_sass/styles.scss */
 .rte h1:first-child, .rte h2:first-child, .rte h3:first-child, .rte h4:first-child, .rte h5:first-child, .rte h6:first-child {
   margin-top: 0;
 }
-/* line 451, ../_sass/styles.scss */
+/* line 452, ../_sass/styles.scss */
 .rte h1 a, .rte h2 a, .rte h3 a, .rte h4 a, .rte h5 a, .rte h6 a {
   text-decoration: none;
 }
-/* line 460, ../_sass/styles.scss */
+/* line 461, ../_sass/styles.scss */
 .rte li {
   margin-bottom: 0.4em;
 }
 
-/* line 465, ../_sass/styles.scss */
+/* line 466, ../_sass/styles.scss */
 .rte--header {
   margin-bottom: 0;
 }
