@@ -84,7 +84,9 @@
         {% for tag in product.tags %}
           {% capture name %}{{ tag }}{% endcapture %}
           {% unless shop.types contains tag %}
-            <a href="/collections/all/{{ tag | handle }}">{{ tag }}</a>
+            {% unless tag.first == "_" %}
+              <a href="/collections/all/{{ tag | handle }}">{{ tag }}</a>
+            {% endunless %}
           {% endunless %}
         {% endfor %}
       </span>
