@@ -271,7 +271,7 @@ a, .btn-link {
 }
 
 .img-thumbnail {
-  border-color: #EEE;
+  border-color: #E5E5E5;
 }
 
 .product-grid-item {
@@ -302,7 +302,7 @@ a, .btn-link {
     width: 100%;
     // min-height: 280px;
     cursor: pointer;
-    border-color: #EEE;
+    border-color: #E5E5E5;
     position: relative;
   }
   .release-title {
@@ -396,9 +396,10 @@ a, .btn-link {
 }
 
 .well {
-  box-shadow: none;
-  border: 0;
   padding: 15px;
+  border: 1px solid #E5E5E5;
+  box-shadow: inset 0 0 0 1px #FBFBFB;
+  background-color: #F5F5F5;
 }
 
 .site-footer {
