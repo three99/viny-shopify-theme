@@ -206,6 +206,21 @@ a, .btn-link {
   > li {
     text-transform: capitalize;
   }
+  .btn-group {
+    border-left: 1px solid #E5E5E5;
+    .btn {
+      line-height: 1;
+      padding: 10px 10px 7px;
+      background: #FBFBFB;
+      color: #AAA;
+      font-weight: bold;
+      text-decoration: none !important;
+      &:hover {
+        color: #777;
+        background: #FFF;
+      }
+    }
+  }
 }
 
 .nav-pills {
