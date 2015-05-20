@@ -6215,26 +6215,27 @@ a:hover, .btn-link:hover {
 .tags a {
   padding: 0 5px;
   line-height: 1.4;
+  margin-bottom: 5px;
 }
 
-/* line 347, ../_sass/styles.scss */
+/* line 348, ../_sass/styles.scss */
 .product-single h1 {
   font-size: 1.6em;
   font-weight: normal;
 }
-/* line 351, ../_sass/styles.scss */
+/* line 352, ../_sass/styles.scss */
 .product-single h2 {
   font-size: 1.4em;
   font-weight: normal;
   text-transform: capitalize;
 }
 
-/* line 358, ../_sass/styles.scss */
+/* line 359, ../_sass/styles.scss */
 .onsale {
   position: relative;
   overflow: hidden;
 }
-/* line 361, ../_sass/styles.scss */
+/* line 362, ../_sass/styles.scss */
 .onsale:after {
   content: attr(data-sale) "% OFF";
   position: absolute;
@@ -6247,7 +6248,7 @@ a:hover, .btn-link:hover {
   text-align: center;
   border-radius: 0 0 5px 5px;
 }
-/* line 376, ../_sass/styles.scss */
+/* line 377, ../_sass/styles.scss */
 .onsale.thumbnail:after {
   left: 0;
   padding-left: 5px;
@@ -6255,46 +6256,46 @@ a:hover, .btn-link:hover {
   border-radius: 0 0 5px 0;
 }
 
-/* line 385, ../_sass/styles.scss */
+/* line 386, ../_sass/styles.scss */
 .product-single__variants {
   display: none;
 }
 
-/* line 389, ../_sass/styles.scss */
+/* line 390, ../_sass/styles.scss */
 #notify-me {
   margin-left: 10px;
 }
 
-/* line 395, ../_sass/styles.scss */
+/* line 396, ../_sass/styles.scss */
 .well {
   box-shadow: none;
   border: 0;
   padding: 15px;
 }
 
-/* line 402, ../_sass/styles.scss */
+/* line 403, ../_sass/styles.scss */
 .site-footer h5 {
   font-size: .8em;
   font-weight: bold;
 }
-/* line 406, ../_sass/styles.scss */
+/* line 407, ../_sass/styles.scss */
 .site-footer h4 {
   font-size: 1em;
   font-weight: bold;
   text-transform: uppercase;
 }
-/* line 411, ../_sass/styles.scss */
+/* line 412, ../_sass/styles.scss */
 .site-footer a {
   display: block;
   font-size: .9em;
 }
-/* line 416, ../_sass/styles.scss */
+/* line 417, ../_sass/styles.scss */
 .site-footer li.active a {
   font-size: .9em;
   font-weight: bold;
 }
 
-/* line 424, ../_sass/styles.scss */
+/* line 425, ../_sass/styles.scss */
 .template-page h1, .template-page h2, .template-page h3, .template-page h4, .template-page h5, .template-page h6 {
   text-transform: uppercase;
 }
@@ -6302,28 +6303,28 @@ a:hover, .btn-link:hover {
 /*============================================================================
   #Rich Text Editor
 ==============================================================================*/
-/* line 442, ../_sass/styles.scss */
+/* line 443, ../_sass/styles.scss */
 .rte a {
   text-decoration: underline;
 }
-/* line 447, ../_sass/styles.scss */
+/* line 448, ../_sass/styles.scss */
 .rte h1, .rte h2, .rte h3, .rte h4, .rte h5, .rte h6 {
   margin-top: 2em;
 }
-/* line 450, ../_sass/styles.scss */
+/* line 451, ../_sass/styles.scss */
 .rte h1:first-child, .rte h2:first-child, .rte h3:first-child, .rte h4:first-child, .rte h5:first-child, .rte h6:first-child {
   margin-top: 0;
 }
-/* line 454, ../_sass/styles.scss */
+/* line 455, ../_sass/styles.scss */
 .rte h1 a, .rte h2 a, .rte h3 a, .rte h4 a, .rte h5 a, .rte h6 a {
   text-decoration: none;
 }
-/* line 463, ../_sass/styles.scss */
+/* line 464, ../_sass/styles.scss */
 .rte li {
   margin-bottom: 0.4em;
 }
 
-/* line 468, ../_sass/styles.scss */
+/* line 469, ../_sass/styles.scss */
 .rte--header {
   margin-bottom: 0;
 }
