@@ -169,6 +169,9 @@
           <br>
           {% if pre_order %}
             <p class="lead">This item is not currently available but it is available for pre-order.</p>
+            {% if product.variants.first.option2 != 0 %}
+              {{ product.variants.first.option2 }}<br>
+            {% endif %}
           {% endif %}
 
           <button type="submit" name="add" id="AddToCart" class="btn btn-default">
