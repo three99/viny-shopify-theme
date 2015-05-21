@@ -4,9 +4,29 @@
 @import "font-awesome.min.css";
 
 a, .btn-link {
-  color: #111;
-  &:hover {
-    color: #111;
+  &:link,
+  &:visited,
+  &:hover,
+  &:active,
+  &:focus {
+    color: #333;
+  }
+}
+
+a.link-underline {
+  display: inline-block;
+  line-height: 1;
+  padding-bottom: 3px;
+  &:link,
+  &:visited,
+  &:hover,
+  &:active,
+  &:focus {
+    border-bottom: 1px rgba(#333, .2) solid;
+  }
+  &:hover,
+  &:focus {
+    text-decoration: none;
   }
 }
 
