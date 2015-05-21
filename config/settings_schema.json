@@ -82,6 +82,17 @@
     ]
   },
   {
+    "name": "Pre-Orders",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "pre_order_alert",
+        "label": "Pre-Order Alert",
+        "default": "This is a Pre-Order Item"
+      }
+    ]
+  },
+  {
     "name": "Typography",
     "settings": [
       {
