@@ -97,7 +97,8 @@
         </div>
         <div class="col-sm-6">
 
-          <div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="well">
+          <div itemprop="offers" itemscope itemtype="http://schema.org/Offer"
+            class="{% unless pre_order %}well{% else %}alert alert-warning{% endunless %}">
             <meta itemprop="priceCurrency" content="{{ shop.currency }}">
 
             <link itemprop="availability" href="http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}">
@@ -159,24 +160,23 @@
               {% endcomment %}
 
               {% if pre_order %}
-                <div class="alert alert-warning">
-                  <p>
-                    <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-                    {{ settings.pre_order_alert }}
-                  </p>
-                  {% if product.variants.first.option2 %}
-                    {% if product.variants.first.option2 != 0 %}
-                      <p>
-                        <i class="fa fa-calendar-o" aria-hidden="true"></i>
-                        {{ product.variants.first.option2 }}
-                      </p>
-                    {% endif %}
+                <p>
+                  <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                  {{ settings.pre_order_alert }}
+                </p>
+                {% if product.variants.first.option2 %}
+                  {% if product.variants.first.option2 != 0 %}
+                    <p>
+                      <i class="fa fa-calendar-o" aria-hidden="true"></i>
+                      {{ product.variants.first.option2 }}
+                    </p>
                   {% endif %}
-                  <p>
-                    <i class="fa fa-question-circle" aria-hidden="true"></i>
-                    <a href="/pages/pre-orders" class="alert-link">How do pre-orders work?</a>
-                  </p>
-                </div>
+                {% endif %}
+                <p>
+                  <i class="fa fa-question-circle" aria-hidden="true"></i>
+                  <a href="/pages/pre-orders" class="alert-link">How do pre-orders work?</a>
+                </p>
+                <br>
               {% endif %}
 
               <button type="submit" name="add" id="AddToCart" class="btn btn-default">
@@ -272,6 +272,7 @@ Callback notes:
     {% endif %}
 
     {% if pre_order %}
+      $("#AddToCart").removeClass("btn-default").addClass("btn-warning");
       $("#AddToCartText").text("Pre-Order");
     {% endif %}
   });
