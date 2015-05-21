@@ -57,4 +57,7 @@
 
     {{ 'styles.css' | asset_url | stylesheet_tag }}
     {{ 'styles.scss.css' | asset_url | stylesheet_tag }}
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    {{ 'bootstrap.min.js' | asset_url | script_tag }}
+    
+
+
