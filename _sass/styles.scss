@@ -483,6 +483,8 @@ a.link-underline {
   a {
     // text-decoration: underline;
     @extend .link-underline;
+    padding-bottom: 1px;
+    border-bottom-width: 2px !important;
   }
 
   // Add some top margin to headers from the rich text editor
