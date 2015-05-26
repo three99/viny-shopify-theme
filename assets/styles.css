@@ -5950,17 +5950,17 @@ a:link, a:visited, a:hover, a:active, a:focus, .btn-link:link, .btn-link:visited
 }
 
 /* line 16, ../_sass/styles.scss */
-a.link-underline {
+a.link-underline, .rte a {
   display: inline-block;
   line-height: 1;
   padding-bottom: 3px;
 }
 /* line 20, ../_sass/styles.scss */
-a.link-underline:link, a.link-underline:visited, a.link-underline:hover, a.link-underline:active, a.link-underline:focus {
+a.link-underline:link, .rte a:link, a.link-underline:visited, .rte a:visited, a.link-underline:hover, .rte a:hover, a.link-underline:active, .rte a:active, a.link-underline:focus, .rte a:focus {
   border-bottom: 1px rgba(51, 51, 51, 0.2) solid;
 }
 /* line 27, ../_sass/styles.scss */
-a.link-underline:hover, a.link-underline:focus {
+a.link-underline:hover, .rte a:hover, a.link-underline:focus, .rte a:focus {
   text-decoration: none;
 }
 
@@ -6440,28 +6440,24 @@ a.link-underline:hover, a.link-underline:focus {
 .rte {
   max-width: 600px;
 }
-/* line 483, ../_sass/styles.scss */
-.rte a {
-  text-decoration: underline;
-}
-/* line 488, ../_sass/styles.scss */
+/* line 489, ../_sass/styles.scss */
 .rte h1, .rte h2, .rte h3, .rte h4, .rte h5, .rte h6 {
   margin-top: 2em;
 }
-/* line 491, ../_sass/styles.scss */
+/* line 492, ../_sass/styles.scss */
 .rte h1:first-child, .rte h2:first-child, .rte h3:first-child, .rte h4:first-child, .rte h5:first-child, .rte h6:first-child {
   margin-top: 0;
 }
-/* line 495, ../_sass/styles.scss */
+/* line 496, ../_sass/styles.scss */
 .rte h1 a, .rte h2 a, .rte h3 a, .rte h4 a, .rte h5 a, .rte h6 a {
   text-decoration: none;
 }
-/* line 504, ../_sass/styles.scss */
+/* line 505, ../_sass/styles.scss */
 .rte li {
   margin-bottom: 0.4em;
 }
 
-/* line 509, ../_sass/styles.scss */
+/* line 510, ../_sass/styles.scss */
 .rte--header {
   margin-bottom: 0;
 }
