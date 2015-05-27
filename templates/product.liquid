@@ -34,6 +34,21 @@
   {% if product.variants.first.inventory_quantity <= 0 and product.variants.first.available and product.variants.first.inventory_management != '' %}
     {% assign pre_order = true %}
   {% endif %}
+
+  {% comment %}
+  <div class="alert alert-danger">
+    product.options.size: {{ product.options.size }}<br>
+    product.options[2]: {{ product.options[2] }}<br>
+    product.variants.first.option3: {{ product.variants.first.option3 }}<br>
+    product.variants.first.inventory_quantity: {{ product.variants.first.inventory_quantity }}<br><br>
+    {% assign pre_sale_inventory_quantity = product.variants.first.option3 | plus: product.variants.first.inventory_quantity %}
+    {{ pre_sale_inventory_quantity }}
+  </div>
+  {% endcomment %}
+
+  {% if product.options.size > 1 and pre_sale_inventory_quantity == 0 %}
+    {% assign pre_order_limit_reached = true %}
+  {% endif %} 
   
   <div class="row product-single">
     <div class="col-sm-4">
@@ -100,7 +115,14 @@
         <div class="col-sm-6">
 
           <div id="offers-box" itemprop="offers" itemscope itemtype="http://schema.org/Offer"
-            class="hidden {% unless pre_order %}well{% else %}alert alert-warning{% endunless %}">
+            class="hidden
+            {% if pre_order and pre_order_limit_reached %}
+              well
+            {% elsif pre_order %}
+              alert alert-warning
+            {% else %}
+              well
+            {% endif %}">
             <meta itemprop="priceCurrency" content="{{ shop.currency }}">
 
             <link itemprop="availability" href="http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}">
@@ -162,30 +184,36 @@
               {% endcomment %}
 
               {% if pre_order %}
-                <p>
-                  <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-                  {{ settings.pre_order_alert }}
-                </p>
-                {% if product.variants.first.option2 %}
-                  {% if product.variants.first.option2 != 0 %}
-                    <p>
-                      <i class="fa fa-calendar-o" aria-hidden="true"></i>
-                      {{ product.variants.first.option2 }}
-                    </p>
+                {% unless pre_order_limit_reached %}
+                  <p>
+                    <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                    {{ settings.pre_order_alert }}
+                  </p>
+                  {% if product.variants.first.option2 %}
+                    {% if product.variants.first.option2 != 0 %}
+                      <p>
+                        <i class="fa fa-calendar-o" aria-hidden="true"></i>
+                        {{ product.variants.first.option2 }}
+                      </p>
+                    {% endif %}
                   {% endif %}
-                {% endif %}
-                <p>
-                  <i class="fa fa-question-circle" aria-hidden="true"></i>
-                  <a href="/pages/pre-orders" class="alert-link link-underline">How do pre-orders work?</a>
-                </p>
-                <br>
+                  <p>
+                    <i class="fa fa-question-circle" aria-hidden="true"></i>
+                    <a href="/pages/pre-orders" class="alert-link link-underline">How do pre-orders work?</a>
+                  </p>
+                  <br>
+                {% endunless %}
               {% endif %}
 
-              <button type="submit" name="add" id="AddToCart" class="btn btn-default">
-                <span id="AddToCartText">
-                  {{ 'products.product.add_to_cart' | t }}
-                </span>
-              </button>
+              {% unless pre_order and pre_order_limit_reached == true %}
+                <button type="submit" name="add" id="AddToCart" class="btn btn-default">
+                  <span id="AddToCartText">
+                    {{ 'products.product.add_to_cart' | t }}
+                  </span>
+                </button>
+              {% else %}
+                <span class="btn btn-default disabled">Sold Out</span>
+              {% endunless %}
 
             </form>
 
