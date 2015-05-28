@@ -35,21 +35,20 @@
     {% assign pre_order = true %}
   {% endif %}
 
-  {% comment %}
-  <div class="alert alert-danger">
-    product.options.size: {{ product.options.size }}<br>
-    product.options[2]: {{ product.options[2] }}<br>
-    product.variants.first.option3: {{ product.variants.first.option3 }}<br>
-    product.variants.first.inventory_quantity: {{ product.variants.first.inventory_quantity }}<br><br>
     {% assign pre_sale_inventory_quantity = product.variants.first.option3 | plus: product.variants.first.inventory_quantity %}
-    {{ pre_sale_inventory_quantity }}
-  </div>
-  {% endcomment %}
 
   {% if product.options.size > 1 and pre_sale_inventory_quantity == 0 %}
     {% assign pre_order_limit_reached = true %}
   {% endif %} 
-  
+
+  <div class="alert alert-danger hidden">
+    product.options.size: {{ product.options.size }}<br>
+    product.options[2]: {{ product.options[2] }}<br>
+    product.variants.first.option3: {{ product.variants.first.option3 }}<br>
+    product.variants.first.inventory_quantity: {{ product.variants.first.inventory_quantity }}<br><br>
+    {{ pre_sale_inventory_quantity }}
+  </div>
+
   <div class="row product-single">
     <div class="col-sm-4">
       <div
