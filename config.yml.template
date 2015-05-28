@@ -1,4 +1,13 @@
-:api_key: 
-:password: 
-:store: 
-:theme_id:
+
+
+# STAGING
+# :api_key: e1afb221cd1e24a4ac0ccb57e22be100
+# :password: e147a3237869cfd2c43d3adb54e36926
+# :store: pbvdev.myshopify.com
+# :theme_id:
+
+# PRODUCTION
+# :api_key: e1afb221cd1e24a4ac0ccb57e22be100
+# :password: e147a3237869cfd2c43d3adb54e36926
+# :store: pbvdev.myshopify.com
+# :theme_id:
