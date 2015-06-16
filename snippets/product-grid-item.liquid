@@ -73,6 +73,10 @@ Example
       <br>
       <span class="release-title" itemprop="name">{{ release_title | capitalize }}</span>
 
+      <br>
+
+      ({{ product.vendor }}) {{ product.type | slice: 0, 3 }}
+
       <span class="price">
         {% comment %}
         You can show a leading 'from' or 'up to' by checking 'product.price_varies'
