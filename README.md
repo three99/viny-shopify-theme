@@ -9,12 +9,17 @@
 
 ### General Development / Deployment Workflow
 
-* create feat/branch-name branch off master and switch to it
 * ensure config.yml syncs to staging store
+* create feat/branch-name branch off master and switch to it
 * start "theme watch"
 * get feature client approval from staging store
-* merge feature branch into master once approved
 * stop "theme watch"
+* push changes
+* checkout to master
 * switch config.yml to sync to production store
-* start "theme watch" and all changes will be synced to production
+* start "theme watch"
+* merge feature branch into master
+* wait untill "theme watch" syncs all changes to production
+* stop "theme watch"
 * be sure to switch config.yml back to staging store after every deployment to production
+* push changes
