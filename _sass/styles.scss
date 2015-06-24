@@ -164,7 +164,7 @@ a.link-underline {
   }
   .navbar-search {
     input {
-      margin: 10px 0;  
+      margin: 10px 0;
       text-align: left;
     }
   }
@@ -511,4 +511,14 @@ a.link-underline {
 
 .rte--header {
   margin-bottom: 0;
+}
+
+/*============================================================================
+  #Gift Card Product Template (/templates/product.giftcard.liquid)
+==============================================================================*/
+
+.selector-wrapper {
+  .form-control {
+    width: 50%;
+  }
 }

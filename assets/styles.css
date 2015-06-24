@@ -6466,3 +6466,11 @@ a.link-underline:hover, .rte a:hover, a.link-underline:focus, .rte a:focus {
 .rte--header {
   margin-bottom: 0;
 }
+
+/*============================================================================
+  #Gift Card Product Template (/templates/product.giftcard.liquid)
+==============================================================================*/
+/* line 521, ../_sass/styles.scss */
+.selector-wrapper .form-control {
+  width: 50%;
+}
