@@ -32,4 +32,4 @@
 * be sure to switch config.yml back to staging store after every deployment to production
 * push changes
 
-  ```git push origin master
+  ```git push origin master```
