@@ -6318,7 +6318,7 @@ a.link-underline:hover, .rte a:hover, a.link-underline:focus, .rte a:focus {
 }
 /* line 350, ../_sass/styles.scss */
 .product-grid-item .release-format {
-  font-size: 0.8em;
+  color: #8B8B8C;
   font-style: italic;
   line-height: 1.5;
 }
