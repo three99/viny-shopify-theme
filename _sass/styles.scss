@@ -164,7 +164,7 @@ a.link-underline {
   }
   .navbar-search {
     input {
-      margin: 10px 0;  
+      margin: 10px 0;
       text-align: left;
     }
   }
@@ -346,6 +346,11 @@ a.link-underline {
     // max-height: 33px;
     overflow: hidden;
     display: block;
+  }
+  .release-format {
+    font-size: 0.8em;
+    font-style: italic;
+    line-height: 1.5;
   }
   .caption {
     display: block;
