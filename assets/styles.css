@@ -6440,35 +6440,43 @@ a.link-underline:hover, .rte a:hover, a.link-underline:focus, .rte a:focus {
 }
 
 /*============================================================================
+  #Cart
+==============================================================================*/
+/* line 478, ../_sass/styles.scss */
+.template-cart .h5 {
+  text-transform: capitalize;
+}
+
+/*============================================================================
   #Rich Text Editor
 ==============================================================================*/
-/* line 477, ../_sass/styles.scss */
+/* line 487, ../_sass/styles.scss */
 .rte {
   max-width: 600px;
 }
-/* line 488, ../_sass/styles.scss */
+/* line 498, ../_sass/styles.scss */
 .rte a {
   padding-bottom: 1px;
   border-bottom-width: 2px !important;
 }
-/* line 496, ../_sass/styles.scss */
+/* line 506, ../_sass/styles.scss */
 .rte h1, .rte h2, .rte h3, .rte h4, .rte h5, .rte h6 {
   margin-top: 2em;
 }
-/* line 499, ../_sass/styles.scss */
+/* line 509, ../_sass/styles.scss */
 .rte h1:first-child, .rte h2:first-child, .rte h3:first-child, .rte h4:first-child, .rte h5:first-child, .rte h6:first-child {
   margin-top: 0;
 }
-/* line 503, ../_sass/styles.scss */
+/* line 513, ../_sass/styles.scss */
 .rte h1 a, .rte h2 a, .rte h3 a, .rte h4 a, .rte h5 a, .rte h6 a {
   text-decoration: none;
 }
-/* line 512, ../_sass/styles.scss */
+/* line 522, ../_sass/styles.scss */
 .rte li {
   margin-bottom: 0.4em;
 }
 
-/* line 517, ../_sass/styles.scss */
+/* line 527, ../_sass/styles.scss */
 .rte--header {
   margin-bottom: 0;
 }
@@ -6476,7 +6484,7 @@ a.link-underline:hover, .rte a:hover, a.link-underline:focus, .rte a:focus {
 /*============================================================================
   #Gift Card Product Template (/templates/product.giftcard.liquid)
 ==============================================================================*/
-/* line 521, ../_sass/styles.scss */
+/* line 536, ../_sass/styles.scss */
 .selector-wrapper .form-control {
   width: 50%;
 }
