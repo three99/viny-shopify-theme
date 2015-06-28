@@ -6446,33 +6446,37 @@ a.link-underline:hover, .rte a:hover, a.link-underline:focus, .rte a:focus {
 .template-cart .h5 {
   text-transform: capitalize;
 }
+/* line 481, ../_sass/styles.scss */
+.template-cart .continue-shopping {
+  margin-bottom: 10px;
+}
 
 /*============================================================================
   #Rich Text Editor
 ==============================================================================*/
-/* line 498, ../_sass/styles.scss */
+/* line 501, ../_sass/styles.scss */
 .rte a {
   padding-bottom: 1px;
   border-bottom-width: 2px !important;
 }
-/* line 506, ../_sass/styles.scss */
+/* line 509, ../_sass/styles.scss */
 .rte h1, .rte h2, .rte h3, .rte h4, .rte h5, .rte h6 {
   margin-top: 2em;
 }
-/* line 509, ../_sass/styles.scss */
+/* line 512, ../_sass/styles.scss */
 .rte h1:first-child, .rte h2:first-child, .rte h3:first-child, .rte h4:first-child, .rte h5:first-child, .rte h6:first-child {
   margin-top: 0;
 }
-/* line 513, ../_sass/styles.scss */
+/* line 516, ../_sass/styles.scss */
 .rte h1 a, .rte h2 a, .rte h3 a, .rte h4 a, .rte h5 a, .rte h6 a {
   text-decoration: none;
 }
-/* line 522, ../_sass/styles.scss */
+/* line 525, ../_sass/styles.scss */
 .rte li {
   margin-bottom: 0.4em;
 }
 @media (min-width: 992px) {
-  /* line 527, ../_sass/styles.scss */
+  /* line 530, ../_sass/styles.scss */
   .rte .newspaper {
     -webkit-column-count: 2;
     -moz-column-count: 2;
@@ -6486,7 +6490,7 @@ a.link-underline:hover, .rte a:hover, a.link-underline:focus, .rte a:focus {
   }
 }
 
-/* line 541, ../_sass/styles.scss */
+/* line 544, ../_sass/styles.scss */
 .rte--header {
   margin-bottom: 0;
 }
@@ -6494,7 +6498,7 @@ a.link-underline:hover, .rte a:hover, a.link-underline:focus, .rte a:focus {
 /*============================================================================
   #Gift Card Product Template (/templates/product.giftcard.liquid)
 ==============================================================================*/
-/* line 550, ../_sass/styles.scss */
+/* line 553, ../_sass/styles.scss */
 .selector-wrapper .form-control {
   width: 50%;
 }
