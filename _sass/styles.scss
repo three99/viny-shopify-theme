@@ -485,7 +485,7 @@ a.link-underline {
   #Rich Text Editor
 ==============================================================================*/
 .rte {
-  max-width: 600px;
+  // max-width: 600px;
   // margin-bottom: $gutter / 2;
 
   ul,ol {
@@ -521,6 +521,20 @@ a.link-underline {
 
   li {
     margin-bottom: 0.4em;
+  }
+
+  @media(min-width: $screen-md-min) {
+    .newspaper {
+    	-webkit-column-count: 2;
+    	   -moz-column-count: 2;
+    	        column-count: 2;
+      	-webkit-column-gap: 3em;
+      	   -moz-column-gap: 3em;
+      	        column-gap: 3em;
+      	-webkit-column-rule: 1px solid #eeeeee;
+      	   -moz-column-rule: 1px solid #eeeeee;
+      	        column-rule: 1px solid #eeeeee;
+    }
   }
 }
 

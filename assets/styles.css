@@ -6450,10 +6450,6 @@ a.link-underline:hover, .rte a:hover, a.link-underline:focus, .rte a:focus {
 /*============================================================================
   #Rich Text Editor
 ==============================================================================*/
-/* line 487, ../_sass/styles.scss */
-.rte {
-  max-width: 600px;
-}
 /* line 498, ../_sass/styles.scss */
 .rte a {
   padding-bottom: 1px;
@@ -6475,8 +6471,22 @@ a.link-underline:hover, .rte a:hover, a.link-underline:focus, .rte a:focus {
 .rte li {
   margin-bottom: 0.4em;
 }
+@media (min-width: 992px) {
+  /* line 527, ../_sass/styles.scss */
+  .rte .newspaper {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    -webkit-column-gap: 3em;
+    -moz-column-gap: 3em;
+    column-gap: 3em;
+    -webkit-column-rule: 1px solid #eeeeee;
+    -moz-column-rule: 1px solid #eeeeee;
+    column-rule: 1px solid #eeeeee;
+  }
+}
 
-/* line 527, ../_sass/styles.scss */
+/* line 541, ../_sass/styles.scss */
 .rte--header {
   margin-bottom: 0;
 }
@@ -6484,7 +6494,7 @@ a.link-underline:hover, .rte a:hover, a.link-underline:focus, .rte a:focus {
 /*============================================================================
   #Gift Card Product Template (/templates/product.giftcard.liquid)
 ==============================================================================*/
-/* line 536, ../_sass/styles.scss */
+/* line 550, ../_sass/styles.scss */
 .selector-wrapper .form-control {
   width: 50%;
 }
