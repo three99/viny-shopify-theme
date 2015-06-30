@@ -49,16 +49,20 @@
           </a>
         </div>
         <div class="col-md-4 col-sm-6 col-xs-6">
-          {% capture release_artist %}{{ item.title | split: " | " | first }}{% endcapture %}
-          {% capture release_title %}{{ item.title | split: " | " | last }}{% endcapture %}
+          {% capture release_artist %}{{ item.product.title | split: " | " | first }}{% endcapture %}
+          {% capture release_title %}{{ item.product.title | split: " | " | last }}{% endcapture %}
           <a href="{{ item.url }}">
             <span class="h4" itemprop="name">{{ release_artist }}</span><br>
             <span class="h5 text-muted" itemprop="name">{{ release_title | downcase }}</span>
           </a>
-          {% unless item.variant.title contains 'Default' %}
-            <br>
-            <small>{{ item.variant.title }}</small>
-          {% endunless %}
+
+          {% comment %}
+            Check for color vinyl option and display if found.
+          {% endcomment %}
+
+          {% if item.variant.title contains 'Vinyl' %}
+            <p class="variant-option">{{ item.variant.option3 }}</p>
+          {% endif %}
 
           {% if settings.cart_vendor_enable %}
             <p>{{ item.vendor }}</p>
