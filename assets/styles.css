@@ -6507,3 +6507,11 @@ a.link-underline:hover, .rte a:hover, a.link-underline:focus, .rte a:focus {
 .selector-wrapper .form-control {
   width: 50%;
 }
+
+/*============================================================================
+  #Color Vinyl Product Template (/templates/product.colorvinyl.liquid)
+==============================================================================*/
+/* line 567, ../_sass/styles.scss */
+.form-color-vinyl label {
+  display: none;
+}
