@@ -517,4 +517,10 @@ a.link-underline {
   .tab-content {
     margin-top: 10px;
   }
+
+  a {
+    @extend .link-underline;
+    padding-bottom: 1px;
+    border-bottom-width: 2px !important;
+  }
 }
