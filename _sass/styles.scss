@@ -164,7 +164,7 @@ a.link-underline {
   }
   .navbar-search {
     input {
-      margin: 10px 0;  
+      margin: 10px 0;
       text-align: left;
     }
   }
@@ -511,4 +511,10 @@ a.link-underline {
 
 .rte--header {
   margin-bottom: 0;
+}
+
+.rte-tabs {
+  .tab-content {
+    margin-top: 10px;
+  }
 }
