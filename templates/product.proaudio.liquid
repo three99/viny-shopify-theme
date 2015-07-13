@@ -276,7 +276,13 @@ Callback notes:
     // Add Bootstrap form-control class to color selector
    $("#productSelect-option-2").addClass("form-control");
 
-    
+    // Hide Tech Specs tab if no content found in RTE.
+    if ($('#specs').length) {
+        $('.nav-tabs li').eq(2).show();
+    }
+    else {
+        $('.nav-tabs li').eq(2).hide();
+    }
 
    // hide default Size selector
    $('.form-group div').eq(0).hide();
