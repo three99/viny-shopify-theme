@@ -52,15 +52,15 @@
         Create thumbnails if we have more than one product image
       {% endcomment %}
       {% if product.images.size > 1 %}
-        <ul class="row" id="ProductThumbs">
+        <div class="row" id="ProductThumbs">
           {% for image in product.images %}
-            <li class="col-sm-3">
-              <a href="{{ image.src | img_url: 'large' }}" class="product-single__thumbnail">
+            <div class="col-sm-6">
+              <a href="{{ image.src | img_url: 'large' }}" class="product-single__thumbnail thumbnail">
                 <img src="{{ image.src | img_url: 'compact' }}" alt="{{ image.alt | escape }}">
               </a>
-            </li>
+            </div>
           {% endfor %}
-        </ul>
+        </div>
       {% endif %}
     </div>
 

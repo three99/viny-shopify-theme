@@ -306,9 +306,22 @@ a.link-underline {
   text-transform: uppercase;
 }
 
+/*============================================================================
+  #Product Images
+==============================================================================*/
+
 .img-thumbnail {
   border-color: #E5E5E5;
 }
+
+a.thumbnail {
+  &:hover,
+  &:active,
+  &:focus {
+    border-color: #faebcc;
+  }
+}
+
 
 .product-grid-item {
   opacity: 1;
