@@ -50,7 +50,9 @@
 
       {% comment %}
         Create thumbnails if we have more than one product image
+        The "product-single__thumbnail" class is required by Shopify to enlarge the thumbnails in the featured image section. Not to be confused with "thumbnail" which is a Bootstrap class.
       {% endcomment %}
+
       {% if product.images.size > 1 %}
         <div class="row" id="ProductThumbs">
           {% for image in product.images %}
