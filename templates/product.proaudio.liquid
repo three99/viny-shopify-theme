@@ -288,10 +288,10 @@ Callback notes:
         $('.nav-tabs li').eq(2).hide();
     }
 
-   // hide default Size selector
+   // due to the TradeGecko bug, we always have Size / Default), so hide the selector
    $('.form-group div').eq(0).hide();
 
-   // hide ETA selector
+   // ETA should always be second, so hide that selector too
    $('.form-group div').eq(1).hide();
 
     // Add label if only one product option and it isn't 'Title'. Could be 'Size'.
