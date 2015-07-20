@@ -317,10 +317,14 @@ a.link-underline {
 
 a.thumbnail {
   &:hover,
-  &:active,
-  &:focus {
+  &:focus,
+  &:active {
     border-color: #faebcc;
   }
+}
+
+#product-thumbnail-gallery .active {
+  border-color: #faebcc;
 }
 
 

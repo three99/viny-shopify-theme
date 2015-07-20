@@ -54,11 +54,10 @@
       {% endcomment %}
 
       {% if product.images.size > 1 %}
-        <div class="row" id="product-thumb-gallery">
+        <div class="row" id="product-thumbnail-gallery">
           {% for image in product.images %}
             <div class="col-sm-6">
-              <a id="thumbnail"
-                 href="#" class="thumbnail"
+              <a href="#" class="thumbnail {% if forloop.first %}active{% endif %}"
                  data-image="{{ image.src | img_url: 'large' }}"
                  data-zoom-image="{{ image.src | img_url: '2048x2048' }}">
                 <img id="ProductPhoto"
@@ -73,8 +72,8 @@
     <script>
 
       $('#ProductPhotoImg').elevateZoom({
-        gallery: "product-thumb-gallery",
-        galleryActiveClass: 'active-thumbnail',
+        gallery: "product-thumbnail-gallery",
+        galleryActiveClass: "active",
         zoomWindowWidth: "650",
         zoomWindowHeight: "400",
         cursor: "crosshair",
@@ -85,8 +84,8 @@
         responsive: true,
        });
 
-       $("#product-thumb-gallery").bind("click", function(e) {
-         var ez = $('#product-thumb-gallery').data('elevateZoom');	$.fancybox(ez.getGalleryList());
+       $("#product-thumbnail-gallery").bind("click", function(e) {
+         var ez = $('#product-thumbnail-gallery').data('elevateZoom');	$.fancybox(ez.getGalleryList());
          return false; });
 
     </script>
