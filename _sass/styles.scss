@@ -536,6 +536,16 @@ a.thumbnail {
   margin-bottom: 0px;
 }
 
+// Match link style in tab content.
+.tab-content {
+  a {
+    @extend .link-underline;
+    padding-bottom: 3px;
+    border-bottom-width: 1px !important;
+  }
+}
+
+
 .rte--header {
   margin-bottom: 0;
 }
