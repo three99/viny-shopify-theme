@@ -513,7 +513,7 @@ a.thumbnail {
   }
 
   // Add some top margin to headers from the rich text editor
-  h1, h2, h3, h4, h5, h6 {
+  h1, h2, h3, h4, h6 {
     margin-top: 2em;
 
     &:first-child {
@@ -525,13 +525,15 @@ a.thumbnail {
     }
   }
 
-  > div {
-    // margin-bottom: $gutter / 2;
-  }
-
   li {
     margin-bottom: 0.4em;
   }
+}
+
+// Remove top and bottom margings from h5 since it's used for tabs in RTE.
+.product-description h5 {
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .rte--header {

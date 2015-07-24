@@ -6466,28 +6466,34 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail:active {
   border-bottom-width: 2px !important;
 }
 /* line 516, ../_sass/styles.scss */
-.rte h1, .rte h2, .rte h3, .rte h4, .rte h5, .rte h6 {
+.rte h1, .rte h2, .rte h3, .rte h4, .rte h6 {
   margin-top: 2em;
 }
 /* line 519, ../_sass/styles.scss */
-.rte h1:first-child, .rte h2:first-child, .rte h3:first-child, .rte h4:first-child, .rte h5:first-child, .rte h6:first-child {
+.rte h1:first-child, .rte h2:first-child, .rte h3:first-child, .rte h4:first-child, .rte h6:first-child {
   margin-top: 0;
 }
 /* line 523, ../_sass/styles.scss */
-.rte h1 a, .rte h2 a, .rte h3 a, .rte h4 a, .rte h5 a, .rte h6 a {
+.rte h1 a, .rte h2 a, .rte h3 a, .rte h4 a, .rte h6 a {
   text-decoration: none;
 }
-/* line 532, ../_sass/styles.scss */
+/* line 528, ../_sass/styles.scss */
 .rte li {
   margin-bottom: 0.4em;
 }
 
-/* line 537, ../_sass/styles.scss */
+/* line 534, ../_sass/styles.scss */
+.product-description h5 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+/* line 539, ../_sass/styles.scss */
 .rte--header {
   margin-bottom: 0;
 }
 
-/* line 541, ../_sass/styles.scss */
+/* line 543, ../_sass/styles.scss */
 .nav-tabs {
   margin-bottom: 15px;
 }
