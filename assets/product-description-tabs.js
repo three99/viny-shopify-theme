@@ -7,7 +7,7 @@ jQuery(document).ready(function($){
 	$('.product-description h5:first-of-type').before('<ul class="nav nav-tabs" role="tablist" />');
 
 	// Loop through each <h5> in the product description.
-	$('.description h5').each(function(index, value){
+	$('.product-description h5').each(function(index, value){
 	    // Assign them each a number, in order
 		var num = index + 1;
 
