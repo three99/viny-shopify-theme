@@ -538,14 +538,6 @@ a.thumbnail {
   margin-bottom: 0;
 }
 
-.rte-tabs {
-  .tab-content {
-    margin-top: 10px;
-  }
-
-  a {
-    @extend .link-underline;
-    padding-bottom: 1px;
-    border-bottom-width: 2px !important;
-  }
+.nav-tabs {
+  margin-bottom: 15px;
 }

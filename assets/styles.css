@@ -5950,17 +5950,17 @@ a:link, a:visited, a:hover, a:active, a:focus, .btn-link:link, .btn-link:visited
 }
 
 /* line 16, ../_sass/styles.scss */
-a.link-underline, .rte a, .rte-tabs a {
+a.link-underline, .rte a {
   display: inline-block;
   line-height: 1;
   padding-bottom: 3px;
 }
 /* line 20, ../_sass/styles.scss */
-a.link-underline:link, .rte a:link, .rte-tabs a:link, a.link-underline:visited, .rte a:visited, .rte-tabs a:visited, a.link-underline:hover, .rte a:hover, .rte-tabs a:hover, a.link-underline:active, .rte a:active, .rte-tabs a:active, a.link-underline:focus, .rte a:focus, .rte-tabs a:focus {
+a.link-underline:link, .rte a:link, a.link-underline:visited, .rte a:visited, a.link-underline:hover, .rte a:hover, a.link-underline:active, .rte a:active, a.link-underline:focus, .rte a:focus {
   border-bottom: 1px rgba(51, 51, 51, 0.2) solid;
 }
 /* line 27, ../_sass/styles.scss */
-a.link-underline:hover, .rte a:hover, .rte-tabs a:hover, a.link-underline:focus, .rte a:focus, .rte-tabs a:focus {
+a.link-underline:hover, .rte a:hover, a.link-underline:focus, .rte a:focus {
   text-decoration: none;
 }
 
@@ -6487,12 +6487,7 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail:active {
   margin-bottom: 0;
 }
 
-/* line 542, ../_sass/styles.scss */
-.rte-tabs .tab-content {
-  margin-top: 10px;
-}
-/* line 546, ../_sass/styles.scss */
-.rte-tabs a {
-  padding-bottom: 1px;
-  border-bottom-width: 2px !important;
+/* line 541, ../_sass/styles.scss */
+.nav-tabs {
+  margin-bottom: 15px;
 }
