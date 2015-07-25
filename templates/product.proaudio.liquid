@@ -1,12 +1,4 @@
-<!-- /templates/product.liquid -->
-
-{% comment %}
-  Rich snippets (itemscope, itemtype, etc.) for products are a theme requirement,
-  and allow search engines to easily understand what the content is.
-
-  For more information on these Scheme.org tags, visit:
-    - http://schema.org/docs/gs.html
-{% endcomment %}
+<!-- /templates/product.proaudio.liquid -->
 
 {% include "main-nav" %}
 
@@ -69,6 +61,10 @@
         </div>
       {% endif %}
 
+      {% comment %}
+        Set image zoom properties.
+      {% endcomment %}
+
     <script>
 
       $('#ProductPhotoImg').elevateZoom({
@@ -93,7 +89,6 @@
     </div>
 
     <div class="col-sm-8">
-
 
       {% capture release_artist %}{{ product.title | split: " | " | first }}{% endcapture %}
       {% capture release_title %}{{ product.title | split: " | " | last }}{% endcapture %}
@@ -292,14 +287,6 @@ Callback notes:
 
     // Add Bootstrap form-control class to color selector
    $("#productSelect-option-2").addClass("form-control");
-
-    // Hide Tech Specs tab if no content found in RTE.
-    if ($('#specs').length) {
-        $('.nav-tabs li').eq(2).show();
-    }
-    else {
-        $('.nav-tabs li').eq(2).hide();
-    }
 
    // due to the TradeGecko bug, we always have Size / Default), so hide the selector
    $('.form-group div').eq(0).hide();
