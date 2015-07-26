@@ -67,6 +67,14 @@ Example
       {% capture release_title %}{{ product.title | split: " | " | last }}{% endcapture %}
       {% capture release_format %}{{ product.type | replace: ' + ', '+' | split: " " | first }}{% endcapture %}
 
+      {% comment %}
+      Loop through product tags and capture in name variable so we can check for 'pro audio' tag further down.
+      {% endcomment %}
+
+      {% for tag in product.tags %}
+        {% capture name %}{{ tag }}{% endcapture %}
+      {% endfor %}
+
       <strong>
         <span itemprop="name">{{ release_artist }}</span>
       </strong>
@@ -74,7 +82,15 @@ Example
       <br>
       <span class="release-title" itemprop="name">{{ release_title | capitalize }}</span>
 
-      <span class="release-format">{{ product.vendor }} {{ release_format }}</span>
+      {% comment %}
+      Don't output release_format for products that are tagged 'pro audio'.
+      {% endcomment %}
+
+      <span class="release-format">{{ product.vendor }}
+        {% unless name contains 'pro audio' %}
+          {{ release_format }}
+        {% endunless %}
+      </span>
 
       <span class="price">
         {% comment %}
