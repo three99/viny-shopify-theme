@@ -6541,14 +6541,18 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail:active {
   #Gift Card Product Template (/templates/product.giftcard.liquid)
 ==============================================================================*/
 /* line 592, ../_sass/styles.scss */
-.selector-wrapper .form-control {
+.form-giftcard label {
+  display: none;
+}
+/* line 595, ../_sass/styles.scss */
+.form-giftcard .form-control {
   width: 50%;
 }
 
 /*============================================================================
   #Color Vinyl Product Template (/templates/product.colorvinyl.liquid)
 ==============================================================================*/
-/* line 602, ../_sass/styles.scss */
+/* line 605, ../_sass/styles.scss */
 .form-color-vinyl label {
   display: none;
 }
@@ -6556,11 +6560,11 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail:active {
 /*============================================================================
   #Proaudio Product Template (/templates/product.proaudio.liquid)
 ==============================================================================*/
-/* line 612, ../_sass/styles.scss */
+/* line 615, ../_sass/styles.scss */
 .form-proaudio label {
   display: none;
 }
-/* line 615, ../_sass/styles.scss */
+/* line 618, ../_sass/styles.scss */
 .form-proaudio .form-control {
   width: 55%;
 }

@@ -588,7 +588,10 @@ a.thumbnail {
   #Gift Card Product Template (/templates/product.giftcard.liquid)
 ==============================================================================*/
 
-.selector-wrapper {
+.form-giftcard {
+  label {
+    display: none;
+  }
   .form-control {
     width: 50%;
   }
