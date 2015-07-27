@@ -279,7 +279,6 @@ a.link-underline {
 }
 
 #products-grid {
-  // padding-top: 20px;
   min-height: 300px;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -306,8 +305,25 @@ a.link-underline {
   text-transform: uppercase;
 }
 
+/*============================================================================
+  #Product Images
+==============================================================================*/
+
 .img-thumbnail {
   border-color: #E5E5E5;
+  margin-bottom: 16px;
+}
+
+a.thumbnail {
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: #faebcc;
+  }
+}
+
+#product-thumbnail-gallery .active {
+  border-color: #faebcc;
 }
 
 .product-grid-item {
@@ -497,8 +513,6 @@ a.link-underline {
   #Rich Text Editor
 ==============================================================================*/
 .rte {
-  // max-width: 600px;
-  // margin-bottom: $gutter / 2;
 
   ul,ol {
     @extend .list-group;
@@ -527,10 +541,6 @@ a.link-underline {
     }
   }
 
-  > div {
-    // margin-bottom: $gutter / 2;
-  }
-
   li {
     margin-bottom: 0.4em;
   }
@@ -550,8 +560,28 @@ a.link-underline {
   }
 }
 
+// Remove top and bottom margings from h5 since it's used for tabs in RTE.
+.product-description h5 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+// Match link style in tab content.
+.tab-content {
+  a {
+    @extend .link-underline;
+    padding-bottom: 3px;
+    border-bottom-width: 1px !important;
+  }
+}
+
+
 .rte--header {
   margin-bottom: 0;
+}
+
+.nav-tabs {
+  margin-bottom: 15px;
 }
 
 /*============================================================================
@@ -571,5 +601,18 @@ a.link-underline {
 .form-color-vinyl {
   label {
     display: none;
+  }
+}
+
+/*============================================================================
+  #Proaudio Product Template (/templates/product.proaudio.liquid)
+==============================================================================*/
+
+.form-proaudio {
+  label {
+    display: none;
+  }
+  .form-control {
+    width: 55%;
   }
 }
